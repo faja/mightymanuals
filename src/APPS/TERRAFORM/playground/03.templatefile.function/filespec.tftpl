@@ -1,0 +1,12 @@
+---
+
+simple_string: ${ simple_string }
+
+simple_array: ${jsonencode([ for item in simple_array : "${item}" ])}
+
+simple_map:
+%{~ for key, value in simple_map }
+${key}=${jsonencode(value)}
+%{~ endfor }
+
+OK

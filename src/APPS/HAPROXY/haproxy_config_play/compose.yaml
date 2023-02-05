@@ -1,0 +1,38 @@
+---
+name: haproxy
+
+services:
+
+  haproxy:
+    build:
+      context: .
+    entrypoint:
+      - sleep
+    command:
+      - infinity
+    ports:
+      - 127.0.0.1:1936:1936/tcp
+      - 127.0.0.1:1937:1937/tcp
+      - 127.0.0.1:8080:8080/tcp
+    volumes:
+      - ${PWD}/haproxy.cfg:/etc/haproxy/haproxy.cfg:ro
+      - ${PWD}/zz_top.cfg:/etc/haproxy/zz_top.cfg:ro
+      - ${PWD}/zz_top2.cfg:/etc/haproxy/zz_top2.cfg:ro
+
+  nginx1:
+    image: nginx:1.23.3
+      #    entrypoint:
+      #      - sleep
+      #    command:
+      #      - infinity
+    volumes:
+      - ${PWD}/i1.html:/usr/share/nginx/html/index.html:ro
+
+  nginx2:
+    image: nginx:1.23.3
+      #    entrypoint:
+      #      - sleep
+      #    command:
+      #      - infinity
+    volumes:
+      - ${PWD}/i2.html:/usr/share/nginx/html/index.html:ro

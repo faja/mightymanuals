@@ -1,0 +1,19 @@
+---
+name: haproxy
+
+services:
+
+  haproxy:
+    build:
+      context: .
+    entrypoint:
+      - sleep
+    command:
+      - infinity
+    ports:
+      - 127.0.0.1:1936:1936/tcp
+      - 127.0.0.1:1937:1937/tcp
+      - 127.0.0.1:8080:8080/tcp
+    volumes:
+      - ${PWD}/haproxy.cfg:/etc/haproxy/haproxy.cfg:ro
+

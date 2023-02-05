@@ -1,0 +1,15 @@
+job "${name}" {
+  datacenters = ${jsonencode([ for dc in datacenters : "${dc}" ])}
+  type = "service"
+
+  group "${name}" {
+    count = ${count}
+
+    task "frontend" {
+      driver = "docker"
+      config {
+        image = ${image.name}:${image.tag}
+      }
+    }
+  }
+}

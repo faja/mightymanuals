@@ -1,0 +1,21 @@
+##
+##
+##
+
+job "${job_name}" {
+    #region
+    datacenters = ["dc1"]
+    type = "service"
+    #constraint
+    #update {
+    #migrate {
+    group "${job_name}" {
+        count = 1
+        task "redis" {
+            driver = "docker"
+            config {
+                image = "redis:6"
+            }
+        }
+    }
+}

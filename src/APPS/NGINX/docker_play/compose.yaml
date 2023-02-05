@@ -1,0 +1,17 @@
+---
+name: nginx-play
+
+services:
+  nginx:
+    image: nginx:1.22.1
+    entrypoint: ["sleep"]
+    command: ["infinity"]
+    ports:
+      - 8080:8080
+    volumes:
+      - ./nginx:/etc/nginx
+
+  httpbin:
+    image: kennethreitz/httpbin
+    ports:
+      - 8081:80

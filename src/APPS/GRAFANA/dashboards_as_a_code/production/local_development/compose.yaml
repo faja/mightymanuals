@@ -1,0 +1,26 @@
+---
+name: grafana-dashboards
+
+services:
+  grafana:
+    image: grafana/grafana:${GRAFANA_VERSION:-9.1.4}
+    ports:
+      - 3000:3000
+    volumes:
+      - ./grafana.ini:/etc/grafana/grafana.ini:ro
+
+  jsonnet:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    user: ${UID:-0}:${GID:-0}
+    volumes:
+      - ./main.tf:/tmp/main.tf:ro
+      - ./modules:/tmp/modules:ro
+      - ../dashboards_jsonnet:/src/dashboards_jsonnet:ro
+      - ../dashboards_json:/src/dashboards_json
+
+  prometheus:
+    image: prom/prometheus:${PROMETHEUS_VERSION:-v2.37.1}
+    ports:
+      - 9090:9090

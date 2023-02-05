@@ -1,0 +1,3 @@
+```yaml
+{{#include main.tf}}
+```

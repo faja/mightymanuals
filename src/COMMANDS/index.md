@@ -1,0 +1,39 @@
+# COMMANDS
+- [argdist](./ARGDIST/index.md) `(tags=bpf,bcc,performance)`
+- [biolatency](./BIOLATENCY/index.md) `(tags=bpf,performance)`
+- [biosnoop](./BIOSNOOP/index.md) `(tags=bpf,performance)`
+- [brew](./BREW/index.md) `(tags=mac,macos,macosx,package,manager)`
+- [cachestat](./CACHESTAT/index.md) `(tags=bpf,performance)`
+- [date](./DATE/index.md)
+- [dmesg](./DMESG/index.md) `(tags=performance)`
+- [execsnoop](./EXECSNOOP/index.md) `(tags=bpf,performance)`
+- [ext4slower](./EXT4SLOWER/index.md) `(tags=bpf,performance)`
+- [free](./FREE/index.md) `(tags=performance)`
+- [funccount](./FUNCCOUNT/index.md) `(tags=bpf,bcc,performance)`
+- [grip](./GRIP/index.md) `(tags=markdown,preview,pip)`
+- [htop](./HTOP/index.md) `(tags=performance)`
+- [iostat](./IOSTAT/index.md) `(tags=performance)`
+- [jq](./JQ/index.md) `(tags=jq,json,yaml)`
+- [mpstat](./MPSTAT/index.md) `(tags=performance)`
+- [opensnoop](./OPENSNOOP/index.md) `(tags=bpf,performance)`
+- [openssl](./OPENSSL/index.md)
+- [pidstat](./PIDSTAT/index.md) `(tags=performance)`
+- [profile](./PROFILE/index.md) `(tags=bpf,performance)`
+- [rsync](./RSYNC/index.md) `(tags=sync,cp,backup)`
+- [runqlat](./RUNQLAT/index.md) `(tags=bpf,erformance)`
+- [sar](./SAR/index.md) `(tags=performance)`
+- [stackcount](./STACKCOUNT/index.md) `(tags=bpf,bcc,performance)`
+- [tcpaccept](./TCPACCEPT/index.md) `(tags=bpf,erformance)`
+- [tcpconnect](./TCPCONNECT/index.md) `(tags=bpf,erformance)`
+- [tcpretrans](./TCPRETRANS/index.md) `(tags=bpf,erformance)`
+- [trace](./TRACE/index.md) `(tags=bpf,bcc,performance)`
+- [uptime](./UPTIME/index.md) `(tags=performance)`
+- [vmstat](./VMSTAT/index.md) `(tags=performance)`
+- [yj](./YJ/index.md) `(tags=jq,hcl,json,yaml,convert)`
+- [yq](./YQ/index.md) `(tags=jq,json,yaml)`
+
+---
+Performance analysis
+- [Linux 60-second analysis](../LINUX_INTERNALS/BPF/ch3_performance_analysis/index.md#linux-60-second-analysis)
+- [BCC tool checklist](../LINUX_INTERNALS/BPF/ch3_performance_analysis/index.md#linux-60-second-analysis)
+

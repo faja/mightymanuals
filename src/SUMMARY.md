@@ -118,6 +118,7 @@
 
 - [LINUX DISTROS](./LINUX_DISTROS/index.md)
     - [ALPINE](./LINUX_DISTROS/ALPINE/index.md)
+    - [DEBIAN](./LINUX_DISTROS/DEBIAN/index.md)
 
 ---
 

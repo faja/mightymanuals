@@ -9,7 +9,7 @@ title = "Manuals"
 create-missing = false
 
 [output.html]
-default-theme = "rust"
+default-theme = "navy"
 
 [output.html.fold]
 enable = true

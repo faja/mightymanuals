@@ -1,27 +1,73 @@
-# 
+---
+
+# run command
+```sh
+/usr/bin/loki -config.file=/etc/loki/loki.yaml -log-config-reverse-order
+```
 
 # config
-TODO
+## single binary
+```yaml
+##
+# this is pretty much my golden config for single binary deployment
+# adjusted for version 2.7.3
+auth_enabled: false
 
-    ```yaml
+server:
+  http_listen_port: 3100
+  grpc_listen_port: 9095
 
-    # compactor component
-    #   periodically compacts index shards to more performant forms
-    compactor:
-        working_directory: /var/lib/loki/boltdb-shipper-compactor
+ingester:
+  chunk_encoding: snappy
+  wal:
+    dir: /var/lib/loki/wal
+    flush_on_shutdown: true
 
-    tracing:
-        enabled: false
-    analytics:
-        reporting_enabled: false
-    ```
+schema_config:
+  configs:
+  - from: "2023-01-15"
+    store: boltdb-shipper    # for index
+    object_store: filesystem # for chunks
+    schema: v12
+    index:
+      prefix: index_
+      period: 24h
+    chunks:
+      period: 24h
+
+storage_config:
+  boltdb_shipper:
+    active_index_directory: /var/lib/loki/boltdb-shipper-active
+    cache_location: /var/lib/loki/boltdb-shipper-cache
+    cache_ttl: 72h
+    shared_store: filesystem
+  filesystem:
+    directory: /var/lib/loki/chunks
+
+compactor:
+  shared_store: filesystem
+  working_directory: /var/lib/loki/boltdb-shipper-compactor
+  retention_enabled: true
+
+limits_config:
+  retention_period: 2160h # 90d
+
+chunk_store_config:
+  max_look_back_period: 2160h # same as retention_period
+
+tracing:
+  enabled: false
+
+analytics:
+  reporting_enabled: false
+```
 
 # update
-- loki documentation contains pretty good [pgrade guide](https://grafana.com/docs/loki/latest/upgrading/)
+- loki documentation contains pretty good [upgrade guide](https://grafana.com/docs/loki/latest/upgrading/)
 - quick check for config changes
     ```sh
-    export OLD_LOKI=2.5.0
-    export NEW_LOKI=2.6.0
+    export OLD_LOKI=2.6.0
+    export NEW_LOKI=2.7.0
     docker pull grafana/loki:${OLD_LOKI}
     docker pull grafana/loki:${NEW_LOKI}
 
@@ -30,3 +76,4 @@ TODO
 
     vd loki.${OLD_LOKI}.yaml loki.${NEW_LOKI}.yaml
     ```
+- [**IMPORTANT**] upgrading is sometimes tricky, so be careful, I once, lost the entire data set (luckly on staging)

@@ -2,7 +2,9 @@
 
 # run command
 ```sh
-/usr/bin/loki -config.file=/etc/loki/loki.yaml -log-config-reverse-order
+/usr/bin/loki -config.file=/etc/loki/loki.yaml -print-config-stderr
+# -log-config-reverse-order # I used to run with this option, but actually,
+# I don't like it
 ```
 
 # config
@@ -13,6 +15,16 @@
 # adjusted for version 2.7.3
 auth_enabled: false
 
+common:
+  path_prefix: /var/lib/loki
+  storage:
+    filesystem:
+      chunks_directory: /var/lib/loki/chunks
+  ring:
+    kvstore:
+      store: inmemory
+  replication_factor: 1
+
 server:
   http_listen_port: 3100
   grpc_listen_port: 9095
@@ -20,7 +32,6 @@ server:
 ingester:
   chunk_encoding: snappy
   wal:
-    dir: /var/lib/loki/wal
     flush_on_shutdown: true
 
 schema_config:
@@ -37,16 +48,9 @@ schema_config:
 
 storage_config:
   boltdb_shipper:
-    active_index_directory: /var/lib/loki/boltdb-shipper-active
-    cache_location: /var/lib/loki/boltdb-shipper-cache
     cache_ttl: 72h
-    shared_store: filesystem
-  filesystem:
-    directory: /var/lib/loki/chunks
 
 compactor:
-  shared_store: filesystem
-  working_directory: /var/lib/loki/boltdb-shipper-compactor
   retention_enabled: true
 
 limits_config:
@@ -60,6 +64,34 @@ tracing:
 
 analytics:
   reporting_enabled: false
+```
+
+## config default values
+```sh
+cat > /tmp/loki.config <<EOT
+common:
+  path_prefix: /var/lib/loki
+  storage:
+    filesystem:
+      chunks_directory: /var/lib/loki/chunks
+  ring:
+    kvstore:
+      store: inmemory
+  replication_factor: 1
+
+schema_config:
+  configs:
+    - from: 2020-10-24
+      store: boltdb-shipper
+      object_store: filesystem
+      schema: v11
+      index:
+        prefix: index_
+        period: 24h
+EOT
+export LOKI_VERSION=2.7.3
+docker pull grafana/loki:${LOKI_VERSION}
+docker run --rm -t -v /tmp/loki.config:/etc/loki/config.yaml grafana/loki:${LOKI_VERSION} -config.file=/etc/loki/config.yaml -print-config-stderr 2>&1 | sed '/Starting Loki/q' > /tmp/loki.yaml
 ```
 
 # update

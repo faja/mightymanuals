@@ -9,13 +9,20 @@
 
 # my awesome commit message for module versioning
 ```
-eks-2.3.0
+eks-2.3.0 (app:X.X.X)
+
+REQUIRED ACTION:
+OPTIONAL ACTION:
+CHANGES:
+FEATURES:
+FIXES:
 
 REQUIRED ACTION: YES
 * kinda, eks version was bumped to 1.24 (default,latest), if you relay
   on default vaule of `cluster_version` you have to set it to 1.21 to
   avoid cluster upgrade
 OPTIONAL ACTION: NO
+
 
 FEATURES:
 * bumped default version of eks to 1.24 (latest)
@@ -25,6 +32,8 @@ FEATURES:
 FIXES:
 * ...
 * ...
+
+
 ```
 
 # nginx

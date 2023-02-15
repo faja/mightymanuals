@@ -20,6 +20,7 @@ common:
   storage:
     filesystem:
       chunks_directory: /var/lib/loki/chunks
+      rules_directory: /var/lib/loki/rules
   ring:
     kvstore:
       store: inmemory
@@ -69,16 +70,6 @@ analytics:
 ## config default values
 ```sh
 cat > /tmp/loki.config <<EOT
-common:
-  path_prefix: /var/lib/loki
-  storage:
-    filesystem:
-      chunks_directory: /var/lib/loki/chunks
-  ring:
-    kvstore:
-      store: inmemory
-  replication_factor: 1
-
 schema_config:
   configs:
     - from: 2020-10-24

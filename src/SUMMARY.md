@@ -45,6 +45,7 @@
     - [terraform](./APPS/TERRAFORM/index.md)
         - [main docs](./APPS/TERRAFORM/MAIN_DOCS/index.md)
             - [00. terraform binary usage](./APPS/TERRAFORM/MAIN_DOCS/00.terraform.binary.usage.md)
+            - [01. tfenv](./APPS/TERRAFORM/MAIN_DOCS/01.tfenv.md)
         - [playground](./APPS/TERRAFORM/playground/index.md)
             - [00. path variable](./APPS/TERRAFORM/playground/00.path.variable/index.md)
             - [01. yaml values](./APPS/TERRAFORM/playground/01.yaml.values.file/index.md)

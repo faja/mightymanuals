@@ -57,6 +57,7 @@
             - [aws](./PLATFORMS/AWS/TERRAFORM/index.md)
             - [tls](./APPS/TERRAFORM/providers/tls/index.md)
                 - [self signed cert](./APPS/TERRAFORM/providers/tls/self_signed_cert/index.md)
+        - [terragrunt](./APPS/TERRAFORM/terragrunt/index.md)
     - [vault](./APPS/VAULT/index.md)
         - [cheatsheet](./APPS/VAULT/cheatsheet.md)
         - [terraform](./APPS/VAULT/TERRAFORM/index.md)

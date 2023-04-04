@@ -30,6 +30,7 @@
         - [logs](./APPS/HAPROXY/logs.md)
         - [metrics](./APPS/HAPROXY/metrics.md)
         - [random config snippets](./APPS/HAPROXY/random_config_snippets.md)
+        - [ssl certificate live reload](./APPS/HAPROXY/ssl_live_reload.md)
         - [haproxy as an ingress full example](./APPS/HAPROXY/haproxy_as_an_ingress/index.md)
         - [haproxy config play](./APPS/HAPROXY/haproxy_config_play/index.md)
     - [loki](./APPS/LOKI/index.md)

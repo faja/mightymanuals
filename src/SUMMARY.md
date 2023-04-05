@@ -10,6 +10,7 @@
     - [containerd](./APPS/CONTAINERD/index.md)
         - [containerd](./APPS/CONTAINERD/containerd.md)
         - [ctr](./APPS/CONTAINERD/ctr.md)
+    - [git](./APPS/GIT/index.md)
     - [grafana](./APPS/GRAFANA/index.md)
         - [dashboards as a code](./APPS/GRAFANA/dashboards_as_a_code/index.md)
             - [quick start example](./APPS/GRAFANA/dashboards_as_a_code/quick_start/index.md)

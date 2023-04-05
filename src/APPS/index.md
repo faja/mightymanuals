@@ -2,9 +2,10 @@
 
 - [atlantis](./ATLANTIS/index.md)
 - [cadvisor](./CADVISOR/index.md)
-- [consul](./CONSUL/index.md)
 - [consul-template](./CONSUL-TEMPLATE/index.md)
+- [consul](./CONSUL/index.md)
 - [containerd](./CONTAINERD/index.md)
+- [git](./GIT/index.md)
 - [grafana](./GRAFANA/index.md)
 - [haproxy](./HAPROXY/index.md)
 - [loki](./LOKI/index.md)

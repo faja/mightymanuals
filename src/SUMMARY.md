@@ -130,6 +130,7 @@
     - [AWS](./PLATFORMS/AWS/index.md)
         - [TERRAFORM](./PLATFORMS/AWS/TERRAFORM/index.md)
             - [ex: r53 weighted records](./PLATFORMS/AWS/TERRAFORM/WORKING_EXAMPLES/R53_WEIGHTED_RECORDS/index.md)
+            - [ex: s3 all the things](./PLATFORMS/AWS/TERRAFORM/WORKING_EXAMPLES/S3_ALL_THE_THINGS/index.md)
         - [AWS LINUX](./PLATFORMS/AWS/AWS_LINUX/index.md)
         - [NLB](./PLATFORMS/AWS/LB/nlb.md)
     - [CloudFlare](./PLATFORMS/CLOUDFLARE/index.md)

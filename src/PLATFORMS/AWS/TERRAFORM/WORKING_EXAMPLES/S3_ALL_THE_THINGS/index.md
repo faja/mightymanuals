@@ -12,3 +12,8 @@
 ```json
 {{#include main_lifecycle.tf}}
 ```
+
+# encryption
+```json
+{{#include main_encryption.tf}}
+```

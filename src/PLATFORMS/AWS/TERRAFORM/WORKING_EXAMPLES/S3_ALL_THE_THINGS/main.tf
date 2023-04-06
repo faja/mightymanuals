@@ -40,7 +40,7 @@ resource "aws_s3_bucket_versioning" "main" {
   bucket = aws_s3_bucket.main.id
 
   versioning_configuration {
-    status     = "Disabled" // available: "Enabled", "Suspended", "Disabled"
-    mfa_delete = "Disabled"
+    status = "Disabled" // available: "Enabled", "Suspended", "Disabled"
+    //mfa_delete = "Disabled" // available: "Enabled", "Disabled", can't be specified if versioning is "Disabled"
   }
 }

@@ -10,3 +10,7 @@
 - [11. show](./11.show.md)
 - [12. diff](./12.diff.md)
 - [15. patch and apply](./15.patch_and_apply.md)
+- [16. ls-tree](./16.ls-tree.md)
+- [20. worktree](./20.worktree.md)
+- [21. hooks](./21.hooks.md)
+- [22. gpg signing](./22.gpg.md)

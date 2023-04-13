@@ -27,6 +27,7 @@
         - [worktree](./APPS/GIT/20.worktree.md)
         - [hooks](./APPS/GIT/21.hooks.md)
         - [gpg signing](./APPS/GIT/22.gpg.md)
+        - [.gitignore](./APPS/GIT/25.gitignore.md)
     - [grafana](./APPS/GRAFANA/index.md)
         - [dashboards as a code](./APPS/GRAFANA/dashboards_as_a_code/index.md)
             - [quick start example](./APPS/GRAFANA/dashboards_as_a_code/quick_start/index.md)

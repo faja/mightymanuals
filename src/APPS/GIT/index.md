@@ -14,3 +14,4 @@
 - [20. worktree](./20.worktree.md)
 - [21. hooks](./21.hooks.md)
 - [22. gpg signing](./22.gpg.md)
+- [25. .gitignore](./25.gitignore.md)

@@ -5,6 +5,7 @@
 - [consul-template](./CONSUL-TEMPLATE/index.md)
 - [consul](./CONSUL/index.md)
 - [containerd](./CONTAINERD/index.md)
+- [docker](./DOCKER/index.md)
 - [git](./GIT/index.md)
 - [grafana](./GRAFANA/index.md)
 - [haproxy](./HAPROXY/index.md)

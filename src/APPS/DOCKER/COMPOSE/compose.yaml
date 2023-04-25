@@ -1,0 +1,33 @@
+---
+name: xyzzy
+
+# https://docs.docker.com/compose/compose-file/07-volumes/
+volumes:
+  # by default volume in docker api are prefixed with compose "name"
+  # lets create a simple volume
+  data-volume:
+  # we can also specify what name the volume should have in docker api
+  # name some-other-random-name will be listed in `docker volume ls`
+  backup-volume:
+    name: some-other-random-name
+  # we can reference a volume that was created outside compose
+  db-volume:
+    external:
+      name: external-volume-created-outside-compose
+
+services:
+  nginx:
+
+    # https://docs.docker.com/compose/compose-file/05-services/#volumes
+    volumes:
+      - type: volume
+        source: backup-volume
+        target: /tmp/backup
+      # short version of it would be:
+      # - backup-volume:/tmp/backup
+      - type: bind
+        source: ./path/in/local/filesystem
+        target: /data
+        read_only: true
+      # short version of it would be:
+      # - ./path/in/local/filesystem:/data:ro

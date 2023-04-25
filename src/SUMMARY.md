@@ -11,6 +11,8 @@
         - [containerd](./APPS/CONTAINERD/containerd.md)
         - [ctr](./APPS/CONTAINERD/ctr.md)
     - [docker](./APPS/DOCKER/index.md)
+        - [compose](./APPS/DOCKER/COMPOSE/index.md)
+            - [basic file, all elements](./APPS/DOCKER/COMPOSE/01.basic.all.md)
     - [git](./APPS/GIT/index.md)
         - [config](./APPS/GIT/01.config.md)
         - [add](./APPS/GIT/02.add.md)

@@ -34,4 +34,33 @@ backend nginx1
 
 ```
 
-# url redirects
+## url redirects
+TODO
+
+## capture and log a header
+
+[official doc](http://docs.haproxy.org/2.6/configuration.html#8.8)
+
+```
+frontend http
+    capture request header cf-connecting-ip len 15
+    capture request header host len 64
+    # this is added to httplog by default just before $METHOD in a form of:
+    # {$first_capture|$second_capture|...}
+```
+
+## add/set a header
+```
+frontend http
+
+    # add-header - appends
+    # set-header - overrides
+
+    http-request add-header x-forwarderd-for aaa
+    http-request add-header x-forwarderd-for bbb  # sets the header to `aaa,bbb`
+
+    http-request set-header x-forwarderd-for2 ccc # sets the header to just `ccc`
+
+    http-request set-header x-custom-source-ip %[req.hdr(cf-connecting-ip)] if { req.hdr(cf-connecting-ip) -m found }
+    http-request set-header x-custom-path %[url]
+```

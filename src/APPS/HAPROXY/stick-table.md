@@ -107,7 +107,20 @@ frontend ...
     tcp-request connection track-sc0 src
     #tcp-request content reject if { sc_conn_cur(0) gt 1 } || { sc_conn_rate(0) gt 5 }   # this is logged in tcplog
     tcp-request connection reject if { sc_conn_cur(0) gt 1 } || { sc_conn_rate(0) gt 5 } # this is not logged in tcplog
+```
 
+## 4. rate limiting based on two differet counters
+```
+backend st-auth-bearer
+    stick-table type string len 512 size 1m expire 10s store http_req_rate(10s)
+backend st-auth-pow
+    stick-table type string len 512 size 1m expire 10s store http_req_rate(10s)
+
+frontend ...
+    http-request track-sc0 req.hdr(Authorization) table st-auth-bearer if { req.hdr(Authorization) -i -m beg bearer }
+    http-request track-sc1 req.hdr(Authorization) table st-auth-pow    if { req.hdr(Authorization) -i -m beg pow }
+    http-request deny status 429 hdr x-rate-limit exceeded content-type application/json string "{\"error\": \"rate limit exceeded\"}" if { sc_http_req_rate(0) gt 10 }
+    http-request deny status 429 hdr x-rate-limit exceeded content-type application/json string "{\"error\": \"rate limit exceeded\"}" if { sc_http_req_rate(1) gt 2 }
 ```
 
 # links

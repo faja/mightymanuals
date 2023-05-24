@@ -1,6 +1,16 @@
 # config handy copy paste snippets
 
+## return static string
+[official docs](http://docs.haproxy.org/2.6/configuration.html#http-request%20return)
+```
+frontend ...
+    // this works on both frontend and backend
+    http-request return status 200 content-type "text/plain" string "ok"
+```
+
+
 ## 403 by default
+[official docs](http://docs.haproxy.org/2.6/configuration.html#4.2-http-request%20deny)
 ```
 frontend http
     ...
@@ -8,6 +18,7 @@ frontend http
 
 backend 403
     http-request deny status 403 content-type text/plain string 403
+    // see also http-request reject
 ```
 
 ## path based routing
@@ -63,4 +74,18 @@ frontend http
 
     http-request set-header x-custom-source-ip %[req.hdr(cf-connecting-ip)] if { req.hdr(cf-connecting-ip) -m found }
     http-request set-header x-custom-path %[url]
+```
+
+## log POST rquest body
+```
+frontend ...
+    option http-buffer-request
+    declare capture request len 40000
+    http-request capture req.body id 0
+```
+
+## disable logging completely for a frontend or a backend
+```
+frontend/backend ...
+    no log
 ```

@@ -15,3 +15,10 @@ examples:
 ## connection timing filed
 0/613/-1/-1/820
 TR '/' Tw '/' Tc '/' Tr '/' Ta*
+
+## trix
+- how to disable logging completely for a frontend or a backend
+```
+frontend/backend ...
+    no log
+```

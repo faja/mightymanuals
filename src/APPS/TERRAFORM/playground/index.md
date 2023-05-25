@@ -3,4 +3,6 @@
 - [02. fileset function](./02.fileset.function/index.md)
 - [03. templatefile function](./03.templatefile.function/index.md)
 - [04. variable validation](./04.variable.validation/index.md)
-- [50.modules.explicit.dependencies](./50.modules.explicit.dependencies/index.md)
+- [50. modules explicit dependencies](./50.modules.explicit.dependencies/index.md)
+- [51. specify provider to module call](./51.specify.provider.to.module.call/index.md)
+- [52. provider meta-argument](./52.provider.meta-argument/index.md)

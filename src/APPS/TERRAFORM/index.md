@@ -1,4 +1,4 @@
 - [main docs](./MAIN_DOCS/index.md)
-- [playground](./playground/index.md)
+- [playground and usage examples](./playground/index.md)
 - [providers](./providers/index.md)
 - [terragrunt](./terragrunt/index.md)

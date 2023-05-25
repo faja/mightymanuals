@@ -107,6 +107,10 @@ frontend ...
     tcp-request connection track-sc0 src
     #tcp-request content reject if { sc_conn_cur(0) gt 1 } || { sc_conn_rate(0) gt 5 }   # this is logged in tcplog
     tcp-request connection reject if { sc_conn_cur(0) gt 1 } || { sc_conn_rate(0) gt 5 } # this is not logged in tcplog
+    # NOTE on PROXY-PROTOCOL, if using PRXOY-PROTOCOL, you must use `content`
+    # in both tcp-request commands, the one that tracks and the one that blocks
+    # tcp-request content track-sc0 src
+    # tcp-request content reject if { sc_conn_cur(0) gt 1 } || { sc_conn_rate(0) gt 5 }
 ```
 
 ## 4. rate limiting based on two differet counters

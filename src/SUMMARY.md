@@ -116,6 +116,7 @@
     - [rsync](./COMMANDS/RSYNC/index.md)
     - [runqlat](./COMMANDS/RUNQLAT/index.md)
     - [sar](./COMMANDS/SAR/index.md)
+    - [ssh](./COMMANDS/SSH/index.md)
     - [stackcount](./COMMANDS/STACKCOUNT/index.md)
     - [tcpaccept](./COMMANDS/TCPACCEPT/index.md)
     - [tcpconnect](./COMMANDS/TCPCONNECT/index.md)

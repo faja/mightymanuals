@@ -22,6 +22,7 @@
 - [rsync](./RSYNC/index.md) `(tags=sync,cp,backup)`
 - [runqlat](./RUNQLAT/index.md) `(tags=bpf,erformance)`
 - [sar](./SAR/index.md) `(tags=performance)`
+- [ssh](./SSH/index.md) `(tags=ssh,security)`
 - [stackcount](./STACKCOUNT/index.md) `(tags=bpf,bcc,performance)`
 - [tcpaccept](./TCPACCEPT/index.md) `(tags=bpf,erformance)`
 - [tcpconnect](./TCPCONNECT/index.md) `(tags=bpf,erformance)`

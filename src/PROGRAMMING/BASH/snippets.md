@@ -13,6 +13,12 @@
     fi
     ```
 
+- read: ctrl+c or continue
+    ```sh
+    echo -n "do something? CTRL+C to stop, ENTER to continue: "
+    read -r
+    ```
+
 - quickly check if var is set
     ```sh
     test "${XYZ:?}"  # exits 1 if XYZ is not set

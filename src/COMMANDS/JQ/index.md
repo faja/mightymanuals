@@ -5,7 +5,7 @@ yq -r '. | .apiVersion + " " + .kind'  # print two fields at once
 ```
 
 ```sh
-jq -S ...  # sort keys !!!
+jq -S . some.json  # sort keys !!!
 ```
 
 

@@ -165,4 +165,8 @@
 ---
 
 - [PROGRAMMING](./PROGRAMMING/index.md)
+    - [BASH (shell scripting)](./PROGRAMMING/BASH/index.md)
+        - [variables ${}](./PROGRAMMING/BASH/variables.md)
+        - [snippets](./PROGRAMMING/BASH/snippets.md)
+        - [my awesome sh script template](./PROGRAMMING/BASH/template.md)
     - [ZSH](./PROGRAMMING/ZSH/index.md)

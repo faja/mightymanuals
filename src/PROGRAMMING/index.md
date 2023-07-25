@@ -1,1 +1,2 @@
+- [BASH (shell scripting)](./BASH/index.md)
 - [ZSH](./ZSH/index.md)

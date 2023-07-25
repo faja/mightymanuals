@@ -2,6 +2,12 @@
 
 ---
 
+```sh
+docker container inspect xyz | jq '.[] | .Config.Labels'
+```
+
+---
+
 ### how to move docker volume from one host to another
 
 ```bash

@@ -1,7 +1,11 @@
 # quick ones
 
 ```sh
-yq -r '. | .apiVersion + " " + .kind'           # print two fields at once
+yq -r '. | .apiVersion + " " + .kind'  # print two fields at once
+```
+
+```sh
+jq -S ...  # sort keys !!!
 ```
 
 

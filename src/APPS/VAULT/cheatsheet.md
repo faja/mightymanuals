@@ -1,19 +1,31 @@
 ```
-### dev server
+#------------------------------------------------------------------------------#
+# dev server
 vault server -dev
 export VAULT_ADDR='http://127.0.0.1:8200'
 export VAULT_TOKEN="..."
+#------------------------------------------------------------------------------#
 
-### kv basics
-vault kv list secret/
-vault kv get -mount=secret config
-vault kv put -mount=secret config KEY1=VALUE1 KEY2=VALUE2
-vault kv put -mount=secret config @data.json
+#------------------------------------------------------------------------------#
+# kv basics
+## list
+vault kv list -mount=secret  # list all "root" paths under "secret" mount
+vault kv list -mount=secret some/path  # list all keys in "some/path"
 
-### policies
-vault
+## metadata
+vault kv metadata get -mount=credentials shared/namespace/fe-web/dhparams
 
-### tokens
+## get
+vault kv get -mount=secret some/path/config
+
+## put
+vault kv put -mount=secret some/path/config KEY1=VALUE1 KEY2=VALUE2
+vault kv put -mount=secret some/path/config @data.json
+
+## patch
+vault kv patch -mount=secret some/path/config KEY1=VALUE1 KEY2=VALUE2
+vault kv patch -mount=secret some/path/config @data.json
+#------------------------------------------------------------------------------#
 ```
 
 ---

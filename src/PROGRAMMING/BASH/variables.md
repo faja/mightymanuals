@@ -41,6 +41,14 @@
     echo ${H::7}  # => 6740751
     ```
 
+- `${..:OFFSET:LENGTH}` extract some part of a variable
+    ```sh
+    XXX=this-is-fine
+    echo ${XXX:5}    # => is-fine
+    echo ${XXX:5:2}  # => is
+    # ${XXX:0:7} == ${XXX::7}
+    ```
+
 - `${#..}` number of characters
     ```sh
     X=123xxx

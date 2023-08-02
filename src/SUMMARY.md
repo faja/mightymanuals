@@ -98,6 +98,7 @@
     - [biosnoop](./COMMANDS/BIOSNOOP/index.md)
     - [brew](./COMMANDS/BREW/index.md)
     - [cachestat](./COMMANDS/CACHESTAT/index.md)
+    - [cat](./COMMANDS/CAT/index.md)
     - [date](./COMMANDS/DATE/index.md)
     - [dmesg](./COMMANDS/DMESG/index.md)
     - [execsnoop](./COMMANDS/EXECSNOOP/index.md)
@@ -170,3 +171,8 @@
         - [snippets](./PROGRAMMING/BASH/snippets.md)
         - [my awesome sh script template](./PROGRAMMING/BASH/template.md)
     - [ZSH](./PROGRAMMING/ZSH/index.md)
+
+---
+
+- [MISC](./MISC/index.md)
+    - [YAML](./MISC/YAML/index.md)

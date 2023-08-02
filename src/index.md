@@ -5,3 +5,4 @@
 - [LINUX DISTROS](./LINUX_DISTROS/index.md)
 - [PLATFORMS](./PLATFORMS/index.md) (aws,cloudflare)
 - [PROGRAMMING](./PROGRAMMING/index.md)
+- [MISC](./MISC/index.md)

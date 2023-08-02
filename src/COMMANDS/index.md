@@ -4,6 +4,7 @@
 - [biosnoop](./BIOSNOOP/index.md) `(tags=bpf,performance)`
 - [brew](./BREW/index.md) `(tags=mac,macos,macosx,package,manager)`
 - [cachestat](./CACHESTAT/index.md) `(tags=bpf,performance)`
+- [cat](./CAT/index.md)
 - [date](./DATE/index.md)
 - [dmesg](./DMESG/index.md) `(tags=performance)`
 - [execsnoop](./EXECSNOOP/index.md) `(tags=bpf,performance)`
@@ -37,4 +38,3 @@
 Performance analysis
 - [Linux 60-second analysis](../LINUX_INTERNALS/BPF/ch3_performance_analysis/index.md#linux-60-second-analysis)
 - [BCC tool checklist](../LINUX_INTERNALS/BPF/ch3_performance_analysis/index.md#linux-60-second-analysis)
-

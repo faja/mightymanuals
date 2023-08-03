@@ -1,2 +1,3 @@
 - [AWS](./AWS/index.md)
 - [CloudFlare](./CLOUDFLARE/index.md)
+- [CICD tools](./CICD/index.md)

@@ -162,6 +162,9 @@
     - [CloudFlare](./PLATFORMS/CLOUDFLARE/index.md)
         - [CloudFlare](./PLATFORMS/CLOUDFLARE/index.md)
             - [firewall rules](./PLATFORMS/CLOUDFLARE/firewall_rules.md)
+    - [CICD tools](./PLATFORMS/CICD/index.md)
+        - [GitLab](./PLATFORMS/CICD/GITLAB/index.md)
+            - [workflow rules](./PLATFORMS/CICD/GITLAB/rules.md)
 
 ---
 

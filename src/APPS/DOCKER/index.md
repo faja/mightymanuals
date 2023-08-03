@@ -7,6 +7,11 @@ docker container inspect xyz | jq '.[] | .Config.Labels'
 ```
 
 ---
+```sh
+docker manifest inspect -v ${IMAGE} | jq .Descriptor.digest
+```
+
+---
 
 ### how to move docker volume from one host to another
 

@@ -13,5 +13,6 @@
 - [nginx](./NGINX/index.md)
 - [nomad](./NOMAD/index.md)
 - [terraform](./TERRAFORM/index.md)
+- [vagrant](./VAGRANT/index.md)
 - [vault](./VAULT/index.md)
 - [vim](./VIM/index.md)

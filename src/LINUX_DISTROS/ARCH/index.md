@@ -1,0 +1,46 @@
+---
+
+TODO
+
+post install
+
+vagrant
+virtualbox
+virtualbox-host-modules-arch
+
+
+---
+
+# virtualization: libvirt + qemu
+
+https://wiki.archlinux.org/title/Libvirt#Set_up_authentication
+https://jamielinux.com/docs/libvirt-networking-handbook/index.html
+https://registry.terraform.io/providers/dmacvicar/libvirt/latest/docs/resources/pool
+
+
+### installation and config
+```sh
+sudo su -
+
+pacman -S libvirt qemu
+usermod -aG libvirt mc  # add `mc` user to `libvirt` group, for easier management
+
+cp /etc/libvirt/libvirtd.conf{,.ori}
+cat <<EOT > /etc/libvirt/libvirtd.conf
+unix_sock_group = "libvirt"
+unix_sock_ro_perms = "0770"
+unix_sock_rw_perms = "0770"
+auth_unix_ro = "none"
+auth_unix_rw = "none"
+EOT
+
+systemctl start libvirtd.service
+systemctl start virtlogd.service
+```
+
+### volumes
+- `default` pool is created and enabled by default
+- this is `dir` type with target `/var/lib/libvirt/images`
+- run `sudo virsh pool-dumpxml default` to see more details
+
+### networking

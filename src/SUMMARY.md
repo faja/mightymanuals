@@ -99,6 +99,7 @@
     - [brew](./COMMANDS/BREW/index.md)
     - [cachestat](./COMMANDS/CACHESTAT/index.md)
     - [cat](./COMMANDS/CAT/index.md)
+    - [curl](./COMMANDS/CURL/index.md)
     - [date](./COMMANDS/DATE/index.md)
     - [dmesg](./COMMANDS/DMESG/index.md)
     - [execsnoop](./COMMANDS/EXECSNOOP/index.md)

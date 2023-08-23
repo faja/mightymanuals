@@ -5,6 +5,7 @@
 - [brew](./BREW/index.md) `(tags=mac,macos,macosx,package,manager)`
 - [cachestat](./CACHESTAT/index.md) `(tags=bpf,performance)`
 - [cat](./CAT/index.md)
+- [curl](./CURL/index.md)
 - [date](./DATE/index.md)
 - [dmesg](./DMESG/index.md) `(tags=performance)`
 - [execsnoop](./EXECSNOOP/index.md) `(tags=bpf,performance)`

@@ -20,6 +20,7 @@
 - [openssl](./OPENSSL/index.md)
 - [pidstat](./PIDSTAT/index.md) `(tags=performance)`
 - [profile](./PROFILE/index.md) `(tags=bpf,performance)`
+- [reflex](./REFLEX/index.md) `(tags=watch,reload)`
 - [rsync](./RSYNC/index.md) `(tags=sync,cp,backup)`
 - [runqlat](./RUNQLAT/index.md) `(tags=bpf,erformance)`
 - [sar](./SAR/index.md) `(tags=performance)`

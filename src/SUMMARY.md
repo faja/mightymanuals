@@ -114,6 +114,7 @@
     - [openssl](./COMMANDS/OPENSSL/index.md)
     - [pidstaT](./COMMANDS/PIDSTAT/index.md)
     - [profile](./COMMANDS/PROFILE/index.md)
+    - [reflex](./COMMANDS/REFLEX/index.md)
     - [rsync](./COMMANDS/RSYNC/index.md)
     - [runqlat](./COMMANDS/RUNQLAT/index.md)
     - [sar](./COMMANDS/SAR/index.md)

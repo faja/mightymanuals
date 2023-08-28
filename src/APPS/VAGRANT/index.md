@@ -76,7 +76,7 @@ Vagrant.configure("2") do |config|
   ## then we can define a "named" machine
   # config.vm.define "server" do |server|
   #   server.vm.hostname = "server.local"
-  #   server.vm.network "private_network", ip: "172.42.43.100"
+  #   server.vm.network "private_network", ip: "192.168.59.100"
   #   server.vm.provider "virtualbox" do |vb|
   #     vb.name = "server.local"
   #     vb.memory = 1024
@@ -88,7 +88,7 @@ Vagrant.configure("2") do |config|
   # (1..NodeCount).each do |i|
   #   config.vm.define "node#{i}" do |node|
   #     node.vm.hostname = "node#{i}.local"
-  #     node.vm.network "private_network", ip: "172.42.43.10#{i}"
+  #     node.vm.network "private_network", ip: "192.168.59.10#{i}"
   #     node.vm.provider "virtualbox" do |vb|
   #       vb.name = "node#{i}.local"
   #       vb.memory = 1024

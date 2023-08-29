@@ -9,6 +9,7 @@
 - [git](./GIT/index.md)
 - [grafana](./GRAFANA/index.md)
 - [haproxy](./HAPROXY/index.md)
+- [helm](./HELM/index.md)
 - [loki](./LOKI/index.md)
 - [nginx](./NGINX/index.md)
 - [nomad](./NOMAD/index.md)

@@ -55,6 +55,7 @@
         - [ssl certificate live reload](./APPS/HAPROXY/ssl_live_reload.md)
         - [haproxy as an ingress full example](./APPS/HAPROXY/haproxy_as_an_ingress/index.md)
         - [haproxy config play](./APPS/HAPROXY/haproxy_config_play/index.md)
+    - [helm](./APPS/HELM/index.md)
     - [loki](./APPS/LOKI/index.md)
     - [nginx](./APPS/NGINX/index.md)
     - [nomad](./APPS/NOMAD/index.md)

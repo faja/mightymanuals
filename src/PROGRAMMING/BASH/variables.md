@@ -66,6 +66,10 @@
 
     : ${XYZ:=ok}
     echo ${XYZ}  # => ok
+
+    # {...:-...} is the one to use for defaults in scripts, eg:
+    ARG1=                   # ARG1, has no default
+    ARG2=${2:-some_default} # ARG2, has default of `some_default`
     ```
 
 - `${XYZ:+value}` - if the var is unset, it will keep unset, if it is set to

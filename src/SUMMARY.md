@@ -1,6 +1,11 @@
 [Manuals](./index.md))
 
 - [APPS](./APPS/index.md)
+    - [ansible](./APPS/ANSIBLE/index.md)
+        - [quick start](./APPS/ANSIBLE/00_quick_start.md)
+        - [inventory](./APPS/ANSIBLE/01_inventory.md)
+        - [ansible.cfg](./APPS/ANSIBLE/02_ansible_cfg.md)
+        - [running ansible](./APPS/ANSIBLE/03_running_ansible.md)
     - [atlantis](./APPS/ATLANTIS/index.md)
     - [cadvisor](./APPS/CADVISOR/index.md)
     - [consul](./APPS/CONSUL/index.md)

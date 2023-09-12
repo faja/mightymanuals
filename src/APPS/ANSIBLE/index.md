@@ -1,0 +1,4 @@
+- [00. quick start](./00_quick_start.md)
+- [01. inventory](./01_inventory.md)
+- [02. ansible.cfg](./02_ansible_cfg.md)
+- [03. running ansible](./03_running_ansible.md)

@@ -1,5 +1,6 @@
 # APPS
 
+- [ansible](./ANSIBLE/index.md)
 - [atlantis](./ATLANTIS/index.md)
 - [cadvisor](./CADVISOR/index.md)
 - [consul-template](./CONSUL-TEMPLATE/index.md)

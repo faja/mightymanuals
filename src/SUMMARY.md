@@ -133,6 +133,7 @@
     - [trace](./COMMANDS/TRACE/index.md)
     - [uptime](./COMMANDS/UPTIME/index.md)
     - [vmstat](./COMMANDS/VMSTAT/index.md)
+    - [wscat](./COMMANDS/WSCAT/index.md)
     - [yj](./COMMANDS/YJ/index.md)
     - [yq](./COMMANDS/YQ/index.md)
 

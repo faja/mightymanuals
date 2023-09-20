@@ -187,4 +187,5 @@
 ---
 
 - [MISC](./MISC/index.md)
+    - [SLACK](./MISC/SLACK/index.md)
     - [YAML](./MISC/YAML/index.md)

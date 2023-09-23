@@ -196,4 +196,3 @@
         - [slack](./MISC/KEYBOARD_SHORTCUTS/slack.md)
         - [terminal/xterm/zsh](./MISC/KEYBOARD_SHORTCUTS/terminal.md)
         - [text](./MISC/KEYBOARD_SHORTCUTS/text.md)
-    - [SLACK](./MISC/SLACK/index.md)

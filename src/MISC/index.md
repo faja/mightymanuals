@@ -1,2 +1,3 @@
+- [KEYBOARD SHORTCUTS](./KEYBOARD_SHORTCUTS/index.md)
 - [SLACK](./SLACK/index.md)
 - [YAML](./YAML/index.md)

@@ -1,2 +1,4 @@
 - [BASH (shell scripting)](./BASH/index.md)
+- [MD](./MD/index.md)
+- [YAML](./YAML/index.md)
 - [ZSH](./ZSH/index.md)

@@ -183,10 +183,17 @@
         - [variables ${}](./PROGRAMMING/BASH/variables.md)
         - [snippets](./PROGRAMMING/BASH/snippets.md)
         - [my awesome sh script template](./PROGRAMMING/BASH/template.md)
+    - [MD](./PROGRAMMING/MD/index.md)
+    - [YAML](./PROGRAMMING/YAML/index.md)
     - [ZSH](./PROGRAMMING/ZSH/index.md)
 
 ---
 
 - [MISC](./MISC/index.md)
+    - [KEYBOARD SHORTCUTS](./MISC/KEYBOARD_SHORTCUTS/index.md)
+        - [browser](./MISC/KEYBOARD_SHORTCUTS/browser.md)
+        - [os](./MISC/KEYBOARD_SHORTCUTS/os.md)
+        - [slack](./MISC/KEYBOARD_SHORTCUTS/slack.md)
+        - [terminal/xterm/zsh](./MISC/KEYBOARD_SHORTCUTS/terminal.md)
+        - [text](./MISC/KEYBOARD_SHORTCUTS/text.md)
     - [SLACK](./MISC/SLACK/index.md)
-    - [YAML](./MISC/YAML/index.md)

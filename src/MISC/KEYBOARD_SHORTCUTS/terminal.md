@@ -76,5 +76,7 @@ Same as `linux`, but:
     - go to keys
     - `+`
     - "Send Escape Sequence"
+- ALT '," - does not work
+
 ## tmux
 Same as `linux`

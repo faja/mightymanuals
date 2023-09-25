@@ -65,3 +65,16 @@ key | action
 <span style="color:#ff4d94">**CTRL**</span>-`s` + `!` | convert pane into dedicated window <span style="color:red">[nice1]</span>
 
 ## vim
+
+# macos
+## iterm/zsh
+Same as `linux`, but:
+- CTRL-s "freeze" - does not work
+- CTRL-q un"freeze" - does not work
+- all ALT- shortcuts requires remapping in iterm settings
+    - go to settings
+    - go to keys
+    - `+`
+    - "Send Escape Sequence"
+## tmux
+Same as `linux`

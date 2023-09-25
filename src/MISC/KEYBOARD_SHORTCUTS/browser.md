@@ -8,6 +8,7 @@ key | action
 <span style="color:#ff4d94">**CTRL**</span>-`<tab>` | next tab
 <span style="color:#ff4d94">**CTRL**</span>-<span style="color:#33ccff">**SHIFT**</span>-`<tab>` | prev tab
 <span style="color:#ff4d94">**CTRL**</span>-`p` | print
+<span style="color:#ff4d94">**CTRL**</span>-`r` | refresh
 
 # macos
 key | action
@@ -19,3 +20,4 @@ key | action
 <span style="color:#ff4d94">**CTRL**</span>-`<tab>` | next tab
 <span style="color:#ff4d94">**CTRL**</span>-<span style="color:#33ccff">**SHIFT**</span>-`<tab>` | prev tab
 <span style="color:#ffff66">**CMD**</span>-`p` | print
+<span style="color:#ffff66">**CMD**</span>-`r` | refresh

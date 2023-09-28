@@ -192,6 +192,7 @@
 - [MISC](./MISC/index.md)
     - [KEYBOARD SHORTCUTS](./MISC/KEYBOARD_SHORTCUTS/index.md)
         - [browser](./MISC/KEYBOARD_SHORTCUTS/browser.md)
+        - [gmail](./MISC/KEYBOARD_SHORTCUTS/gmail.md)
         - [os](./MISC/KEYBOARD_SHORTCUTS/os.md)
         - [slack](./MISC/KEYBOARD_SHORTCUTS/slack.md)
         - [terminal/xterm/zsh](./MISC/KEYBOARD_SHORTCUTS/terminal.md)

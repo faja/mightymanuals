@@ -1,4 +1,5 @@
 - [browser](./browser.md)
+- [gmail](./gmail.md)
 - [os](./os.md)
 - [slack](./slack.md)
 - [terminal/xterm/zsh](./terminal.md)

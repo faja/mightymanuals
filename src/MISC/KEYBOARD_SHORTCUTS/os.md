@@ -37,23 +37,19 @@ key | action
 
 key | action
 -|-
-<span style="color:#ffff66">**CMD**</span>-`j` | move focus counter clockwise
-<span style="color:#ffff66">**CMD**</span>-`k` | move focus clockwise
-<span style="color:#ffff66">**CMD**</span>-`h` | move focus to counter clockwise screen
-<span style="color:#ffff66">**CMD**</span>-`l` | move focus to clockwise screen
+<span style="color:#ffff66">**CMD**</span>-`j,k` | move focus in current screen
+<span style="color:#ffff66">**CMD**</span>-`h,l` | move focus to other screen
+---|---
+<span style="color:#ffff66">**CMD**</span>-<span style="color:#ff4d94">**CTRL**</span>-`j,k` | resize main window
+<span style="color:#ffff66">**CMD**</span>-<span style="color:#33ccff">**SHIFT**</span>`j,k` | swap focused window in current screen
+---|---
+<span style="color:#ffff66">**CMD**</span>-`o` | swap focused window to clockwise screen
+<span style="color:#ffff66">**CMD**</span>-<span style="color:#99ff66">**OPTION**</span>-`o` | swap focused window to counter clockwise screen
 ---|---
 <span style="color:#ffff66">**CMD**</span>-<span style="color:#99ff66">**OPTION**</span>-`a` | select TALL layout
 <span style="color:#ffff66">**CMD**</span>-<span style="color:#99ff66">**OPTION**</span>-`s` | select WIDE layout
 <span style="color:#ffff66">**CMD**</span>-<span style="color:#99ff66">**OPTION**</span>-`f` | select FULLSCREEN layout
 <span style="color:#ffff66">**CMD**</span>-<span style="color:#99ff66">**OPTION**</span>-`c` | select COLUMN layout
----|---
-<span style="color:#ffff66">**CMD**</span>-`o` | swap focused window to clockwise screen
-<span style="color:#ffff66">**CMD**</span>-<span style="color:#99ff66">**OPTION**</span>-`o` | swap focused window to counter clockwise screen
----|---
-<span style="color:#ffff66">**CMD**</span>-<span style="color:#99ff66">**OPTION**</span>-`j` | shrink main pane
-<span style="color:#ffff66">**CMD**</span>-<span style="color:#99ff66">**OPTION**</span>-`k` | expand main pane
-<span style="color:#ffff66">**CMD**</span>-<span style="color:#99ff66">**OPTION**</span>-`h` | swap focused window counter clockwise
-<span style="color:#ffff66">**CMD**</span>-<span style="color:#99ff66">**OPTION**</span>-`l` | swap focused window clockwise
 
 ## general
 key | action

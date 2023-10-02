@@ -146,7 +146,7 @@
         - [chapter 3 - performance_analysis](./LINUX_INTERNALS/BPF/ch3_performance_analysis/index.md)
         - [chapter 4 - bcc](./LINUX_INTERNALS/BPF/ch4_bcc/index.md)
         - [chapter 5 - bpftrace](./LINUX_INTERNALS/BPF/ch5_bpftrace/index.md)
-            - [bpftrace programming](./LINUX_INTERNALS/BPF/ch5_bpftrace/programming.md)
+        - [learning ebpf book notes](./LINUX_INTERNALS/BPF/learning_ebpf_notes.md)
     - [CPU](./LINUX_INTERNALS/CPU/index.md)
         - [limits and throttling](./LINUX_INTERNALS/CPU/METRICS_STATS_LIMITS/limits_and_throttling.md)
     - [MEMORY](./LINUX_INTERNALS/MEMORY/index.md)

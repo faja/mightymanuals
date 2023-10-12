@@ -102,6 +102,7 @@
     - [argdist](./COMMANDS/ARGDIST/index.md)
     - [biolatency](./COMMANDS/BIOLATENCY/index.md)
     - [biosnoop](./COMMANDS/BIOSNOOP/index.md)
+    - [bpftool](./COMMANDS/BPFTOOL/index.md)
     - [brew](./COMMANDS/BREW/index.md)
     - [cachestat](./COMMANDS/CACHESTAT/index.md)
     - [cat](./COMMANDS/CAT/index.md)

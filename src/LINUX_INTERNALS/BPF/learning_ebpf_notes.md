@@ -152,7 +152,7 @@ there, as long as the reference counter is > 0. Reference counter is increased w
 a userspace program creates FD (file descriptor) etc.. Once the counter drops to 0, program (or actually
 any BPF object) is deleted from kernel.
 
-See [blogpost](https://facebookmicrosites.github.io/bpf/blog/2018/08/31/object-lifetime.html) for detailed explanation.
+    See [blogpost](https://facebookmicrosites.github.io/bpf/blog/2018/08/31/object-lifetime.html) for detailed explanation.
 
 ---
 

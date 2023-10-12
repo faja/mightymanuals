@@ -2,6 +2,7 @@
 - [argdist](./ARGDIST/index.md) `(tags=bpf,bcc,performance)`
 - [biolatency](./BIOLATENCY/index.md) `(tags=bpf,performance)`
 - [biosnoop](./BIOSNOOP/index.md) `(tags=bpf,performance)`
+- [bpftool](./BPFTOOL/index.md) `(tags=bpf)`
 - [brew](./BREW/index.md) `(tags=mac,macos,macosx,package,manager)`
 - [cachestat](./CACHESTAT/index.md) `(tags=bpf,performance)`
 - [cat](./CAT/index.md)

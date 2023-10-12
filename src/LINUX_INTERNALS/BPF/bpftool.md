@@ -1,3 +1,3 @@
 ---
 
-see [commands/bpftool](./../../COMMANDS/BPFTOOL/index.md)
+[commands/bpftool](./../../COMMANDS/BPFTOOL/index.md)

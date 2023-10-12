@@ -2,7 +2,9 @@
 
 BCC - BPF Compiler Collection aka BPF toolkit
 
-- NOTE, recently there is a trend to replace it with libbpf
+- [github](https://github.com/iovisor/bcc)
+
+- <span style="color:#ff4d94">**NOTE!!**</span> recently there is a trend to replace it with libbpf
     - see [bcc -> libbpf](https://nakryiko.com/posts/bcc-to-libbpf-howto-guide/) blog post
     - see dedicated [libbpf](./libbpf.md) page
 

@@ -18,6 +18,6 @@ Notes based on `Liz Rice - Learning eBPF` book
 
 - [bcc](./bcc.md)
 - [bcctools](./bcctools.md)
-- [libbpf](./libbpf.md)
+- [libbpf](./libbpf.md)      # todo a bit later
 - [bpftool](./bpftool.md)
-- [bpftrace](./bpftrace.md)
+- [bpftrace](./bpftrace.md)  # todo but later

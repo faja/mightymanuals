@@ -27,8 +27,9 @@ This is the filed containing **4** characters (or **2** for TCP), it looks like:
 examples:
 
 - `sC--` - CONNECTION to the server timed out
-- `SD--` - (`S`) the TCP session was ABORTED by the server, (`D`) the session was in the DATA phase
 - `sD--` - (`s`) server-side timeout while waiting for send or receive, (`D`) the session was in the DATA phase
+- `SD--` - (`S`) the TCP session was ABORTED by the server, (`D`) the session was in the DATA phase
+- `cD--` - (`c`) client-side timeout while waiting for the client send or receive data, (`D`) the session was in the DATA phase
 - `CD--` - (`C`) the TCP session was ABORTED by the client, (`D`) the session was in the DATA phase
 - `PR--` - (`P`) session closed "prematurely", due to DENY match, or connection limit, nothing was sent to the backend server
 

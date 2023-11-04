@@ -170,4 +170,40 @@ any BPF object) is deleted from kernel.
 
 # ch07: eBPF Program and Attachment Types
 
+- tere is currently around 30 program types and more than 40 attachment type ([bpf.h](https://elixir.bootlin.com/linux/v5.19.14/source/include/uapi/linux/bpf.h))
+- the **TYPE** of BPF program defines what events can it be attached
+- BPF program takes a **CONTEXT** argument (eg, a network packet, a infro about executed file etc..) - the context depends on the program type
+  and it is a pointer to a structure (that depends on an event that triggered it)
+- **TRACING** types. Sometimes reffered as "perf-related" programs.
+    - `bpftool perf show` - prints all programs attached to tracing/perf related events
+    Sometimes
+    - `k(ret)probes` - allow to attach to an entry and return of a:
+        - syscall
+        - kernel function
+    - `fentry/fexist` - new and recommended way of attaching to a kernel function
+    - `tracepoints` - "static"/"predefined"/"marked" places in the kernel where you can attach a bpf program, you can list all of them by `cat /sys/kernel/tracing/available_events`,
+       a tracepoint has a format of `tracing_subsystem:tracepoint_name` for instance `syscalls:sys_enter_execve`
+        - it is possible to print more info about a tracepoint by `cat /sys/kernel/tracing/events/syscalls/sys_enter_execve/format`
+        - there are also BTF-Enabled tracepoints
+    - `u(ret)probes)` - **USER SPACE** equivalet of kprobes, probes allowing to attach to a **USER SPACE** functions
+    - `USDT (user statically defined tracepoints)` - **USER SPACE** equivalet of tracepoints
+        - There are a few gotchas to be aware of when instrumenting user space code:
+            - the path to shared libraries may be architecture specific,
+              so you may need corresponding architecture-specific definitions.
+            - unless you control the machine you’re running the code on, you can’t know what
+              user space libraries and applications will be installed.
+            - an application might be built as a standalone binary, so it won’t hit any probes
+              you might attach within shared libraries.
+            - containers typically run with their own copy of a filesystem, with their own set
+              of dependencies installed in it. The path to a shared library used by a container
+              won’t be the same as the path to a shared library on the host machine.
+            - Your eBPF program might need to be aware of the language in which an application was written.
+- **LSM** (linux security module)
+    - BPF_PROG_TYPE_LSM programs are attached to the Linux Security Module (LSM) API,
+    - interesting characteristic is that the return value of the BPF programm affects the way the kernel
+      behaves - A nonzero return code indicates that the security check wasn’t passed, so the
+      kernel won’t proceed
+
+- **NETWORKING**
+
 ---

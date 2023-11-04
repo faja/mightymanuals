@@ -157,3 +157,17 @@ any BPF object) is deleted from kernel.
 ---
 
 # ch05: CO-RE, BTF, and Libbpf
+
+- TODO
+
+---
+
+# ch06: The eBPF Verifier
+
+- [kernel bpf verifier docs](https://docs.kernel.org/bpf/verifier.html)
+
+---
+
+# ch07: eBPF Program and Attachment Types
+
+---

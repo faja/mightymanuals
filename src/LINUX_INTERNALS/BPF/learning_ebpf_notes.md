@@ -203,7 +203,26 @@ any BPF object) is deleted from kernel.
     - interesting characteristic is that the return value of the BPF programm affects the way the kernel
       behaves - A nonzero return code indicates that the security check wasn’t passed, so the
       kernel won’t proceed
+    - [kernel LSM BPF programs documentation](https://www.kernel.org/doc/html/latest/bpf/prog_lsm.html)
 
 - **NETWORKING**
+    - networking BPF programs can be attached in different places, starting from `Layer 2`, up to `Layer 7 sockets`
+    ![](./images/learning_ebpf_image_000.png)
+    - networking BPF programs have two main characteristics:
+        - return code from the eBPF program tells the kernel what to do with a
+          network packet - which could involve processing it as usual, dropping it, or
+          redirecting it to a different destination
+        - eBPF program can modify network packets, socket configuration parameters, and so on
+    - networking program types (first three are the most popular):
+        - `Sockets` - relates to sockets and socket operations
+        - `Traffic Control` - for network traffic control and shaping
+        - `XDP (eXpress Data Path)` -
+        - `Flow Dissector` - to extract details froma packet's headers.
+        - `Lightweight Tunnels` - can be used to implement network encapsulation in eBPF programs
+          In practice, these are used infrequently.
+        - `Cgroups` - Attaching eBPF programs to a cgroup allows for custom behavior that only applies to that cgroup’s processes
+        - `Infrared Controllers` - provide decoding for infrared protocols
 
 ---
+
+# ch08: eBPF for Networking

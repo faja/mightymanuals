@@ -226,3 +226,40 @@ any BPF object) is deleted from kernel.
 ---
 
 # ch08: eBPF for Networking
+
+This chapter is all about eBPF for Networking. Differet types, and their use cases.
+Mostly on `XDP` and `TC`, and the differces between them.
+
+My uderstanding:
+- XDP
+    - is done much earlier, before hitting the kernel networking stack
+    - support only ingress
+    - it's possible to attach only SINGLE program to XDP
+- TC
+    - done once the kernel creates [sk_buff](https://wiki.linuxfoundation.org/networking/sk_buff) struct
+    - support both ingress and egress
+    - it's possible to attach MULTIPLE programs
+
+
+Some links:
+- [xdp vs tc - cilium docs](https://docs.cilium.io/en/latest/bpf/progtypes/)
+- [life of a packet in cilium](https://arthurchiao.art/blog/cilium-life-of-a-packet-pod-to-service/)
+- [xdp tutorial](https://github.com/xdp-project/xdp-tutorial)
+- [tc direct action](https://qmonnet.github.io/whirl-offload/2020/04/11/tc-bpf-direct-action/)
+- [youtube: liz rice - load balancer from scratch](https://github.com/xdp-project/xdp-tutorial)
+
+---
+
+# ch09: eBPF for Security
+
+- seccomp
+    - [inspektor-gadget](https://www.inspektor-gadget.io/) and its `seccomp-profile` can be used to
+      record syscalls that are issued in a specified k8s pod and then use this information to generate
+      the corresponding seccomp profile
+    - [default docker seccomp profile](https://github.com/moby/moby/blob/master/profiles/seccomp/default.json)
+    - [cool list of syscalls](https://filippo.io/linux-syscall-table/)
+
+---
+
+
+# ch10: ...

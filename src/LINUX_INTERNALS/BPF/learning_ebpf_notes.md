@@ -258,6 +258,12 @@ Some links:
       the corresponding seccomp profile
     - [default docker seccomp profile](https://github.com/moby/moby/blob/master/profiles/seccomp/default.json)
     - [cool list of syscalls](https://filippo.io/linux-syscall-table/)
+- syscall-tracking security tools
+    - [https://falco.org/](https://falco.org/) - both kernel module and eBPF based
+    - [sysmon for linux](https://github.com/Sysinternals/SysmonForLinux)
+- BPF LSM
+    - [youtube: LSM BPF Change Everything](https://www.youtube.com/watch?v=l8jZ-8uLdVU)
+- [cilium tetragon](https://github.com/cilium/tetragon)
 
 ---
 

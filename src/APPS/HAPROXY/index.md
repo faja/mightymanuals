@@ -5,6 +5,7 @@
 - [metrics](./metrics.md)
 - [stick-table and rate limiting](./stick-table.md)
 - [ssl certificate live reload](./ssl_live_reload.md)
+- [dns stuff](./dns.md)
 
 ---
 - [haproxy as an ingress full example](./haproxy_as_an_ingress/index.md)

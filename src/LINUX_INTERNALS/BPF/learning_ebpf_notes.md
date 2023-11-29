@@ -268,4 +268,45 @@ Some links:
 ---
 
 
-# ch10: ...
+# ch10: eBPF Programming
+
+- TLDR;
+    - `C` + `libbpf`
+    - `GO` + `ebpf`
+    - `Rust` + `aya`
+    - list of most up to date libraries, runtimes, etc... -> [https://ebpf.io/infrastructure/](https://ebpf.io/infrastructure/)
+
+- [bpftrace](../../PROGRAMMING/BPFTRACE/index.md)
+
+- eBPF programming can be split into:
+    - `in kenrel` - so that's the actual code that is being transleted into bytecode
+        and here we do have only two options:
+        - `C`
+        - `Rust`
+    - `in userspace` - this is the userspace program that actually loads the
+        the ebpf program into kernel, reads the maps, etc..., and here we do
+        have quite a few options
+
+- `in userspace` programming:
+    - `python` and `BCC` library
+        - [tutorial](https://github.com/iovisor/bcc/blob/master/docs/tutorial_bcc_python_developer.md)
+        - unfortunatelly this is not CO-RE approach, see ch05 for more details
+    - `C` and `libbpf` (+ `libxdp` that is buiild on `libbpf`)
+        - CO-RE approach
+        - [libbpf-bootstrap github](https://github.com/libbpf/libbpf-bootstrap)
+        - [libbpf-bootstrap blogpost](https://nakryiko.com/posts/libbpf-bootstrap)
+        - [libcdp tutorial](https://github.com/xdp-project/xdp-tutorial)
+    - `GO`
+        - [ebpf](https://github.com/cilium/ebpf) - pure go, co-re support - from cilium
+        - [Getting Started with eBPF and Go](https://networkop.co.uk/post/2021-03-ebpf-intro/) blogpost
+        - [libbpfgo](https://github.com/aquasecurity/libbpfgo) - wrapper around libbpf's C code - from aqua security
+    - `Rust`
+        - [aya](https://aya-rs.dev/book/) - co-re, no libbpf dependency
+
+
+---
+
+
+# ch11: The Future Evolution of eBPF
+
+na

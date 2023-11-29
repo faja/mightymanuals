@@ -190,6 +190,7 @@
         - [variables ${}](./PROGRAMMING/BASH/variables.md)
         - [snippets](./PROGRAMMING/BASH/snippets.md)
         - [my awesome sh script template](./PROGRAMMING/BASH/template.md)
+    - [BPFTRACE](./PROGRAMMING/BPFTRACE/index.md)
     - [MD](./PROGRAMMING/MD/index.md)
     - [YAML](./PROGRAMMING/YAML/index.md)
     - [ZSH](./PROGRAMMING/ZSH/index.md)

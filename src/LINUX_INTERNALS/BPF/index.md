@@ -21,3 +21,12 @@ Notes based on `Liz Rice - Learning eBPF` book
 - [bpftool](./bpftool.md)
 - [bcctools](./bcctools.md)
 - [bpftrace](./bpftrace.md)  # todo but later
+
+---
+
+other resources links:
+- [kernel BPF documentation](https://docs.kernel.org/bpf/index.html)
+- [cilium docs](https://docs.cilium.io/en/stable/)
+- [https://ebpf.io/](https://ebpf.io/)
+- [https://www.brendangregg.com/](https://www.brendangregg.com/) - Brendan Gregg’s website
+- [https://nakryiko.com/](https://nakryiko.com/) - Andrii Nakryiko's Blog

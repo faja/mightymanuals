@@ -45,6 +45,28 @@ dashboard
 .addTemplate(varJob)
 ```
 
+- mutli value + repeated row
+```json
+local varBy = grafana.template.custom(
+  'varBy',                // name
+  'value1,value2,value3', // query
+  'All',                  // current
+  includeAll=true,
+  hide=true,
+);
+
+//
+.addPanel(
+  grafana.row.new(title="... by '${varBy}'", repeat='varBy', collapse=true)
+  .addPanels(
+    [
+      // panels goes here
+    ]
+  ),
+  gridPos={ x: 0, y: 17, w: 24, h: 1 },
+)
+```
+
 - prometheus label_values
 ```
 local varCluster = std.mergePatch(

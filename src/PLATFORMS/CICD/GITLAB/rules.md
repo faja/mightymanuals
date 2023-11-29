@@ -3,7 +3,9 @@
 workflow:
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH      # run on default branch
+      when: always                                     # trigger AUTOMATICALLY
     - if: $CI_PIPELINE_SOURCE == 'merge_request_event' # run on MRs
+      when: manual                                     # trigger MANUALLY
     - when: never                                      # do NOT run in any other case
 ```
 

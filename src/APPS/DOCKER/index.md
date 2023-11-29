@@ -1,7 +1,6 @@
 - [compose](./COMPOSE/index.md)
 
 ---
-
 ```sh
 docker container inspect xyz | jq '.[] | .Config.Labels'
 ```
@@ -9,6 +8,12 @@ docker container inspect xyz | jq '.[] | .Config.Labels'
 ---
 ```sh
 docker manifest inspect -v ${IMAGE} | jq .Descriptor.digest
+```
+
+---
+```sh
+docker ps --filter label=labelKEY=value1 \
+  --format '{{ .Names }}\t{{ .Label "some.label.with.dots.xxx" }}'
 ```
 
 ---

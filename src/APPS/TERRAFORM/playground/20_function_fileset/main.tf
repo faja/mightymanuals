@@ -11,7 +11,7 @@ output "dashboards" {
 #
 # NOTE!!!
 #
-# fileset produces list of files with path RELATIVE to 
+# fileset produces list of files with path RELATIVE to
 # its first argument, so in this example, the output will be
 #
 #  dashboards = [

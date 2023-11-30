@@ -80,7 +80,7 @@
             - [00. path variable](./APPS/TERRAFORM/playground/00.path.variable/index.md)
             - [01. yaml values](./APPS/TERRAFORM/playground/01.yaml.values.file/index.md)
             - [04. variable validation](./APPS/TERRAFORM/playground/04.variable.validation/index.md)
-            - [05. TF_VAR_map_type variable](./APPS/TERRAFORM/playground/05.TF_VAR_map_type/index.md)
+            - [05_TF_VAR_map_type_variable](./APPS/TERRAFORM/playground/05_TF_VAR_map_type_variable/index.md)
             - [20_function_fileset](./APPS/TERRAFORM/playground/20_function_fileset/index.md)
             - [21_function_templatefile](./APPS/TERRAFORM/playground/21_function_templatefile/index.md)
             - [50. modules explicit dependencies](./APPS/TERRAFORM/playground/50.modules.explicit.dependencies/index.md)

@@ -3,7 +3,7 @@
 - [00. path variable](./00.path.variable/index.md)
 - [01. yaml values](./01.yaml.values.file/index.md)
 - [04. variable validation](./04.variable.validation/index.md)
-- [05. TF_VAR_map_type variable](./05.TF_VAR_map_type/index.md)
+- [05_TF_VAR_map_type_variable](./05_TF_VAR_map_type_variable/index.md)
 
 ---
 

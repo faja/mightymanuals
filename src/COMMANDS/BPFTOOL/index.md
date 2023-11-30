@@ -61,6 +61,16 @@ bpftool perf show  # list all tracing eBPF programs,  currently attached
 # net
 bpftool net show              # listing programs related to network packets processing
 bpftool net show dev <iface>  # filter per interface
+
+# btf
+bpftool btf list                  # list all the BTF data loadod into the kernel
+bpftool btf dump id <id>          # inspect btf data content
+bpftool btf dump map name config  # dump btf info about a map named "config"
+bpftool btf dump prog <prog id>   # dump btf info about program
+
+bpftool btf dump file /sys/kernel/btf/vmlinux format c > vmlinux.h # generate
+  # kernel header file from the btf data
+  # kernel must be compiled with CONFIG_DEBUG_INFO_BTF enabled
 ```
 
 # my handy 1liners

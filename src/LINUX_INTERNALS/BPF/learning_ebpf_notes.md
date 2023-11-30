@@ -158,7 +158,32 @@ any BPF object) is deleted from kernel.
 
 # ch05: CO-RE, BTF, and Libbpf
 
-- TODO
+- THE PROBLEM: the probelm is that, eBPF programs access kernel structures, that changes
+  across differet versions
+
+- `BCC` approach to compatibility - is to comiple the BPF program at runtime,
+  that means on the destination machine. That causues a few issues, the main ones
+  being:
+    - compailer and kernel headers must be installed
+    - you have to wait for the program to compile, before it actually starts
+
+- `CO-RE` - compile once run everywhere - solves the problem of making eBPF
+  programs portable across different kernel versions. It consists of a few elements:
+    - [BTF (BPF Type Format)](https://docs.kernel.org/bpf/btf.html) - format of expressing the layout of data structures
+      and function signatures
+    - kernel headers
+    - compiler support - clang and the `-g` option to include CO-RE relocations information
+        (gcc since version 12 alos supports it)
+
+- Andrii Nakryiko's posts on that topic:
+    - [bpf-portability-and-co-re](https://nakryiko.com/posts/bpf-portability-and-co-re/)
+    - [bpf-core-reference-guide](https://nakryiko.com/posts/bpf-core-reference-guide)
+    - [libbpf-bootstrap](https://nakryiko.com/posts/libbpf-bootstrap/)
+    - [bcc-to-libbpf-howto-guide](https://nakryiko.com/posts/bcc-to-libbpf-howto-guide)
+
+- for all `bpftool` related command, eg: listing btf data in kernel, generating
+  kernel headers file, etc...please refer to [btftool](../../COMMANDS/BPFTOOL/index.md)
+
 
 ---
 

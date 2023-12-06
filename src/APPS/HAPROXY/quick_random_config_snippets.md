@@ -68,12 +68,13 @@ TODO
         http-request set-var(txn.req_hdrs) req.hdrs
     ```
 
-## add/set a header
+## add/set/delete a header
 ```
 frontend http
 
     # add-header - appends
     # set-header - overrides
+    # del-header - deletes
 
     http-request add-header x-forwarderd-for aaa
     http-request add-header x-forwarderd-for bbb  # sets the header to `aaa,bbb`
@@ -82,6 +83,8 @@ frontend http
 
     http-request set-header x-custom-source-ip %[req.hdr(cf-connecting-ip)] if { req.hdr(cf-connecting-ip) -m found }
     http-request set-header x-custom-path %[url]
+
+    http-request del-header x-forwarderd-for # this is case insensitive
 ```
 
 ## log POST rquest body

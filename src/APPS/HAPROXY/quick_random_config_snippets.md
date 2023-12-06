@@ -50,15 +50,23 @@ TODO
 
 ## capture and log a header
 
-[official doc](http://docs.haproxy.org/2.6/configuration.html#8.8)
+- single header
+    [official doc](http://docs.haproxy.org/2.6/configuration.html#8.8)
+    ```
+    frontend http
+        capture request header cf-connecting-ip len 15
+        capture request header host len 64
+        # this is added to httplog by default just before $METHOD in a form of:
+        # {$first_capture|$second_capture|...}
+    ```
 
-```
-frontend http
-    capture request header cf-connecting-ip len 15
-    capture request header host len 64
-    # this is added to httplog by default just before $METHOD in a form of:
-    # {$first_capture|$second_capture|...}
-```
+- all headers
+    [blog post](https://www.haproxy.com/blog/how-to-log-http-headers-with-haproxy-for-debugging-purposes)
+    ```
+    frontend http
+        log-format "${HAPROXY_HTTP_LOG_FMT} hdrs:%{+Q}[var(txn.req_hdrs)]"
+        http-request set-var(txn.req_hdrs) req.hdrs
+    ```
 
 ## add/set a header
 ```

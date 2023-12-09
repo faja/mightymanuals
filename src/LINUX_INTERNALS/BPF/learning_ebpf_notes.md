@@ -184,6 +184,19 @@ any BPF object) is deleted from kernel.
 - for all `bpftool` related command, eg: listing btf data in kernel, generating
   kernel headers file, etc...please refer to [btftool](../../COMMANDS/BPFTOOL/index.md)
 
+- compiling CO-RE bpf programs
+    ```
+    hello-buffer-config.bpf.o: %.o: %.c
+        clang \
+            -target bpf \
+            -D __TARGET_ARCH_$(ARCH) \
+            -I/usr/include/$(shell uname -m)-linux-gnu \
+            -Wall \
+            -O2 -g \
+            -c $< -o $@
+        llvm-strip -g $@
+    ```
+
 
 ---
 

@@ -24,6 +24,12 @@ Notes based on `Liz Rice - Learning eBPF` book
 
 ---
 
+PROGRAMMING:
+- [python](./python/index.md)
+- [go](./go/index.md)
+
+---
+
 other resources links:
 - [kernel BPF documentation](https://docs.kernel.org/bpf/index.html)
 - [cilium docs](https://docs.cilium.io/en/stable/)

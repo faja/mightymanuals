@@ -73,6 +73,7 @@
         - [terraform](./APPS/NOMAD/TERRAFORM/index.md)
             - [very first example job](./APPS/NOMAD/TERRAFORM/00_JOB/index.md)
     - [redis](./APPS/REDIS/index.md)
+        - [general](./APPS/REDIS/general.md)
         - [persistance](./APPS/REDIS/persistance.md)
         - [replication](./APPS/REDIS/replication.md)
         - [types/sets](./APPS/REDIS/types/sets.md)

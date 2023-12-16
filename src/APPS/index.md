@@ -14,6 +14,7 @@
 - [loki](./LOKI/index.md)
 - [nginx](./NGINX/index.md)
 - [nomad](./NOMAD/index.md)
+- [redis](./REDIS/index.md)
 - [terraform](./TERRAFORM/index.md)
 - [vagrant](./VAGRANT/index.md)
 - [vault](./VAULT/index.md)

@@ -116,6 +116,9 @@ end
 ```ruby
 Vagrant.configure("2") do |config|
   config.vm.box = "debian/bookworm64"
+    config.vm.provision "shell",
+      inline: "apt-get -y update && apt-get -y install redis"
+
 
   nodes = [
     "master",

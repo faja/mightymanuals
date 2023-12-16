@@ -116,15 +116,20 @@ end
 ```ruby
 Vagrant.configure("2") do |config|
   config.vm.box = "debian/bookworm64"
-    config.vm.provision "shell",
-      inline: "apt-get -y update && apt-get -y install redis"
-
 
   nodes = [
     "master",
     "slave",
     "client",
   ]
+
+  $script = <<-SCRIPT
+    apt-get -y update && apt-get -y install redis
+    echo 192.168.59.100 master.local master >> /etc/hosts
+    echo 192.168.59.101 slave.local  slave  >> /etc/hosts
+    echo 192.168.59.102 client.local client >> /etc/hosts
+  SCRIPT
+  config.vm.provision "shell", inline: $script
 
   nodes.each_with_index do |n,i|
     config.vm.define n do |server|

@@ -72,6 +72,8 @@
             - [02. job spec](./APPS/NOMAD/MAIN_DOCS/02.job.spec.md)
         - [terraform](./APPS/NOMAD/TERRAFORM/index.md)
             - [very first example job](./APPS/NOMAD/TERRAFORM/00_JOB/index.md)
+    - [postgres](./APPS/POSTGRES/index.md)
+        - [dump && restore](./APPS/POSTGRES/dump_restore.md)
     - [redis](./APPS/REDIS/index.md)
         - [general](./APPS/REDIS/general.md)
         - [persistance](./APPS/REDIS/persistance.md)

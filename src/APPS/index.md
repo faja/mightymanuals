@@ -12,6 +12,7 @@
 - [haproxy](./HAPROXY/index.md)
 - [helm](./HELM/index.md)
 - [loki](./LOKI/index.md)
+- [mdbook](./MDBOOK/index.md)
 - [nginx](./NGINX/index.md)
 - [nomad](./NOMAD/index.md)
 - [podman](./PODMAN/index.md)

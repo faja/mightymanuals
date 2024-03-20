@@ -14,5 +14,20 @@ brew install PACKAGE@VERSION     # to install or upgrade something
 ```
 
 # my list of brew packages
+<details>
+<summary>brew install</summary>
+
 ```
+# shell
+brew install git-lfs
+brew install git-delta
+brew install fzf
+
+# containers
+brew install skopeo
+
+# misc
+brew install awscli
 ```
+
+</details>

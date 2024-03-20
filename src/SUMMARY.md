@@ -63,6 +63,7 @@
         - [haproxy config play](./APPS/HAPROXY/haproxy_config_play/index.md)
     - [helm](./APPS/HELM/index.md)
     - [loki](./APPS/LOKI/index.md)
+    - [mdbook](./APPS/MDBOOK/index.md)
     - [nginx](./APPS/NGINX/index.md)
     - [nomad](./APPS/NOMAD/index.md)
         - [cheatsheet](./APPS/NOMAD/cheatsheet.md)

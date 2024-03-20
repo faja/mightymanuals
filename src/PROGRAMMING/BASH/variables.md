@@ -56,6 +56,14 @@
     echo ${#H}  # => 6
     echo ${#Y}  # => 0
     ```
+
+- `${..^^}`/`${..,,}` - uppercase/lowercase (requires bash > 4.0.0)
+    ```sh
+    X=xxYYzz
+    echo ${X^^}  # => XXYYZZ
+    echo ${X,,}  # => xxyyzz
+    ```
+
 # ${...:...} variable default value, setting, error message...
 
 - `${XYZ:-value}` - insert only

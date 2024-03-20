@@ -79,6 +79,7 @@
         - [persistance](./APPS/REDIS/persistance.md)
         - [replication](./APPS/REDIS/replication.md)
         - [types/sets](./APPS/REDIS/types/sets.md)
+    - [skopeo](./APPS/SKOPEO/index.md)
     - [terraform](./APPS/TERRAFORM/index.md)
         - [main docs](./APPS/TERRAFORM/MAIN_DOCS/index.md)
             - [00. terraform binary usage](./APPS/TERRAFORM/MAIN_DOCS/00.terraform.binary.usage.md)

@@ -12,3 +12,7 @@ brew upgrade                     # update all packages
 
 brew install PACKAGE@VERSION     # to install or upgrade something
 ```
+
+# my list of brew packages
+```
+```

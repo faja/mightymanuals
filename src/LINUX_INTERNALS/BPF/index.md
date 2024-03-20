@@ -1,20 +1,13 @@
 # BPF
 
-Notes based on `Brendan Gregg - BPF Performance Tools` book
+---
+BOOKS:
 
-- [chapter 1 - introduction](./ch1_introduction/index.md)
-- [chapter 2 - technology background](./ch2_technology_background/index.md)
-- [chapter 3 - performance_analysis](./ch3_performance_analysis/index.md)
-- [chapter 4 - bcc](./ch4_bcc/index.md)
-- [chapter 5 - bpftrace](./ch5_bpftrace/index.md)
+- Notes based on: [Brendan Gregg - BPF Performance Tools](./book_bpf_performance_tools/index.md)
+- Notes based on: [Liz Rice - Learning eBPF](./learning_ebpf_notes.md)
 
 ---
-
-Notes based on `Liz Rice - Learning eBPF` book
-
-- [all the notes (for now single file)](./learning_ebpf_notes.md)
-
----
+TOOLS and LIBS:
 
 - [bcc](./bcc.md)
 - [libbpf](./libbpf.md)
@@ -23,8 +16,8 @@ Notes based on `Liz Rice - Learning eBPF` book
 - [bpftrace](./bpftrace.md)  # todo but later
 
 ---
-
 PROGRAMMING:
+
 - [python](./python/index.md)
 - [go](./go/index.md)
 

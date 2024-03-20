@@ -39,6 +39,9 @@ bpftool prog show name hello --pretty  # show/describe particular program (by na
 bpftool prog dump xlated name hello    # print “translated” bytecode
 bpftool prog dump jited name hello     # print MACHINE CODE
 
+# xlated mode - prints the BPF instructions translated to assembly
+# jited mode  - shows the machine code for the processor that is executed
+
 bpftool prog load hello.bpf.o /sys/fs/bpf/hello  # load prog/object into kernel
   # ^^ the last argument above is to pin bpf program to userspace
 ls /sys/fs/bpf  # should list hello

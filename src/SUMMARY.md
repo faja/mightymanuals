@@ -214,6 +214,7 @@
 ---
 
 - [MISC](./MISC/index.md)
+    - [REGEX](./MISC/REGEX/index.md)
     - [KEYBOARD SHORTCUTS](./MISC/KEYBOARD_SHORTCUTS/index.md)
         - [browser](./MISC/KEYBOARD_SHORTCUTS/browser.md)
         - [gmail](./MISC/KEYBOARD_SHORTCUTS/gmail.md)

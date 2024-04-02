@@ -3,6 +3,9 @@
 BCCTools are set of performance/tracing tools that are build on top of BCC.
 They live in the same repo as BCC, and usually are packed together/next to BCC.
 
+As a rule of thumb
+  - `bcctools` tools are heavier, includes a lot of options, etc...
+  - `bpftrace` tools are lighter, often oneliners, etc...
 
 NOTE: in the bcc git repo there are actually two directories:
 - [tools](https://github.com/iovisor/bcc/tree/master/tools) - bcc based, python programs

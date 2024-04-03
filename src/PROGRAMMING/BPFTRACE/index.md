@@ -86,10 +86,15 @@ bpftrace -l '...'   # lists all probes filtered by provided filter,
 bpftrace -l 'tracepoint:syscalls:sys_enter_*'
 ```
 
+### emiting BPF instructions
+```sh
+bpftrace -v script.bt     # -v empits BPF instructions
+```
 
 ### bpftrace scripting
 
 `bpftrace` can be also used to write "scripts", eg:
+
 ```sh
 #!/usr/local/bin/bpftrace
 

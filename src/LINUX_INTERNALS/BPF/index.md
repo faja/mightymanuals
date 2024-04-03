@@ -10,7 +10,6 @@ BOOKS:
 TLDR:
 - [uber install guide no bullshit given](tldr_install.md)
 
-
 ---
 TOOLS and LIBS:
 

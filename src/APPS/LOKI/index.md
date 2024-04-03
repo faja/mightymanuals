@@ -1,4 +1,38 @@
+
+# THIS IS ALL TODO TBH
+
 ---
+
+
+min config
+```
+auth_enabled: false
+
+server:
+  http_listen_port: 3100
+
+common:
+  path_prefix: /loki
+  storage:
+    filesystem:
+      chunks_directory: /loki/chunks
+      rules_directory: /loki/rules
+  ring:
+    kvstore:
+      store: inmemory
+
+schema_config:
+  configs:
+    - from: 2024-01-01
+      store: boltdb-shipper
+      object_store: filesystem
+      schema: v12
+      index:
+        prefix: index_
+        period: 24h
+```
+docker run --rm -t -v $(pwd)/config.yaml:/config.yaml grafana/loki:2.9.3 -config.file=/config.yaml -print-config-stderr 2>&1 | sed '/Starting Loki/q' > loki.defaults.yaml
+
 
 # run command
 ```sh

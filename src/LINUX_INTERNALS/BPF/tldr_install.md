@@ -15,6 +15,8 @@ Copy paste my own sh script to pretty print what is there and what is missing...
 Kernel config options are taken from official `bcc` and `bpftrace` install github
 pages.
 
+<details><summary><span style="color:#ff4d94">bpf_kernel_config_check.sh</span></summary>
+
 ```sh
 #!/bin/bash -
 
@@ -86,6 +88,8 @@ echo
 echo '## kernel headers through /sys/kernel/kheaders.tar.xz [optional]'
 check CONFIG_IKHEADERS=y
 ```
+
+</details>
 
 # packages
 

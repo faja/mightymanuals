@@ -162,6 +162,7 @@
             - [chapter 4 - bcc](./LINUX_INTERNALS/BPF/book_bpf_performance_tools/ch04.md)
             - [chapter 5 - bpftrace](./LINUX_INTERNALS/BPF/book_bpf_performance_tools/ch05.md)
         - [BOOK NOTES: Liz Rice - Learning eBPF](./LINUX_INTERNALS/BPF/learning_ebpf_notes.md)
+        - [TLDR Install guide](./LINUX_INTERNALS/BPF/tldr_install.md)
         - [bcc](./LINUX_INTERNALS/BPF/bcc.md)
         - [libbpf](./LINUX_INTERNALS/BPF/libbpf.md)
         - [bpftool](./LINUX_INTERNALS/BPF/bpftool.md)

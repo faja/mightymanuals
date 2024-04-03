@@ -7,6 +7,11 @@ BOOKS:
 - Notes based on: [Liz Rice - Learning eBPF](./learning_ebpf_notes.md)
 
 ---
+TLDR:
+- [uber install guide no bullshit given](tldr_install.md)
+
+
+---
 TOOLS and LIBS:
 
 - [bcc](./bcc.md)

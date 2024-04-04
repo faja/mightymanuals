@@ -22,6 +22,7 @@
 - [opensnoop](./OPENSNOOP/index.md) `(tags=bpf,performance)`
 - [openssl](./OPENSSL/index.md)
 - [pidstat](./PIDSTAT/index.md) `(tags=performance)`
+- [printf](./PRINTF/index.md) `(tags=hex)`
 - [profile](./PROFILE/index.md) `(tags=bpf,performance)`
 - [reflex](./REFLEX/index.md) `(tags=watch,reload)`
 - [rsync](./RSYNC/index.md) `(tags=sync,cp,backup)`

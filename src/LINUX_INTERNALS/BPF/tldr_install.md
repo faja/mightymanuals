@@ -23,12 +23,12 @@ pages.
 # kernel configs:
 # bcc      : https://github.com/iovisor/bcc/blob/master/INSTALL.md#kernel-configuration
 # bpftrace : https://github.com/bpftrace/bpftrace/blob/master/INSTALL.md#linux-kernel-requirements
-#
 
 KERNEL_CONFIG_FILE=${1}
 
 if test -z "${KERNEL_CONFIG_FILE}"; then
   echo usage: "${0}" KERNEL_CONFIG_FILE
+  echo "  KERNEL_CONFIG_FILE is usually: /proc/config.gz or /boot/config-$(uname -r)"
   exit 1
 fi
 
@@ -41,7 +41,7 @@ ok() {
 }
 
 nok() {
-  echo -e " [${RED}NOK${NORMAL}]"
+  echo -e " [${RED}NOK${NORMAL}]" "${1}"
 }
 
 check() {
@@ -49,7 +49,7 @@ check() {
   if grep -q "${1}" "${KERNEL_CONFIG_FILE}"; then
     ok
   else
-    nok
+    nok "${2}"
   fi
 }
 
@@ -86,7 +86,15 @@ check CONFIG_VXLAN=m
 echo
 
 echo '## kernel headers through /sys/kernel/kheaders.tar.xz [optional]'
-check CONFIG_IKHEADERS=y
+check CONFIG_IKHEADERS=y "That's OK, you just need to install kernel headers manually"
+echo
+
+echo -n '## BTF check, test -f /sys/kernel/btf/vmlinux'
+if test -f /sys/kernel/btf/vmlinux; then
+  ok
+else
+  nok
+fi
 ```
 
 </details>

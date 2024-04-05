@@ -28,6 +28,9 @@ apt-get install -y libbpf-tools
 ```
 
 # List of commands I do have man page for
-- [tcpconnect](../../COMMANDS/TCPCONNECT/index.md)
 - ...TODO
-
+- [argdist](../../COMMANDS/ARGDIST/index.md)
+- [funccount](../../COMMANDS/FUNCCOUNT/index.md)
+- [stackcount](../../COMMANDS/STACKCOUNT/index.md)
+- [tcpconnect](../../COMMANDS/TCPCONNECT/index.md)
+- [trace](../../COMMANDS/TRACE/index.md)

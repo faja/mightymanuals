@@ -1,3 +1,8 @@
+<span style="color:#ff4d94">**funccount**</span> - counts events, especially
+function calls, and can aswer questions such as:
+- is the kernel- or user-level function being called?
+- what is the rate of this function call, per second?
+
 # syntax
 
 ```
@@ -40,10 +45,12 @@ run `funccount -h` for help
     ```
 
 # one liners
-- `funccount 'vfs_*'` - count VFS kernel calls 
-- `funccount 'tcp_*'` - count TCP kernel calls
-- `funccount -i 1 'tcp_send*'` - count TCP send calls per second
-- `funccount -i 1 't:block:*'` - show rate of block I/O events per second
-- `funccount -i 1 t:sched:sched_process_fork` - show rate of ne processes per second
-- `funccount -i 1 c:getaddrinfo` - show rate of libc getaddrinfo() per second
-- `funccount 'go:os.*'` -  count all "os.*" calls in libgo
+```sh
+funccount 'vfs_*'                          # count VFS kernel calls
+funccount 'tcp_*'                          # count TCP kernel calls
+funccount -i 1 'tcp_send*'                 # count TCP send calls per second
+funccount -i 1 't:block:*'                 # show rate of block I/O events per second
+funccount -i 1 t:sched:sched_process_fork  # show rate of ne processes per second
+funccount -i 1 c:getaddrinfo               # show rate of libc getaddrinfo() per second
+funccount 'go:os.*'                        # count all "os.*" calls in libgo
+```

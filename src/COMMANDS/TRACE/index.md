@@ -1,3 +1,10 @@
+<span style="color:#ff4d94">**trace**</span> - tool for per-event tracing from
+many different sources: kprobes, uprobes, tracepoints and USDT probes, can answer questions:
+- what are the arguments when a kernel- or user-level function is called?
+- what is the return value of this function? is it failing?
+- how is this function called? what is the user- or kernel-level stack trace?
+
+
 # syntax
 
 ```
@@ -25,7 +32,9 @@ where `eventname` is:
 run `trace -h` for help
 
 # one liners
-- `trace 'do_sys_open "%s", arg2'` - trace the kernel do_sys_open() function with the filename
-- `trace 'r::do_sys_open "ret: %d", retval'` - trace the return of the kernel do_sys_open() function and print the return value
-- `trace -U 'do_nanosleep "mode: %d", arg2'` - trace do_nanosleep() with mode and user-level stacks
-- `trace 'pam:pam_start "%s: %s", arg1, arg2'` - trace authentication requests via the pam library
+```sh
+trace 'do_sys_open "%s", arg2'              # trace the kernel do_sys_open() function with the filename
+trace 'r::do_sys_open "ret: %d", retval'    # trace the return of the kernel do_sys_open() function and print the return value
+trace -U 'do_nanosleep "mode: %d", arg2'    # trace do_nanosleep() with mode and user-level stacks
+trace 'pam:pam_start "%s: %s", arg1, arg2'  # trace authentication requests via the pam library
+```

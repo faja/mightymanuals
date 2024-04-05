@@ -1,3 +1,8 @@
+<span style="color:#ff4d94">**stackcount**</span> - counts the stack traces that
+led to en event, can answer the questions:
+- why is this event called? What is the code path?
+- what are all the different code paths taht call this event and what are their frequencies?
+
 # syntax
 
 ```
@@ -33,8 +38,10 @@ run `stackcount -h` for help
     ```
 
 # one liners
-- `stackcount t:block:block_rq_insert` - count stack traces that created block I/O
-- `stackcount ip_output` - count stack traces that led to sending IP packets
-- `stackcount -P ip_output` - count stack traces that led to sending IP packets, with the responsible PID
-- `stackcount t:sched:sched_switch` - count stack traces that led to the thread blocking and moving off-CPU
-- `stackcount t:syscall:sys_enter_read` - count stack traces that led to the read() syscall
+```sh
+stackcount t:block:block_rq_insert  # count stack traces that created block I/O
+stackcount ip_output                # count stack traces that led to sending IP packets
+stackcount -P ip_output             # count stack traces that led to sending IP packets, with the responsible PID
+stackcount t:sched:sched_switch     # count stack traces that led to the thread blocking and moving off-CPU
+stackcount t:syscall:sys_enter_read # count stack traces that led to the read() syscall
+```

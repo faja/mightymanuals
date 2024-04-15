@@ -125,6 +125,7 @@
     - [cat](./COMMANDS/CAT/index.md)
     - [curl](./COMMANDS/CURL/index.md)
     - [date](./COMMANDS/DATE/index.md)
+    - [df](./COMMANDS/DF/index.md)
     - [dmesg](./COMMANDS/DMESG/index.md)
     - [execsnoop](./COMMANDS/EXECSNOOP/index.md)
     - [ext4slower](./COMMANDS/EXT4SLOWER/index.md)

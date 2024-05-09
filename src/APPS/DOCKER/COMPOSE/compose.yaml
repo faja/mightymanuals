@@ -15,8 +15,15 @@ volumes:
     external:
       name: external-volume-created-outside-compose
 
+# https://docs.docker.com/compose/compose-file/05-services/
 services:
   nginx:
+
+    image: nginx:1.26
+    entrypoint:
+      - sleep
+    command:
+      - infinity
 
     # https://docs.docker.com/compose/compose-file/05-services/#volumes
     volumes:

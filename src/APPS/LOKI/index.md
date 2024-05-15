@@ -5,7 +5,8 @@
 
 ---
 
-docs re version: <span style="color:#ff4d94">**3.0.0**</span>
+- docs re version: <span style="color:#ff4d94">**3.0.0**</span>
+- [promtail](./../PROMTAIL/index.md)
 
 ---
 

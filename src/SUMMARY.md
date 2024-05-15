@@ -80,6 +80,7 @@
     - [podman](./APPS/PODMAN/index.md)
     - [postgres](./APPS/POSTGRES/index.md)
         - [dump && restore](./APPS/POSTGRES/dump_restore.md)
+    - [promtail](./APPS/PROMTAIL/index.md)
     - [redis](./APPS/REDIS/index.md)
         - [general](./APPS/REDIS/general.md)
         - [persistance](./APPS/REDIS/persistance.md)

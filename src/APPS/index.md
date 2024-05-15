@@ -17,6 +17,7 @@
 - [nomad](./NOMAD/index.md)
 - [podman](./PODMAN/index.md)
 - [postgres](./POSTGRES/index.md)
+- [promtail](./PROMTAIL/index.md)
 - [redis](./REDIS/index.md)
 - [skopeo](./SKOPEO/index.md)
 - [terraform](./TERRAFORM/index.md)

@@ -2,7 +2,7 @@
 the below prints `compose.yaml` file "code block" formatted
 ```
 \```yaml
-{{#include compose.yaml}}
+\{{#include compose.yaml}}
 \```
 ```
 

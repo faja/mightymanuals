@@ -6,4 +6,3 @@
 - [PLATFORMS](./PLATFORMS/index.md) (aws,cloudflare)
 - [PROGRAMMING](./PROGRAMMING/index.md)
 - [MISC](./MISC/index.md)
-

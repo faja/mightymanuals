@@ -130,6 +130,7 @@
     - [dmesg](./COMMANDS/DMESG/index.md)
     - [execsnoop](./COMMANDS/EXECSNOOP/index.md)
     - [ext4slower](./COMMANDS/EXT4SLOWER/index.md)
+    - [find](./COMMANDS/FIND/index.md)
     - [free](./COMMANDS/FREE/index.md)
     - [funccount](./COMMANDS/FUNCCOUNT/index.md)
     - [grip](./COMMANDS/GRIP/index.md)

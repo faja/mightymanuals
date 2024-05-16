@@ -13,6 +13,7 @@
 - [dmesg](./DMESG/index.md) `(tags=performance)`
 - [execsnoop](./EXECSNOOP/index.md) `(tags=bpf,performance)`
 - [ext4slower](./EXT4SLOWER/index.md) `(tags=bpf,performance)`
+- [find](./FIND/index.md)
 - [free](./FREE/index.md) `(tags=performance)`
 - [funccount](./FUNCCOUNT/index.md) `(tags=bpf,bcc,performance)`
 - [grip](./GRIP/index.md) `(tags=markdown,preview,pip)`

@@ -36,6 +36,7 @@
         - [diff](./APPS/GIT/12.diff.md)
         - [patch and apply](./APPS/GIT/15.patch_and_apply.md)
         - [ls-tree](./APPS/GIT/16.ls-tree.md)
+        - [cat-file](./APPS/GIT/16.cat-file.md)
         - [worktree](./APPS/GIT/20.worktree.md)
         - [hooks](./APPS/GIT/21.hooks.md)
         - [gpg signing](./APPS/GIT/22.gpg.md)

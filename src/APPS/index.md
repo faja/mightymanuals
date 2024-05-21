@@ -21,6 +21,7 @@
 - [redis](./REDIS/index.md)
 - [skopeo](./SKOPEO/index.md)
 - [terraform](./TERRAFORM/index.md)
+- [tmux](./TMUX/index.md)
 - [vagrant](./VAGRANT/index.md)
 - [vault](./VAULT/index.md)
 - [vim](./VIM/index.md)

@@ -108,6 +108,7 @@
                 - [self signed cert](./APPS/TERRAFORM/providers/tls/self_signed_cert/index.md)
         - [terragrunt](./APPS/TERRAFORM/terragrunt/index.md)
         - [tflint](./APPS/TERRAFORM/tflint/index.md)
+    - [tmux](./APPS/TMUX/index.md)
     - [vagrant](./APPS/VAGRANT/index.md)
     - [vault](./APPS/VAULT/index.md)
         - [cheatsheet](./APPS/VAULT/cheatsheet.md)

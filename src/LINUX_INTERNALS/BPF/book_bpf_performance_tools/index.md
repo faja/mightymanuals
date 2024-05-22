@@ -5,3 +5,5 @@ Notes based on `Brendan Gregg - BPF Performance Tools` book
 - [chapter 3 - performance_analysis](./ch03.md)
 - [chapter 4 - bcc](./ch04.md)
 - [chapter 5 - bpftrace](./ch05.md)
+---
+- [chapter 6 - cpu](./ch06.md)

@@ -44,5 +44,5 @@
 
 ---
 Performance analysis
-- [Linux 60-second analysis](../LINUX_INTERNALS/BPF/ch3_performance_analysis/index.md#linux-60-second-analysis)
-- [BCC tool checklist](../LINUX_INTERNALS/BPF/ch3_performance_analysis/index.md#linux-60-second-analysis)
+- [Linux 60-second analysis](../LINUX_INTERNALS/BPF/book_bpf_performance_tools/ch03.md#linux-60-second-analysis)
+- [BCC tool checklist](../LINUX_INTERNALS/BPF/book_bpf_performance_tools/ch03.md#bpf-tool-checklist)

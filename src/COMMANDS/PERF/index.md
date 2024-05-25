@@ -12,3 +12,6 @@ event statistics and tracing
 perf stat -e sched:sched_sched_process_exec -I 1000
 
 and much much much more
+
+
+...but I tend to use BPF tools instead

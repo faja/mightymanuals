@@ -17,3 +17,15 @@ runqlen -C     # show per-CPU histogram, useful for checking scheduler balance
   sampling run queues at **99 Hertz** (`runqlat` traces scheduler events)
 - it is kind a cheaper version of [runqlat](./../RUNQLAT/index.md), and should
   be exec rather as a helper to it
+
+  # runqlen 10 1
+Sampling run queue length... Hit Ctrl-C to end.
+
+     runqlen       : count     distribution
+        0          : 47284    |****************************************|
+        1          : 211      |                                        |
+        2          : 28       |                                        |
+        3          : 6        |                                        |
+        4          : 4        |                                        |
+        5          : 1        |                                        |
+        6          : 1        |                                        |

@@ -142,6 +142,7 @@
     - [mpstat](./COMMANDS/MPSTAT/index.md)
     - [opensnoop](./COMMANDS/OPENSNOOP/index.md)
     - [openssl](./COMMANDS/OPENSSL/index.md)
+    - [perf](./COMMANDS/PERF/index.md)
     - [pidstat](./COMMANDS/PIDSTAT/index.md)
     - [printf](./COMMANDS/PRINTF/index.md)
     - [profile](./COMMANDS/PROFILE/index.md)

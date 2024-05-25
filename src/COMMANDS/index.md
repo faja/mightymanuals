@@ -23,6 +23,7 @@
 - [mpstat](./MPSTAT/index.md) `(tags=performance)`
 - [opensnoop](./OPENSNOOP/index.md) `(tags=bpf,performance)`
 - [openssl](./OPENSSL/index.md)
+- [perf](./PERF/index.md)
 - [pidstat](./PIDSTAT/index.md) `(tags=performance)`
 - [printf](./PRINTF/index.md) `(tags=hex)`
 - [profile](./PROFILE/index.md) `(tags=bpf,performance)`

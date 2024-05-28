@@ -9,3 +9,9 @@ $ uptime
 
 By comparing these numbers, you can determine whether the load has been increasing,
 decreasing, or steady during the past 15 minutes or so.
+
+---
+
+```sh
+uptime -s   # pretty neat, boot time!
+```

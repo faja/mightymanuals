@@ -1,4 +1,4 @@
-`mpstat` - can be used to examine per-CPU metrics
+<span style="color:#ff4d94">**mpstat**</span> - can be used to examine per-CPU metrics
 
 ```sh
 mpstat           # average across all cpus

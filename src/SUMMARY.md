@@ -150,6 +150,8 @@
     - [reflex](./COMMANDS/REFLEX/index.md)
     - [rsync](./COMMANDS/RSYNC/index.md)
     - [runqlat](./COMMANDS/RUNQLAT/index.md)
+    - [runqlen](./COMMANDS/RUNQLEN/index.md)
+    - [runqslower](./COMMANDS/RUNQSLOWER/index.md)
     - [sar](./COMMANDS/SAR/index.md)
     - [ssh](./COMMANDS/SSH/index.md)
     - [stackcount](./COMMANDS/STACKCOUNT/index.md)

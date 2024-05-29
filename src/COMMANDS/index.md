@@ -1,5 +1,5 @@
 # COMMANDS
-- [argdist](./ARGDIST/index.md) `(tags=bpf,bcc,performance)`
+- [argdist](./ARGDIST/index.md) `(tags=bpf,performance)`
 - [biolatency](./BIOLATENCY/index.md) `(tags=bpf,performance)`
 - [biosnoop](./BIOSNOOP/index.md) `(tags=bpf,performance)`
 - [bpftool](./BPFTOOL/index.md) `(tags=bpf)`
@@ -16,7 +16,7 @@
 - [ext4slower](./EXT4SLOWER/index.md) `(tags=bpf,performance)`
 - [find](./FIND/index.md)
 - [free](./FREE/index.md) `(tags=performance)`
-- [funccount](./FUNCCOUNT/index.md) `(tags=bpf,bcc,performance)`
+- [funccount](./FUNCCOUNT/index.md) `(tags=bpf,performance)`
 - [grip](./GRIP/index.md) `(tags=markdown,preview,pip)`
 - [htop](./HTOP/index.md) `(tags=performance)`
 - [iostat](./IOSTAT/index.md) `(tags=performance)`
@@ -30,14 +30,16 @@
 - [profile](./PROFILE/index.md) `(tags=bpf,performance)`
 - [reflex](./REFLEX/index.md) `(tags=watch,reload)`
 - [rsync](./RSYNC/index.md) `(tags=sync,cp,backup)`
-- [runqlat](./RUNQLAT/index.md) `(tags=bpf,erformance)`
+- [runqlat](./RUNQLAT/index.md) `(tags=bpf,performance)`
+- [runqlen](./RUNQLEN/index.md) `(tags=bpf,performance)`
+- [runqslower](./RUNQSLOWER/index.md) `(tags=bpf,performance)`
 - [sar](./SAR/index.md) `(tags=performance)`
 - [ssh](./SSH/index.md) `(tags=ssh,security)`
-- [stackcount](./STACKCOUNT/index.md) `(tags=bpf,bcc,performance)`
+- [stackcount](./STACKCOUNT/index.md) `(tags=bpf,performance)`
 - [tcpaccept](./TCPACCEPT/index.md) `(tags=bpf,erformance)`
 - [tcpconnect](./TCPCONNECT/index.md) `(tags=bpf,erformance)`
 - [tcpretrans](./TCPRETRANS/index.md) `(tags=bpf,erformance)`
-- [trace](./TRACE/index.md) `(tags=bpf,bcc,performance)`
+- [trace](./TRACE/index.md) `(tags=bpf,performance)`
 - [uptime](./UPTIME/index.md) `(tags=performance)`
 - [vmstat](./VMSTAT/index.md) `(tags=performance)`
 - [wscat](./WSCAT/index.md) `(tags=websocket)`

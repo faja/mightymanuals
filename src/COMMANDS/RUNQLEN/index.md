@@ -9,16 +9,9 @@ runqlen 10 1   # gather stats for 10 seconds and output once
 runqlen -C     # show per-CPU histogram, useful for checking scheduler balance
 ```
 
----
-
-### notes
-
-- <span style="color:#ffff66">**important**</span> `runqlen` works is by
-  sampling run queues at **99 Hertz** (`runqlat` traces scheduler events)
-- it is kind a cheaper version of [runqlat](./../RUNQLAT/index.md), and should
-  be exec rather as a helper to it
-
-  # runqlen 10 1
+### example output
+```sh
+# runqlen 10 1
 Sampling run queue length... Hit Ctrl-C to end.
 
      runqlen       : count     distribution
@@ -29,3 +22,14 @@ Sampling run queue length... Hit Ctrl-C to end.
         4          : 4        |                                        |
         5          : 1        |                                        |
         6          : 1        |                                        |
+```
+
+---
+
+### notes
+
+- <span style="color:#ffff66">**important**</span> `runqlen` works is by
+  sampling run queues at **99 Hertz** (`runqlat` traces scheduler events)
+- it is kind a cheaper version of [runqlat](./../RUNQLAT/index.md), and should
+  be exec rather as a helper to it
+

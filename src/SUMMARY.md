@@ -131,6 +131,7 @@
     - [df](./COMMANDS/DF/index.md)
     - [dmesg](./COMMANDS/DMESG/index.md)
     - [execsnoop](./COMMANDS/EXECSNOOP/index.md)
+    - [exitsnoop](./COMMANDS/EXITSNOOP/index.md)
     - [ext4slower](./COMMANDS/EXT4SLOWER/index.md)
     - [find](./COMMANDS/FIND/index.md)
     - [free](./COMMANDS/FREE/index.md)

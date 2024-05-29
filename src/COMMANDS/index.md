@@ -12,6 +12,7 @@
 - [df](./DF/index.md)
 - [dmesg](./DMESG/index.md) `(tags=performance)`
 - [execsnoop](./EXECSNOOP/index.md) `(tags=bpf,performance)`
+- [exitsnoop](./EXITSNOOP/index.md) `(tags=bpf,performance)`
 - [ext4slower](./EXT4SLOWER/index.md) `(tags=bpf,performance)`
 - [find](./FIND/index.md)
 - [free](./FREE/index.md) `(tags=performance)`

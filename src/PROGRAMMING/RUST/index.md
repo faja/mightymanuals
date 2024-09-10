@@ -125,3 +125,89 @@ else {
 
 let msg = if age > 50 {"old"} else {"young"};
 ```
+
+# match statement
+```rust
+let num = 100;
+
+match num {
+    100 => println!("A hundred"),
+    200 => {
+        println!("Two hundred");
+        println!("Two indeed!")
+    },
+    201..=300 => println!("more than 200"),
+    400 | 500 => println!("400 or 500"),
+    _   => println!("Something else")
+}
+```
+
+# loops
+
+```rust
+loop {
+    // this is infinite loop...
+}
+
+let mut i = 0;
+while i < 10 {
+    // do something
+   i += 1; 
+}
+
+let arr = [99, 55, 95, 100, 82];
+for elem in arr {
+    println!("{}", elem);
+}
+
+for i in 0..10 { 
+    // 0 to 9, 
+    // to include 10, 0..=10
+    println!("{}", i);
+}
+```
+
+#  break and continue
+loop {
+    if some_condition {
+        break;
+    }
+    // do something
+}
+
+loop {
+    if some_condition {
+        continue; // this means actually next
+    }
+    // do something
+}
+
+to break or continue in nested loops use loop labels, eg:
+```rust
+
+'outer: loop {
+   // ...
+   loop {
+      // ...
+      break 'outer;
+   } 
+}
+```
+
+# ENUMS
+## basics
+```rust
+enum Color {
+    Red,
+    Green,
+    Blue
+}
+
+let c: Color = Color::Red;
+
+match c {
+    Color::Red   => println!("coch"),
+    Color::Green => println!("gwyrdd"),
+    Color::Blue  => println!("glas"),
+}
+```

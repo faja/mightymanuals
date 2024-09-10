@@ -16,3 +16,4 @@
 - [21. hooks](./21.hooks.md)
 - [22. gpg signing](./22.gpg.md)
 - [25. .gitignore](./25.gitignore.md)
+- [26. lfs](./26.lfs.md)

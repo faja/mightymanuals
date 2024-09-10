@@ -16,7 +16,7 @@
     docker manifest inspect registry/iamge:tag
     ```
 
-# a "SMALL" note on the image SHA
+### a "SMALL" note on the image SHA
 - image SHA or DIGEST, the one that we are using to pull the image,
   is actually a SHA/DIGEST of a manifest or manifest list
 - manifest list allows you to pull an image for different ARCHITECTURE

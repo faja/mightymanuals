@@ -111,3 +111,17 @@ let _f = 0;
 ```
 const SECONDS_IN_HOUR; i32 = 3_600;   # must be capital letter and type must be specified
 ```
+
+# if statement
+```rust
+if age > 50 { // please note, test expression must be "bool"
+  ...;
+else if age > 30 {
+}
+  ...;
+else {
+  ...;
+}
+
+let msg = if age > 50 {"old"} else {"young"};
+```

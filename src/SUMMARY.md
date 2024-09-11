@@ -225,6 +225,7 @@
         - [my awesome sh script template](./PROGRAMMING/BASH/template.md)
     - [BPFTRACE](./PROGRAMMING/BPFTRACE/index.md)
     - [MD](./PROGRAMMING/MD/index.md)
+    - [RUST](./PROGRAMMING/RUST/index.md)
     - [YAML](./PROGRAMMING/YAML/index.md)
     - [ZSH](./PROGRAMMING/ZSH/index.md)
 

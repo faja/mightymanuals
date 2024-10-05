@@ -226,6 +226,9 @@
     - [BPFTRACE](./PROGRAMMING/BPFTRACE/index.md)
     - [MD](./PROGRAMMING/MD/index.md)
     - [RUST](./PROGRAMMING/RUST/index.md)
+        - [start here](./PROGRAMMING/RUST/START_HERE/index.md)
+        - [syntax](./PROGRAMMING/RUST/SYNTAX/index.md)
+        - [advanced topics](./PROGRAMMING/RUST/ADVANCED/index.md)
     - [YAML](./PROGRAMMING/YAML/index.md)
     - [ZSH](./PROGRAMMING/ZSH/index.md)
 

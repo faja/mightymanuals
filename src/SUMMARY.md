@@ -120,6 +120,7 @@
 
 - [COMMANDS](./COMMANDS/index.md)
     - [argdist](./COMMANDS/ARGDIST/index.md)
+    - [awk](./COMMANDS/AWK/index.md)
     - [biolatency](./COMMANDS/BIOLATENCY/index.md)
     - [biosnoop](./COMMANDS/BIOSNOOP/index.md)
     - [bpftool](./COMMANDS/BPFTOOL/index.md)

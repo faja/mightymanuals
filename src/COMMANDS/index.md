@@ -1,5 +1,6 @@
 # COMMANDS
 - [argdist](./ARGDIST/index.md) `(tags=bpf,performance)`
+- [awk](./AWK/index.md) `(tags=text)`
 - [biolatency](./BIOLATENCY/index.md) `(tags=bpf,performance)`
 - [biosnoop](./BIOSNOOP/index.md) `(tags=bpf,performance)`
 - [bpftool](./BPFTOOL/index.md) `(tags=bpf)`

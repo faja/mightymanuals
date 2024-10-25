@@ -1,5 +1,6 @@
 - [dockerfile](./DOCKERFILE/index.md)
 - [compose](./COMPOSE/index.md)
+- [docker image sha madness](./SHA/index.md)
 
 # below is all todo
 

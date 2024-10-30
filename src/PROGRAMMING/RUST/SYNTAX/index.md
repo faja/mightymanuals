@@ -50,6 +50,87 @@ let g = 3.99;
 let h = g as i32; # convert float to iteger
 ```
 
+## arrays
+```rust
+let a1 = [100, 200, 300];
+
+let a2: [i32, 3];
+a2 = [100, 200, 300];
+
+let mut a3 = [99; 5];  // [value; size]
+
+// to access, array[index]
+a1[0]
+
+// lenght
+a1.len()
+
+// iterate over
+for elem in a1 {
+}
+```
+
+## tuples
+```rust
+let t1 = (9, "h1", 3.5);
+
+let mut t2 = (1, "hi");
+
+let t3: (i32, bool, f64);
+t3 = (53, true, 1.67);
+
+// to access, tuple.index
+t1.0
+
+// note! there is no .len() function for tuple
+// note! there is no `for elem in tup` iterations
+```
+
+## vectors Vec<T>
+```rust
+
+let mut v1: Vec<i32> = Vec::new();
+
+let mut v2 = Vec::<i32>::new();
+
+let mut v3 = vec![100, 200, 300];
+
+// to access, v[index]
+let item = v[index];
+
+// some functions
+v.push(item);
+v.insert(index, item);
+v.pop();
+v.len();
+
+// iterate
+for item in &v {
+}
+```
+
+## maps
+```rust
+use std::collections::HashMap
+
+let mut m: HashMap<String, i32> = HashMap::new();
+//or
+let mut m = HashMap::<String, i32>::new();
+
+m.insert(aKey, aValue);
+
+// this crashes if aKey is not found
+let v1 = m[aKey];
+let v2 = m.get(aKey);
+
+// iterate
+for entry in &m {
+  ...
+}
+
+println!("Debug print of a hashmap: {:?}", m);
+```
+
 # variables
 ```rust
 // to define a variable

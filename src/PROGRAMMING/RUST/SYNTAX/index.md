@@ -192,3 +192,59 @@ match c {
     Color::Blue  => println!("glas"),
 }
 ```
+
+## enum with data
+```rust
+enum HouseLocation {
+  Number(i32),
+  Name(String),
+  Unknown
+}
+
+let h1 = HouseLocation::Number(4);
+
+match h1 {
+  HouseLocation::Number(h) => println!("number: {}", s),
+  _ => println!("...Unknown"),
+}
+```
+
+## OPTION enum
+
+```rust
+enum Option<T> {
+  Some(T),
+  None
+}
+
+// eg:
+fn sec_of_day(h: u32, m: u32, s: u32) -> Option<u32> {
+  // ...
+  let secs = 42
+  return Option::Some(secs)
+  // else
+  return Option::None
+}
+
+secs = sec_of_day(1, 2, 3);
+match secs {
+  Some(s) => println!("second of day: {}", s),
+  None    => println!("second of day: no value")
+}
+```
+
+## RESULT enum
+similar to OPTION
+
+```rust
+enum Result<T, E> {
+  Ok(T),
+  Err(E)
+}
+
+// example function retruns Resutl enum
+fn .... -> Result<i32, ParseIntError>
+// returns Ok or Err
+Result::Ok<i32>
+Result::Err<ParseIntError>
+```

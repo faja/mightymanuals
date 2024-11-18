@@ -52,6 +52,7 @@ vms:
 ```
 
 - to test the inventroy
+    - `ansible-inventory -i inventory.yaml --graph`
     - `ansible-inventory -i inventory.yaml --list`
     - `ansible --list -i inventory.yaml all`
     - `ansible --list -i inventory.yaml ${GROUP_NAME}`
@@ -76,3 +77,15 @@ vms:
     ansible-playbook -l 'staging:&database' playbook.yml
     ```
 
+## behavioral parameters
+```
+ansible_host
+ansible_port
+ansible_user
+ansible_password
+ansible_connection
+ansible_ssh_private_key_file
+ansible_shell_type
+ansible_python_interpreter
+ansible_*_interpreter
+```

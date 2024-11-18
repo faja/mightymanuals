@@ -60,3 +60,9 @@ string4: >-
   string
 # this produces "single line string"
 ```
+
+# inline list and dict
+```yaml
+my_awesome_list: [first_item, lfg, oh yeah 3rd item with spaces]
+my_awesome_dictionary: {street: main street, appt: '742', city: logan}
+```

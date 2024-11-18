@@ -11,6 +11,7 @@
     [defaults]
     nocows = true
     inventory = ./inventory.yaml
+    stdout_callback = yaml
 
     # gathering = smart # worth considering, default: implicit
     # forks = 100       # worth considering, default: 5

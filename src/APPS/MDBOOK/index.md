@@ -1,3 +1,17 @@
+# table of content
+- [include](#include)
+- [folding](#folding)
+- [colours](#colours)
+
+```md
+- [include](#include)
+- [folding](#folding)
+- [colours](#colours)
+- [something with spaces](#something-with-spaces)
+```
+
+number of `#` does not matter
+
 # include
 the below prints `compose.yaml` file "code block" formatted
 ```

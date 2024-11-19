@@ -4,6 +4,7 @@
 - [03. running ansible](./03_running_ansible.md)
 - [04. playbook](./04_playbook.md)
 - [05. variables](./05_variables.md)
+- [06. task options](./06_task_options.md)
 
 ---
 
@@ -20,3 +21,4 @@ modules:
 language syntax:
 
 - [50. loop](./50_syntax_loop.md)
+- [51. templating trix](./51_templating_trix.md)

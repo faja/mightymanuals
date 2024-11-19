@@ -10,8 +10,9 @@
 - name: my first playbook
   hosts: webservers
   become: ture
-  vars: ...
   gather_facts: true
+  vars: ...
+  vars_files: ...
 
   handlers:
     - name: ...
@@ -25,4 +26,5 @@
 - `hosts` - hosts string
 - `become` - when set to true, ansible will become `become_user` (default `root`)
 - `vars` - playbook scope variables
+- `vars_files` - list of playbook scoped variable files
 - `gather_facts` - to gather facts or not

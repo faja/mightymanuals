@@ -1,7 +1,7 @@
 ---
 
 - [variables declaration and precedence](#variables-declaration-locations-and-precedence-order)
-- [predefined variables](#predefined-variables)
+- [built-in variables](#built-in-variables)
 - [facts](#facts)
 - [include_vars module](#include_vars-module)
 
@@ -180,19 +180,40 @@
     ```sh
     ansible-playbook playbookname.yml -e 'your_name=Fred'
     ```
+- note it can be passed as a FILENAME with `@` notation
+    ```sh
+    ansible-playbook playbookname.yaml -e @my_custom_variables.yaml
+    ```
 </details>
 
 
-### predefined variables
-
-- `{{ groups }}` - hash of all groups
+### built-in variables
+- `{{ hostvars }}` - a massive dict that contain all hostvars for all hosts, eg usage:
+    ```yaml
+    {{ hostvars['db.example.com'].ansible_eth1.ipv4.address }}
+    ```
+- `{{ inventory_hostname }}` - current host name from the inventory
+- `{{ inventory_hostname_short }}` - current host name from the inventory without domain name
+- `{{ group_names }}` - list of groups current host belongs to
+- `{{ groups }}` - dict of all groups, example usage:
+    ```yaml
+    {% for host in group.web %}
+    server {{ hostvars[host].inventory_hostname }} \
+      {{ hostvars[host].ansible_default_ipv4.address }}:80
+    {% endfor %}
+    ```
 - `{{ groups['group_name'] }}` - list of machines which belongs to that `group_name`
-- `{{ group_names }}` - list of groups current node belongs to
+- `{{ ansible_check_mode}}`
+- `{{ ansible_version }}`
+
+[ALL variables](https://docs.ansible.com/ansible/latest/reference_appendices/special_variables.html)
 
 
 ### facts
 
 - all ansible facts starts with `ansible_` prefix
+    - automatic ones with `ansible_facts.`
+    - manual ones with `ansible_local.`
 - get all facts for a host
     ```sh
     ansible -m setup ${HOSTNAME}
@@ -217,6 +238,15 @@
 
         - name: ...
     ```
+- actually any module can return facts that will be registerd with `ansible_facts`
+it just needs to return output that contains key `ansible_facts`, for example
+`service_facts` module does it:
+    ```yaml
+    - name: get services facts
+      service_facts:
+
+    - debug: var=ansible_facts['services']['sshd.service']
+    ```
 
 ##### custom facts
 Custom facts are read from `/etc/ansible/facts.d/*.fact` and exposed with
@@ -238,6 +268,18 @@ Custom facts are read from `/etc/ansible/facts.d/*.fact` and exposed with
     }
     ```
 - hence available as `{{ ansible_local.users.mc.colors }}`
+- local/custom `.fact` file can be in format:
+    - INI
+    - JSON
+    - or it can be an executable that takes no arguments and outputs JSON to stdout
+
+#### `set_fact` module
+```yaml
+- name: set nginx state
+  when: ansible_facts.services.nginx.state is defined
+  set_fact:
+    nginx_state: "{{ ansible_facts.services.nginx.state }}"
+```
 
 ### include_vars module
 

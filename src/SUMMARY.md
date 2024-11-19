@@ -7,6 +7,7 @@
         - [ansible.cfg](./APPS/ANSIBLE/02_ansible_cfg.md)
         - [running ansible](./APPS/ANSIBLE/03_running_ansible.md)
         - [playbook](./APPS/ANSIBLE/04_playbook.md)
+        - [variables](./APPS/ANSIBLE/05_variables.md)
         - [production setup](./APPS/ANSIBLE/11_production_setup.md)
         - [modules: debug](./APPS/ANSIBLE/20_modules_debug.md)
         - [syntax: loop](./APPS/ANSIBLE/50_syntax_loop.md)

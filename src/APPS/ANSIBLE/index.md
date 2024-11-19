@@ -3,6 +3,7 @@
 - [02. ansible.cfg](./02_ansible_cfg.md)
 - [03. running ansible](./03_running_ansible.md)
 - [04. playbook](./04_playbook.md)
+- [05. variables](./05_variables.md)
 
 ---
 

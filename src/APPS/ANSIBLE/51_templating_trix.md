@@ -1,4 +1,21 @@
 ---
+- for loop
+  ```
+  ALLOWED_HOSTS = [{% for domain in domains %}"{{ domain }}",{% endfor %}]
+  ```
+
+- if
+  ```
+  {% if tls_enabled %}
+  ...
+  {% endif %}
+  ```
+
+- join
+  ```
+  {{ domains | join(", ") }}
+  ```
+
 - use `~` to variable concatination between double braces
     ```yaml
     ... {{ server_name ~ '.' ~ domain_name }} ...

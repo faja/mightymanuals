@@ -28,4 +28,8 @@
     # become = true
     # become_user = admin
     # become_ask_pass = true
+
+    ## ssh_connection
+    # [ssh_connection]
+    # ssh_args = -o ForwardAgent=yes
     ```

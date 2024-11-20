@@ -25,3 +25,22 @@ with, this set to true, it will continue
 
     - debug: var=result
     ```
+
+- `environment` - passes environment variable to task
+    ```yaml
+    - name: ...
+      script: scripts/setsite.py
+      environment:
+        PATH: ...
+        XXX_YYY: ...
+    ```
+
+- `become` and `become_user`
+    ```yaml
+    - name: ...
+      become: true
+      become_user: postgres
+      ...
+    ```
+
+- `notify`

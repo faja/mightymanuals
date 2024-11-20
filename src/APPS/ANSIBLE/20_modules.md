@@ -3,11 +3,17 @@
 MODULES:
 
 - [apt](#apt)
+- [command](#command)
 - [debug](#debug)
+- [file](#file)
+- [git](#git)
+- [template](#template)
 
 ---
 
 ### apt
+
+[official docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html)
 
 ```yaml
 - name: ...
@@ -21,7 +27,37 @@ MODULES:
       - ...
 ```
 
+### command
+
+[official docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/command_module.html)
+
+- simple
+    ```yaml
+    - name: ...
+      become: true
+      ansible.builtin.command:
+        cmd: /usr/bin/make_database.sh db_user db_name
+        creates: /path/to/database
+    ```
+
+- more complex
+    ```yaml
+    - name: ...
+      become: true
+      ansible.builtin.command:
+        argv:
+          - /path/to/binary
+          - -v
+          - --debug
+          - --longopt
+          - value for longopt
+          - --other-longopt=value for other longopt
+          - positional
+        creates: /path/to/database
+    ```
+
 ### debug
+[official docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/debug_module.html)
 
 - short version - for quick debug purposes
     ```yaml
@@ -34,3 +70,70 @@ MODULES:
       debug:
         msg: "The debug module will print a message: neat, eh?"
     ```
+
+### file
+[official docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/file_module.html)
+
+- standard file
+    ```yaml
+    - name: ...
+      become: true
+      ansible.builtin.file:
+        path: /etc/foo.conf
+        owner: foo
+        group: foo
+        mode: '0644'
+    ```
+
+- directory
+    ```yaml
+    - name: ensure config path exists
+      become: true
+      ansible.builtin.file:
+        path: "{{ conf_path }}"
+        state: directory
+        mode: '0755'
+    ```
+
+- symlink
+    ```yaml
+    - name: ...
+      become: true
+      ansible.builtin.file:
+        src: ...
+        dest: ...
+        state: link
+        mode: '0777'
+    ```
+
+- remove
+    ```yaml
+    - name: ...
+      become: true
+      ansible.builtin.file:
+        paht: /etc/nginx/conf.d/default
+        state: absent
+    ```
+
+### git
+[official docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/git_module.html)
+
+```yaml
+- name: ...
+  git:
+    repo: "{{ repo_url }}"
+    dest: "{{ proj_path }}"
+    version: master
+    accept_hostkey: true
+```
+
+### template
+[official docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/template_module.html)
+
+```yaml
+- name: ...
+  template:
+    src: ...
+    dest: ...
+    mode: '0640'
+```

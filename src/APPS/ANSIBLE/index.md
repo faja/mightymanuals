@@ -12,9 +12,7 @@
 
 ---
 
-modules:
-
-- [20. debug](./20_modules_debug.md)
+- [20. modules](./20_modules.md)
 
 ---
 

@@ -24,6 +24,11 @@ ansible localhost -i 'localhost,' -m setup -e 'ansible_connection=local'
 ansible localhost -i 'localhost,' -m setup -c local
 ```
 
+interesting
+```sh
+ansible-playbook --list-tasks ${PLAYBOOK_FILE} # to nicely list all tasks in playbook
+```
+
 ### flags to ansible-playbook
 - `--syntax-check` - check if syntax is valid
 - `--list-tasks` - lists tasks which will be executed

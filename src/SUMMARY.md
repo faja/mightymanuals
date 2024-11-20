@@ -10,7 +10,7 @@
         - [variables](./APPS/ANSIBLE/05_variables.md)
         - [task options](./APPS/ANSIBLE/06_task_options.md)
         - [production setup](./APPS/ANSIBLE/11_production_setup.md)
-        - [modules: debug](./APPS/ANSIBLE/20_modules_debug.md)
+        - [modules](./APPS/ANSIBLE/20_modules.md)
         - [syntax: loop](./APPS/ANSIBLE/50_syntax_loop.md)
         - [syntax: templating trix](./APPS/ANSIBLE/51_templating_trix.md)
     - [atlantis](./APPS/ATLANTIS/index.md)

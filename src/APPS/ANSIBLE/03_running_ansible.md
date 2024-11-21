@@ -1,45 +1,32 @@
-to simply test if the "whole" config and connectivity works run
-```sh
-ansible --list  ${GROUP}|all
-ansible -m ping ${GROUP}|all
-
-# to gather/test facts from a single machine
-ansible -m ansible.builtin.setup ${MACHINE_NAME}
-
-# if something is wrong with a single machine
-ansible -m ping -vvvv ${MACHINE_NAME}
-```
-
 ## ansible-playbook
 usual execution:
 ```sh
 ansible-playbook -i inventory_file 00_first_playbook.yml
+
+# run playbook against single host (or group of hosts)
 ansible-playbook -i inventory_file 00_first_playbook.yml -l "${HOST_SELECTION_STRING}"
   # see inventory docs for selecting hosts
-```
-local run:
-```sh
+  # -l --limit
+
+# run playbook against localhost
 ansible-playbook -i 'localhost,' playbook1.yml
-ansible localhost -i 'localhost,' -m setup -e 'ansible_connection=local'
-ansible localhost -i 'localhost,' -m setup -c local
-```
 
-interesting
-```sh
+# check syntax
+ansible-playbook --syntax-check ${PLAYBOOK_FILE}
+
+# dry-run options: list and check
 ansible-playbook --list-tasks ${PLAYBOOK_FILE} # to nicely list all tasks in playbook
+ansible-playbook --list-hosts ${PLAYBOOK_FILE} # to nicely list all hosts playbook is going to run agains
+  # can be used to check if our host_selection_string is correct
+
+ansible-playbook --check ${PLAYBOOK_FILE}        # dry-run
+ansible-playbook --check --diff ${PLAYBOOK_FILE} # dry-run, and diff files
+
+# run part of the playbook
+--start-at-task - allows to start the playbook at specified task
+--tags          - run only tasks with specified tags
+--skip-tags     - skip specified tags
 ```
-
-### flags to ansible-playbook
-- `--syntax-check` - check if syntax is valid
-- `--list-tasks` - lists tasks which will be executed
-- `--list-hosts` - lists hosts on which the playbook will be executed
-- `-C` or `--check` - runs in check mode (dry run)
-- `--step` - ansible prompt you before executing each task, (y/n/c)
-- `-D` or `--diff` - shows diff of changed files
-- `--start-at-task` - allows to start the playbook at specified task
-- `-t` or `--tags` - run only tasks with specified tags
-- `--skip-tags` - skip specified tags
-
 
 ## ansible
 ```sh
@@ -52,7 +39,26 @@ ansible testserver -i inventory -m ping -vvvv
 ansible testserver -i inventory -m command -a uptime
 ansible testserver -i inventory -a uptime # same as above, be `command` module is a default
 ansible testserver -i inventory -b -m service -a "name=nginx state=restarted"
+
+# local run
+ansible localhost -i 'localhost,' -m setup -e 'ansible_connection=local'
+ansible localhost -i 'localhost,' -m setup -c local
+
+##
+# to simply test if the "whole" config and connectivity works run
+```sh
+ansible --list  ${GROUP}|all
+ansible -m ping ${GROUP}|all
+
+# to gather/test facts from a single machine
+ansible -m ansible.builtin.setup ${MACHINE_NAME}
+
+# if something is wrong with a single machine
+ansible -m ping -vvvv ${MACHINE_NAME}
 ```
+
+```
+
 ## ansible-inventory
 ```sh
 ansible-inventory -i inventory.yaml --graph

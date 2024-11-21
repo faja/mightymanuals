@@ -3,6 +3,8 @@
 MODULES:
 
 - [apt](#apt)
+- [assert](#assert)
+- [authorized_key](#authorized_key)
 - [command](#command)
 - [debug](#debug)
 - [file](#file)
@@ -26,6 +28,47 @@ MODULES:
       - ...
       - ...
 ```
+
+### assert
+[official docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/assert_module.html)
+
+The `assert` module will fail with an error if a specified condition is not met
+
+Please note code in an assert statement is Jinja not Python.
+
+- single
+    ```yaml
+    - name: ...
+      ansible.builtin.assert:
+        that: single_statement_that_returns_bool
+    ```
+
+- list
+    ```yaml
+    - name: ...
+      ansible.builtin.assert:
+        that:
+          - single_statement_that_returns_bool
+          - another_that returns_bool
+          # both must be TURE
+    ```
+
+- common case to check output from previous task
+    ```yaml
+    - name: stat  /boot/grub
+      stat:
+        path: /boot/grub
+      register: st
+
+    - name: assert that /boot/grub is a directory
+      assert:
+        that: st.stat.isdir
+    ```
+
+
+
+### authorized_key
+todo
 
 ### command
 

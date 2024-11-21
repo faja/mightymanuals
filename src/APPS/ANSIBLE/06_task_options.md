@@ -44,3 +44,13 @@ with, this set to true, it will continue
     ```
 
 - `notify`
+
+- `remote_user`
+equivalent of `ansible_user` from inventory - it tells which user ot use to ssh
+
+- `tags`
+add a tag to task (or role, block, play)
+    ```yaml
+    - name: ...
+      tags:
+    ```

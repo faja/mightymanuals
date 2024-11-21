@@ -11,3 +11,39 @@
     ```sh
     ssh-keygen -y -f ~/.ssh/id_myawesomenewkey_2024
     ```
+
+# ssh-keyscan
+```
+ssh-keygen -R ${SOME_HOSTNAME_FROM_KNOWN_HOSTS}
+ssh-keyscan ${SOME_HOSTNAME_FROM_KNOWN_HOSTS} >> ~/.ssh/known_hosts
+```
+
+# ~/.ssh/config
+
+### bastion jump
+
+my
+```
+Host bastion
+  User ec2-user
+  ForwardAgent yes
+
+Host 172*
+  User ec2-user
+  ForwardAgent yes
+  ProxyCommand ssh ec2-user@bastion -W %h:%p
+```
+
+from ansible book
+```
+Host bastion
+  Hostname X.X.X.X
+  User ...
+  # basically bastion options
+
+Host *.private.cloud
+  User ...
+  CheckHostIP no
+  StrictHostKeyChecking no
+  ProxyJump bastion
+```

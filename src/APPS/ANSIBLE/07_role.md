@@ -44,72 +44,45 @@ roles_path = galaxy_roles:roles
     └── main.yml
 ```
 
-==============================
-=== II.   INSIDE_yml_FILES ===
-==============================
-
-tasks/main.yml:
+### include_tasks
+In roles, a common approach is to have `tasks/main.yaml` that includes other
+files:
+```yaml
 ---
-- name: ...
-  command: ...
+- include_tasks: php.yaml
+- include_tasks: extensions.yaml
+```
+just bear in mind `include_tasks` is just another module ~> [docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/include_tasks_module.html)
 
-- name: ...
-  command: ...
 
-- name: create nginx config
-  template: ...
-  notify: restart nginx
+### dependecies and wrapper roles
+In `meta/main.yaml` you can specify list of dependencies,
+that will be included automagically,
 
-handlers/main.yml:
+
+
+```yaml
 ---
-- name: restart nginx
-  service: name=nginx state=restarted
+dependencies:
+  - role1
+  - someother.role
+  - third.role42
+```
 
+you can also provide some variables for them, such pattern is called
+**WRAPPER ROLES**:
 
-
-
-a nasz glowny playbook wyglada tak:
+```yaml
 ---
-- hosts: all
-  roles:
-    - role1
-    - role2
-
-=====================
-=== III.  INCLUDE ===
-=====================
-
-common zachowaniem jest by w mail.yml byly tylko include statements
-a caly kod byl w oddzielnych plikach
-
-tasks/main.yml
-  ---
-  - include: php.yml
-  - include: extensions.yml
-
-tasks/php.yml
-  ---
-  ...<some_code>...
-
-tasks/extensions.yml
-  ---
-  ...<some_code>...
-
-==========================================
-=== IV. DEPENDENCIES_AND_WRAPPER_ROLES ===
-==========================================
-w meta/main.yml mozemy zdefiniowac nasze dependecies, przez co
-wszystkie beda zinkludowane i uruchomione automatycznie przed nasza rola
-meta/main.yml
-  dependencies:
-    - role1
-    - someother.role
-    - third.role42
-
-
-w dependencies mozna rowniez, zdefiniowac zmienne, przez co mozna
-fajnie tworzyc takie WRAPPERS_ROLES
-  dependencies:
-    - role: role1
-      some_variable: value
-      some_variable2: value2
+dependencies:
+  - role: common
+    vars:
+      some_parameter: 3
+  - role: apache
+    vars:
+      apache_port: 80
+  - role: postgres
+    vars:
+      dbname: blarg
+      other_parameter: 12
+```

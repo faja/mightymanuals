@@ -23,6 +23,8 @@
     # remote_user = dedicateduser
     # private_key_file = /path/to/id_rsa
 
+    # roles_path = galaxy_roles:roles
+
     ## privilege_escalation - quite interesting section, but I'd leave it default
     # [privilege_escalation]
     # become = true

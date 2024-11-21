@@ -9,6 +9,7 @@
         - [playbook](./APPS/ANSIBLE/04_playbook.md)
         - [variables](./APPS/ANSIBLE/05_variables.md)
         - [task options](./APPS/ANSIBLE/06_task_options.md)
+        - [role](./APPS/ANSIBLE/07_role.md)
         - [debugger](./APPS/ANSIBLE/09_debugger.md)
         - [production setup](./APPS/ANSIBLE/11_production_setup.md)
         - [modules](./APPS/ANSIBLE/20_modules.md)

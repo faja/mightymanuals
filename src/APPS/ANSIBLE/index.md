@@ -5,6 +5,7 @@
 - [04. playbook](./04_playbook.md)
 - [05. variables](./05_variables.md)
 - [06. task options](./06_task_options.md)
+- [07. role](./07_role.md)
 - [09. debugger](./09_debugger.md)
 
 ---

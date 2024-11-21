@@ -17,8 +17,21 @@
   handlers:
     - name: ...
 
+  # with tasks
   tasks:
     - name: ...
+
+  # with roles
+  roles:
+    - role: ...
+
+  # tasks to execute first
+  pre_tasks:
+    - name:
+
+  # tasks to execute at the end
+  post_tasks:
+    - name:
 ```
 
 ### playbook config properties

@@ -22,6 +22,11 @@ roles_path = galaxy_roles:roles
 ```
 
 ### basic structure of a role
+to create a basic structure run:
+```sh
+ansible-galaxy role init ${NAME_OF_THE_ROLE}
+```
+
 ```
 .
 ├── defaults/

@@ -22,3 +22,5 @@ language syntax:
 
 - [50. loop](./50_syntax_loop.md)
 - [51. templating trix](./51_templating_trix.md)
+- [52. filters](./52_syntax_filters.md)
+- [53. lookups](./53_syntax_lookups.md)

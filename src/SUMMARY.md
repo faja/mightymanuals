@@ -15,6 +15,8 @@
         - [modules](./APPS/ANSIBLE/20_modules.md)
         - [syntax: loop](./APPS/ANSIBLE/50_syntax_loop.md)
         - [syntax: templating trix](./APPS/ANSIBLE/51_templating_trix.md)
+        - [syntax: filters](./APPS/ANSIBLE/52_syntax_filters.md)
+        - [syntax: lookups](./APPS/ANSIBLE/53_syntax_lookups.md)
     - [atlantis](./APPS/ATLANTIS/index.md)
     - [cadvisor](./APPS/CADVISOR/index.md)
     - [consul](./APPS/CONSUL/index.md)

@@ -7,6 +7,7 @@ MODULES:
 - [authorized_key](#authorized_key)
 - [command](#command)
 - [debug](#debug)
+- [fail](#fail)
 - [file](#file)
 - [git](#git)
 - [template](#template)
@@ -112,6 +113,29 @@ todo
     - name: Show a debug message
       debug:
         msg: "The debug module will print a message: neat, eh?"
+    ```
+
+### fail
+[official docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/fail_module.html)
+
+- causes ansible to fail the run, common use case:
+    ```yaml
+    - name: some task, that fail but we set it to ignore errors
+      ...
+      register: result
+      failed_when: false # or even ignore_errors
+
+    - debug: var=result
+
+    - fail:
+    ```
+
+- fail with message:
+    ```yaml
+    - name: Example using fail and when together
+      ansible.builtin.fail:
+        msg: The system may not be provisioned according to the CMDB status.
+      when: cmdb_status != "to-be-staged"
     ```
 
 ### file

@@ -53,4 +53,8 @@ these can be used with `register` to check state of the previous task result
 
 # custom filters
 - you can create custom filters
-- ansible will look for custom filters in `filter_plugins` directory
+- ansible will look for custom filters in
+  - `filter_plugins` in your playbook directory
+  - `~/.ansible/plugins/filter`
+  - `/usr/share/ansible/plugins/filter`
+  - location specified by `ANSIBLE_FILTER_PLUGINS`

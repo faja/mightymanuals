@@ -16,8 +16,11 @@ Watch a directory and rerun a command when certain files change
         ```
 
 - quick usage
-```
+```sh
 reflex -r "\.txt$" echo {}
 reflex -r "\.jsonnet$" -- bash -c "render {} && tf-init && tf-apply"
 reflex -r "\.yaml$" helm tempalte xxx .
+
+# watch single file
+reflex -g src/somefile.yaml somecommand
 ```

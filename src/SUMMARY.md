@@ -30,6 +30,7 @@
         - [dockerfile](./APPS/DOCKER/DOCKERFILE/index.md)
             - [alpine](./APPS/DOCKER/DOCKERFILE/ALPINE/index.md)
             - [debian](./APPS/DOCKER/DOCKERFILE/DEBIAN/index.md)
+            - [python](./APPS/DOCKER/DOCKERFILE/PYTHON/index.md)
             - [wolfi](./APPS/DOCKER/DOCKERFILE/WOLFI/index.md)
         - [compose](./APPS/DOCKER/COMPOSE/index.md)
             - [basic file, all elements](./APPS/DOCKER/COMPOSE/01.basic.all.md)

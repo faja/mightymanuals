@@ -4,6 +4,20 @@
 
 # below is all todo
 
+- deubugging "slim" containers
+    ```sh
+    # net and pid
+    docker run --rm -it \
+      --net container:CONTAINER_NAME \
+      --pid container:CONTAINER_NAME \
+      alpine:3 sh
+
+    # rootfs
+    CPID=$(docker inspect -f '{{ .State.Pid }}' CONTAINER_NAME)
+    PPID=$(awk '{ print $4 }' /proc/${CPID}/stat )
+    ll /proc/${PPID}/root/
+    ```
+
 ---
 ```sh
 docker container inspect xyz | jq '.[] | .Config.Labels'

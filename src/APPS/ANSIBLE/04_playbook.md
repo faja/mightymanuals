@@ -13,6 +13,8 @@
   gather_facts: true
   vars: ...
   vars_files: ...
+  serial: ...
+  max_fail_percentage: ...
 
   handlers:
     - name: ...
@@ -41,3 +43,13 @@
 - `vars` - playbook scope variables
 - `vars_files` - list of playbook scoped variable files
 - `gather_facts` - to gather facts or not
+- `serial` - allows to run specific number of hosts at the same time
+    ```yaml
+    serial: 1    # one at a time
+    serial: 50%  # half now, half after
+    serial:      # start with 1 host, then go for 30%
+      - 1
+      - 30%
+    ```
+- `max_fail_percentage` - allows to stop playbook if there are errors, setting
+    to `0` fails playbook if any hosts fail

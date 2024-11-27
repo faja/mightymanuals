@@ -10,17 +10,38 @@
     - pkg2
 ```
 
-## loop_control.loop_var
+other `with_` lookup plugins:
+```
+with_items            - predefined list of items
+with_lines            - execute a command and iterates over output lines
+with_fileglob
+with_first_found
+with_dictflattened
+with_indexed_items
+with_nested
+with_random_choice
+with_sequence
+with_subelements
+with_together
+with_inventory_hostnames
+```
+
+## loop_control.loop_var and index_var
 If we want to use other name than `item` in our loop, for example we have to nested loops and we want to avoid clashing, we can use `loop_control.loop_var`
+Also, just FYI, `loop` keyword is equivalent to `with_items`
 
 ```yaml
-with_items:
-  - name: ruby_19
-    chruby: system
-  - name: ruby_22
-    chruby: ruby-2.2
-loop_control:
-  loop_var: other_item_name
+tasks:
+  - name: test task
+    ansible.builtin.debug:
+      msg: "index: {{ index }}, item: {{ i }}"
+    loop:
+      - xxx
+      - yyy
+      - zzz
+    loop_control:
+      loop_var: i
+      index_var: index
 ```
 
 ## loop_control.label

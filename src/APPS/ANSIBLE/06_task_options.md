@@ -4,9 +4,11 @@ task OPTIONS/PROPERTIES/CLAUSES:
 - [become](#become-become_user)
 - [become_user](#become-and-become_user)
 - [changed_when](#changed_when)
+- [delegate_to](#delegate_to)
 - [environment](#environment)
 - [failed_when](#failed_when)
 - [ignore_errors](#ignore_errors)
+- [no_log](#no_log)
 - [notify](#notify)
 - [register](#register)
 - [remote_user](#remote_user)
@@ -27,6 +29,17 @@ task OPTIONS/PROPERTIES/CLAUSES:
 ```yaml
 - name: ...
   changed_when: condition_that_evaluates_to_BOOLEAN
+```
+
+### `delegate_to`
+run a task on different/specific host,
+one use case is to run something on localhost/control machine, instead of remote
+```yaml
+- name: ...
+  delegate_to: localhost
+  connection: local
+  become: false
+  ...
 ```
 
 ### `environment`
@@ -55,6 +68,13 @@ with, this set to true, it will continue
   ignore_errors: true
 
 - debug: var=result
+```
+
+### `no_log`
+```yaml
+- name: useful for secrets
+  debug: there will be no output
+  no_log: true
 ```
 
 ### `notify`

@@ -8,6 +8,18 @@ vagrant
 virtualbox
 virtualbox-host-modules-arch
 
+---
+
+# networking
+
+- static ip
+    ```sh
+    ip a add 192.168.1.2/24 dev enp0s20f0u5u2u4
+    ip link set dev enp0s20f0u5u2u4 up
+
+    ```
+
+
 
 ---
 

@@ -13,6 +13,7 @@
 - [11. production setup](./11_production_setup.md)
 - [12. ansible-vault](./12_ansible_vault.md)
 - [13. sops](./13_sops.md)
+- [14. docker](./14_docker.md)
 
 ---
 
@@ -28,3 +29,4 @@ language syntax:
 - [53. lookups](./53_syntax_lookups.md)
 - [54. includes and imports](./54_syntax_include_import.md)
 - [55. block](./55_syntax_block.md)
+- [56. handlers](./56_syntax_handlers.md)

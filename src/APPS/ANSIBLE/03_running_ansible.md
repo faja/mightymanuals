@@ -23,6 +23,7 @@ ansible-playbook --check ${PLAYBOOK_FILE}        # dry-run
 ansible-playbook --check --diff ${PLAYBOOK_FILE} # dry-run, and diff files
 
 # run part of the playbook
+--step          - allows to selectively skip a tasks
 --start-at-task - allows to start the playbook at specified task
 --tags          - run only tasks with specified tags
 --skip-tags     - skip specified tags

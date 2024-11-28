@@ -15,6 +15,7 @@
   vars_files: ...
   serial: ...
   max_fail_percentage: ...
+  strategy: ...
 
   handlers:
     - name: ...
@@ -53,3 +54,8 @@
     ```
 - `max_fail_percentage` - allows to stop playbook if there are errors, setting
     to `0` fails playbook if any hosts fail
+- `strategy` - by default, playbook runs task by task on all machines, it starts
+    with 1st task, waits for all the hosts, then run next one, this default behaviour/strategy
+    is called `linear`, to NOT wait but just change stratrgy to `free`, see
+    [docs](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_strategies.html#selecting-a-strategy)
+    for details

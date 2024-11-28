@@ -12,6 +12,7 @@ task OPTIONS/PROPERTIES/CLAUSES:
 - [notify](#notify)
 - [register](#register)
 - [remote_user](#remote_user)
+- [run_once](#run_once)
 - [tags](#tags)
 - [when](#when)
 
@@ -99,6 +100,22 @@ add a tag to task (or role, block, play)
 - name: ...
   tags:
 ```
+
+### `run_once`
+run task only once no matter how many hosts it is scheduled for
+```yaml
+- name: ...
+  command: /opt/run_migrations
+  run_once: true
+```
+comman practise is to execute such task on control machine, eg:
+```yaml
+- name: ...
+  command: /my_custom_command
+  run_once: true
+  delegate_to: localhost
+```
+
 
 ### `when`
 allows execute task conditionally

@@ -10,6 +10,7 @@ MODULES:
 - [fail](#fail)
 - [file](#file)
 - [git](#git)
+- [meta](#meta)
 - [template](#template)
 
 ---
@@ -192,6 +193,24 @@ todo
     dest: "{{ proj_path }}"
     version: master
     accept_hostkey: true
+```
+
+### meta
+[official docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/meta_module.html)
+
+meta module is used to perform various actions playbook related, like flush handlers,
+end playbook, etc..
+```yaml
+- name: ...
+  meta: flush_handlers
+```
+
+actions:
+```
+- flush_handlers
+- refresh_inventory
+- end_host
+- end_play
 ```
 
 ### template

@@ -2,10 +2,8 @@
 
 ```sh
 yq -r '. | .apiVersion + " " + .kind'  # print two fields at once
-```
-
-```sh
 jq -S . some.json  # sort keys !!!
+jq -e -r ...       # -e fails if item is not found
 ```
 
 

@@ -7,6 +7,7 @@
 - [06. task options](./06_task_options.md)
 - [07. role](./07_role.md)
 - [09. debugger](./09_debugger.md)
+- [10. collections](./10_collections.md)
 
 ---
 
@@ -14,6 +15,7 @@
 - [12. ansible-vault](./12_ansible_vault.md)
 - [13. sops](./13_sops.md)
 - [14. docker](./14_docker.md)
+- [15. callback plug-ins](./14_callback_plugins.md)
 
 ---
 

@@ -22,7 +22,7 @@ prod:
   hosts:
     192.168.59.102:
 
-xxx:
+xxx: # group xx will contain all hosts from web
   children:
     web:
 # }}} -------------------------------------------------------------------------#
@@ -48,6 +48,15 @@ vms:
       ansible_host: 192.168.59.102
   vars: # group level variables
     ansible_user: my_server_user
+# }}} -------------------------------------------------------------------------#
+
+# group aliasing {{{ ---------------------------------------------------------------#
+# when using dynamic inventory we might not like "long" group names
+# like `tag_environment_production` we can use `children` feature
+# to create an alias
+prod:
+  children:
+    tag_environment_production:
 # }}} -------------------------------------------------------------------------#
 ```
 

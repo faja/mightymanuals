@@ -12,6 +12,7 @@ MODULES:
 - [git](#git)
 - [meta](#meta)
 - [template](#template)
+- [wait_for](#wait_for)
 
 ---
 
@@ -223,3 +224,22 @@ actions:
     dest: ...
     mode: '0640'
 ```
+
+### wait_for
+[official docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/wait_for_module.html)
+- simple SLEEP
+    ```yaml
+    - name: Sleep for 300 seconds and continue with play
+      ansible.builtin.wait_for:
+        timeout: 300
+      delegate_to: localhost
+    ```
+- check network connection
+    ```yaml
+    - name: ...
+      wait_for:
+        host: ...
+        port: 22
+        search_regex: OpenSSH
+        delay: 60
+    ```

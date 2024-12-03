@@ -1,4 +1,5 @@
 # COMMANDS
+- [age](./AGE/index.md) `(tags=encryption,secrets,security)`
 - [argdist](./ARGDIST/index.md) `(tags=bpf,performance)`
 - [awk](./AWK/index.md) `(tags=text)`
 - [biolatency](./BIOLATENCY/index.md) `(tags=bpf,performance)`
@@ -35,6 +36,7 @@
 - [runqlen](./RUNQLEN/index.md) `(tags=bpf,performance)`
 - [runqslower](./RUNQSLOWER/index.md) `(tags=bpf,performance)`
 - [sar](./SAR/index.md) `(tags=performance)`
+- [sops](./SOPS/index.md) `(tags=encryption,secrets,security)`
 - [ssh](./SSH/index.md) `(tags=ssh,security)`
 - [stackcount](./STACKCOUNT/index.md) `(tags=bpf,performance)`
 - [tcpaccept](./TCPACCEPT/index.md) `(tags=bpf,erformance)`

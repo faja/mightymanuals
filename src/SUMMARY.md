@@ -140,6 +140,7 @@
 ---
 
 - [COMMANDS](./COMMANDS/index.md)
+    - [age](./COMMANDS/AGE/index.md)
     - [argdist](./COMMANDS/ARGDIST/index.md)
     - [awk](./COMMANDS/AWK/index.md)
     - [biolatency](./COMMANDS/BIOLATENCY/index.md)
@@ -176,6 +177,7 @@
     - [runqlen](./COMMANDS/RUNQLEN/index.md)
     - [runqslower](./COMMANDS/RUNQSLOWER/index.md)
     - [sar](./COMMANDS/SAR/index.md)
+    - [sops](./COMMANDS/SOPS/index.md)
     - [ssh](./COMMANDS/SSH/index.md)
     - [stackcount](./COMMANDS/STACKCOUNT/index.md)
     - [tcpaccept](./COMMANDS/TCPACCEPT/index.md)

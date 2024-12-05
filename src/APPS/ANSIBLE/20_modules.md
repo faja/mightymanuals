@@ -217,13 +217,22 @@ actions:
 ### template
 [official docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/template_module.html)
 
-```yaml
-- name: ...
-  template:
-    src: ...
-    dest: ...
-    mode: '0640'
-```
+- basic
+    ```yaml
+    - name: ...
+      template:
+        src: ...
+        dest: ...
+        mode: '0640'
+    ```
+
+- validate sudoers
+    ```yaml
+    - name: ...
+      template:
+        ...
+        validdate: 'bash -c "cat /etc/sudoers /etc/sudoers.d* %s | visudo -cf-"'
+    ```
 
 ### wait_for
 [official docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/wait_for_module.html)

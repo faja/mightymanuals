@@ -16,6 +16,7 @@
 - [13. sops](./13_sops.md)
 - [14. docker](./14_docker.md)
 - [15. callback plug-ins](./14_callback_plugins.md)
+- [19. ansible ssh tweaks](./19_ansible_ssh_tweaks.md)
 
 ---
 
@@ -32,3 +33,4 @@ language syntax:
 - [54. includes and imports](./54_syntax_include_import.md)
 - [55. block](./55_syntax_block.md)
 - [56. handlers](./56_syntax_handlers.md)
+- [57. async](./57_syntax_async.md)

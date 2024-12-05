@@ -12,13 +12,18 @@
     nocows = true
     inventory = ./inventory.yaml
     stdout_callback = yaml
+    gathering = explicit # I kinda like it, it requires for you to explicitly,
+                         # set `gather_facts: true` if you wanna do it
 
     callbacks_enabled=ansible.posix.profile_tasks
     #callbacks_enabled=ansible.posix.profile_tasks,community.general.log_plays
 
-    # gathering = smart # worth considering, default: implicit
-    # forks = 100       # worth considering, default: 5
-    # pipelining = true # worth considering, default: false
+    [connection]
+    pipelining = true # to make it work, remote host must NOT have `requiretty`
+                      # in /etc/sudoers, which is not set by default, so, all good
+                      # in most cases
+    forks = 10 # default: 5, worth considering something even bigger for
+               # lots of servers, like 50
 
 
     ## connection related, custom user, port etc...

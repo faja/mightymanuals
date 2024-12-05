@@ -1,6 +1,7 @@
 ---
 task OPTIONS/PROPERTIES/CLAUSES:
 
+- [async](#async)
 - [become](#become-become_user)
 - [become_user](#become-and-become_user)
 - [changed_when](#changed_when)
@@ -17,6 +18,8 @@ task OPTIONS/PROPERTIES/CLAUSES:
 - [when](#when)
 
 ---
+### `async`
+see [async](./57_syntax_async.md)
 
 ### `become` and `become_user`
 ```yaml

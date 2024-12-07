@@ -1,0 +1,19 @@
+---
+
+### misc
+#### how to vnc to a vm
+```sh
+
+# ssh to host were VM is runing
+ps auxww | grep ${VM_NAME} | grep --color vnc
+# should print something like -vnc 0.0.0.0:0
+# important part is :${NUMBER} as it mapps to port vnc for this VM listens on
+# :0 = 5900
+# :1 = 5901
+# ..etc
+
+# establish ssh tunnel to the right port, eg:
+ssh -L 5901:127.0.0.1:5901 ${HOST_NAME}
+
+# open vnciewer and connect to 127.0.0.1:5901
+```

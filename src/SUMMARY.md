@@ -91,6 +91,7 @@
         - [haproxy as an ingress full example](./APPS/HAPROXY/haproxy_as_an_ingress/index.md)
         - [haproxy config play](./APPS/HAPROXY/haproxy_config_play/index.md)
     - [helm](./APPS/HELM/index.md)
+    - [libvirt](./APPS/LIBVIRT/index.md)
     - [loki](./APPS/LOKI/index.md)
     - [mdbook](./APPS/MDBOOK/index.md)
     - [nginx](./APPS/NGINX/index.md)

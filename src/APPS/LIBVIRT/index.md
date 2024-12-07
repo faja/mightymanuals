@@ -1,5 +1,21 @@
 ---
 
+### virsh
+```sh
+virsh list --all
+DOMAIN_NAME=...
+
+# edit a VM config
+virsh edit ${DOMAIN_NAME}
+
+# gracefully stop and remove
+virsh shutdown ${DOMAIN_NAME}
+virsh undefined ${DOMAIN_NAME} --remove-all-storage
+
+# force remove
+virsh destroy ${DOMAIN_NAME}
+```
+
 ### misc
 #### how to vnc to a vm
 ```sh

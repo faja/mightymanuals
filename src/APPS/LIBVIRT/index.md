@@ -2,6 +2,11 @@
 
 ### virsh
 ```sh
+# getting help #################################################################
+virsh --help | grep ...
+virsh ${COMMAND} --help
+
+# vm ###########################################################################
 virsh list --all
 DOMAIN_NAME=...
 
@@ -14,6 +19,10 @@ virsh undefine ${DOMAIN_NAME} --remove-all-storage
 
 # force remove
 virsh destroy ${DOMAIN_NAME}
+
+# volumes ######################################################################
+virsh pool-list
+virsh vol-list --pool ${POOL_NAME}
 ```
 
 ### misc

@@ -10,7 +10,7 @@ virsh edit ${DOMAIN_NAME}
 
 # gracefully stop and remove
 virsh shutdown ${DOMAIN_NAME}
-virsh undefined ${DOMAIN_NAME} --remove-all-storage
+virsh undefine ${DOMAIN_NAME} --remove-all-storage
 
 # force remove
 virsh destroy ${DOMAIN_NAME}

@@ -23,6 +23,8 @@ virsh destroy ${DOMAIN_NAME}
 # volumes ######################################################################
 virsh pool-list
 virsh vol-list --pool ${POOL_NAME}
+virsh vol-clone --pool ${POOL_NAME} ${SRC_IMAGE} ${DST_IMAGE}
+  # i think it works for RAW type only
 ```
 
 ### misc

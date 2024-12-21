@@ -1,5 +1,6 @@
 - [BASH (shell scripting)](./BASH/index.md)
 - [BPFTRACE](./BPFTRACE/index.md)
+- [GO](./GO/index.md)
 - [MD](./MD/index.md)
 - [RUST](./RUST/index.md)
 - [YAML](./YAML/index.md)

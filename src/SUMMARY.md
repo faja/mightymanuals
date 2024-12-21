@@ -251,6 +251,8 @@
         - [snippets](./PROGRAMMING/BASH/snippets.md)
         - [my awesome sh script template](./PROGRAMMING/BASH/template.md)
     - [BPFTRACE](./PROGRAMMING/BPFTRACE/index.md)
+    - [GO](./PROGRAMMING/GO/index.md)
+        - [PERFORMANCE](./PROGRAMMING/GO/PERFORMANCE/index.md)
     - [MD](./PROGRAMMING/MD/index.md)
     - [RUST](./PROGRAMMING/RUST/index.md)
         - [start here](./PROGRAMMING/RUST/START_HERE/index.md)

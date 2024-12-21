@@ -26,11 +26,11 @@
 
 # general
 ```sh
-GODEBUG= ./your_go_binary
+GODEBUG=schedtrace=1000 ./your_go_binary
 # this will cause to print scheduling info to STDERR every 1000ms
 
+GODEBUG=gctrace=1 ./your_go_binary
 # this will cause to print info about GC every thim GC happens
-GODEBUG=... ./your_go_binary
 ```
 
 
@@ -51,11 +51,22 @@ go tool pprof -alloc_space m.out
 #    - cumulative - is the sum of all alocation that was caused by that line
 #                   usually it happens not directly but down on the stack
 #                   eg, we are calling some function that allocates a lot
+
+go tool pprof -http :3000 -alloc_space m.out
+# opens web ui for browshing the profile
 ```
 
 # cpu profiling (benchmark) (macro optimisation)
 - create benchmark for your function
 - run benchmark with memory profiling flags
 ```sh
-go test ...
+go test -run none -bench . -benchtime 3s -cpuprofile c.out
+  # -run none          - do not run any tests just benchmark stuff
+  # -cpuprofile c.out  - create cpu profiling
+
+go tool pprof c.out
+  (pprof) list yourAwesomeFunctionNameYouWannaProfile
+
+go tool pprof -http :3000 c.out
+# opens web ui for browshing the profile
 ```

@@ -2,6 +2,8 @@
 
 # Performance
 
+- [go build in TRACING tool](./tracing.md)
+
 ---
 
 **Four** things that causing pain in terms of performance

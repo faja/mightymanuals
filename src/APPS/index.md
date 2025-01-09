@@ -21,6 +21,7 @@
 - [promtail](./PROMTAIL/index.md)
 - [redis](./REDIS/index.md)
 - [skopeo](./SKOPEO/index.md)
+- [task](./TASK/index.md)
 - [terraform](./TERRAFORM/index.md)
 - [tmux](./TMUX/index.md)
 - [vagrant](./VAGRANT/index.md)

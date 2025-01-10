@@ -20,17 +20,27 @@ MODULES:
 
 [official docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_module.html)
 
-```yaml
-- name: ...
-  become: true
-  apt:
-    update_cache: true
-    cache_valid_time: 900 # 15mins
-    pkg:
-      - curl
-      - ...
-      - ...
-```
+- install some packages
+    ```yaml
+    - name: ...
+      become: true
+      apt:
+        update_cache: true
+        cache_valid_time: 900 # 15mins
+        pkg:
+          - curl
+          - ...
+          - ...
+    ```
+
+- force update apt cache
+    ```yaml
+    - name: Update APT cache
+      become: true
+      when: reg_docker_apt_source.changed
+      ansible.builtin.apt:
+          update_cache: yes
+    ```
 
 ### assert
 [official docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/assert_module.html)

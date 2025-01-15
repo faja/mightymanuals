@@ -3,14 +3,20 @@
 TLDR:
 - `include` keywoard is deprecated, please use `(include|import)_(task|role)`
 - `include_(task|role)` aka `includes` allow to dynamically includes other tasks
-    usually THIS IS THE ONE WE WANNA USE
 - `import_(task|role)` aka `imports` statically puts content of a different task
     to the current one
+- if you don't know which one to pick, you most likely wanna use `include_`
 
 - when we use `include_` task level keywords like loops etc, apply to the `include_`
     itself!
 - when we use `import_` task level keywords like loops etc, apply to all tasks
     in the imported file!
+- note: `include_` will cause 1 extra task to appear, the include:
+    ```yaml
+    TASK [${role_name} : include_tasks] ...
+    ```
+- note: `import_` skips the above, bc, the content is literally copy-pasted
+
 
 ---
 

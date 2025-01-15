@@ -15,17 +15,36 @@ volumes:
     external:
       name: external-volume-created-outside-compose
 
-# https://docs.docker.com/compose/compose-file/05-services/
+# https://docs.docker.com/reference/compose-file/services/
 services:
   nginx:
+    container_name: my_custom_name
 
     image: nginx:1.26
     entrypoint:
       - sleep
     command:
       - infinity
+    restart: unless-stopped
 
-    # https://docs.docker.com/compose/compose-file/05-services/#volumes
+    privileged: false
+
+    # i do this for promtail see promtail for more details about it
+    logging:
+      options:
+        tag: "{{ .Name }}"
+        labels: stack
+
+    # https://docs.docker.com/reference/compose-file/services/#ports
+    ports:
+      # long version:
+      # - HOST_IP:HOST_PORT:CONTAINER_PORT/PROTOCOL
+      # - 127.0.0.1:9090:8080/tcp
+      # short version:
+      # - HOST_PORT:CONTAINER_PORT
+      - 9090:8080
+
+    # https://docs.docker.com/reference/compose-file/services/#volumes
     volumes:
       - type: volume
         source: backup-volume
@@ -38,3 +57,6 @@ services:
         read_only: true
       # short version of it would be:
       # - ./path/in/local/filesystem:/data:ro
+
+    labels:
+      stack: whatever

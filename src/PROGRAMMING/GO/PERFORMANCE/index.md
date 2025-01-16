@@ -7,8 +7,8 @@
 ---
 
 **Four** things that causing pain in terms of performance
-1. **IO**: latency on the **outside**: network, disk, device, etc., **inside**: mutexes, synchronisation
-1. **MEMORY**: allocations on the heap, memory profiles are going to help us here
+1. **exteranl latency**, aka **IO**: latency on the **outside**: network, disk, device, etc., **inside**: mutexes, synchronisation
+1. **internal latent**, aka **MEMORY**: allocations on the heap, memory profiles are going to help us here
 1. How data is being accessed and how we iterate over that data
 1. **CPU**: algorithm efficiency, cpu profiles are going to help us here
 

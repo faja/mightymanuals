@@ -7,6 +7,10 @@
 ---
 version: '3'
 
+# global variables
+vars:
+  SOME_GLOBAL_VAR: Hello from Taskfile!
+
 tasks:
   default:
     cmds:
@@ -19,4 +23,13 @@ tasks:
     desc: ...
     cmds:
       - ...
+
+  task3_with_variable:
+    desc: ...
+    vars:
+      GREETING: '{{.GREETING | default "hello default value"}}'
+    cmds:
+      - echo {{.GREETING}}  # task task3_with_variable GREETING="hello from cli"
+    requires:
+      vars: [GREETING]
 ```

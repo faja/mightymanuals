@@ -10,8 +10,10 @@ MODULES:
 - [fail](#fail)
 - [file](#file)
 - [git](#git)
+- [group](#group)
 - [meta](#meta)
 - [template](#template)
+- [user](#user)
 - [wait_for](#wait_for)
 
 ---
@@ -206,6 +208,19 @@ todo
     accept_hostkey: true
 ```
 
+### group
+[official docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/group_module.html)
+
+```yaml
+- name: Create prometheus group
+  become: true
+  ansible.builtin.group:
+    name: prometheus
+    state: present
+    gid: "{{ prometheus_gid }}"
+    system: true
+```
+
 ### meta
 [official docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/meta_module.html)
 
@@ -242,6 +257,24 @@ actions:
       template:
         ...
         validdate: 'bash -c "cat /etc/sudoers /etc/sudoers.d* %s | visudo -cf-"'
+    ```
+
+### user
+[official docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/user_module.html)
+
+- system user with nologin
+    ```yaml
+    - name: Create prometheus user
+      become: true
+      ansible.builtin.user:
+        name: prometheus
+        state: present
+        uid: "{{ prometheus_uid }}"
+        group: prometheus
+        create_home: false
+        home: /var/lib/prometheus
+        shell: /user/sbin/nologin
+        system: true
     ```
 
 ### wait_for

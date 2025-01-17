@@ -23,4 +23,7 @@ reflex -r "\.yaml$" helm tempalte xxx .
 
 # watch single file
 reflex -g src/somefile.yaml somecommand
+
+# watch directory
+reflex -r '^roles/prometheus' -- sh -c 'cd 01_play_debian12 && task at TAG=prometheus'
 ```

@@ -9,8 +9,9 @@ TLDR:
 
 - when we use `include_` task level keywords like loops etc, apply to the `include_`
     itself!
-- when we use `import_` task level keywords like loops etc, apply to all tasks
+- when we use `import_` task level keywords like vars, become etc, apply to all tasks
     in the imported file!
+- note! you **CANNOT** use **loops** with `import_` only with `include_`
 - note: `include_` will cause 1 extra task to appear, the include:
     ```yaml
     TASK [${role_name} : include_tasks] ...

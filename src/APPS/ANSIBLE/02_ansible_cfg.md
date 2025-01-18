@@ -15,6 +15,10 @@
     gathering = explicit # I kinda like it, it requires for you to explicitly,
                          # set `gather_facts: true` if you wanna do it
 
+    hash_behaviour: merge # default: replace
+                          # this one is tricky, can cause a lot of damage
+                          # be careful with it
+
     callbacks_enabled=ansible.posix.profile_tasks
     #callbacks_enabled=ansible.posix.profile_tasks,community.general.log_plays
 

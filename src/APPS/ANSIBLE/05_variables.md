@@ -1,6 +1,7 @@
 ---
 
 - [variables declaration and precedence](#variables-declaration-locations-and-precedence-order)
+- [hash variables merge strategy](#hash-variables-merge-strategy)
 - [built-in variables](#built-in-variables)
 - [facts](#facts)
 - [include_vars module](#include_vars-module)
@@ -185,6 +186,18 @@
     ansible-playbook playbookname.yaml -e @my_custom_variables.yaml
     ```
 </details>
+
+### hash variables merge strategy
+
+`ansible.cfg`
+```toml
+[defaults]
+hash_behaviour: merge
+# default: replace
+# this one is tricky, can cause a lot of damage be careful with it
+# NOTE! it is highly recommended by ansible maintainers to keep the default
+# I personally hate it :(
+```
 
 
 ### built-in variables

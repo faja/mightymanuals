@@ -12,5 +12,31 @@ docker_container
 docker_compose
 ```
 
+---
+
 ### `docker_compose`
-TODO
+```yaml
+- name: Pull an image
+  become: true
+  community.docker.docker_image_pull:
+    name: "{{ prometheus_image_name }}"
+    tag: "{{ prometheus_image_tag }}"
+    pull: not_present
+
+- name: Run `docker compose up`
+  become: true
+  community.docker.docker_compose_v2:
+    project_src: /var/lib/docker-compose/prometheus
+```
+
+### send signal handler
+```yaml
+- name: reload prometheus config
+  become: true
+  listen: prometheus_config_reload
+  community.docker.docker_container:
+    name: prometheus
+    state: stopped    # send signal but don't remove container
+    force_kill: true  # use kill signal instead of stop
+    kill_signal: HUP  # send HUP instead of kill
+```

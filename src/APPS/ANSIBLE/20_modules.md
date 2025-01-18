@@ -7,6 +7,7 @@ MODULES:
 - [authorized_key](#authorized_key)
 - [command](#command)
 - [debug](#debug)
+- [docker](#docker)
 - [fail](#fail)
 - [file](#file)
 - [git](#git)
@@ -128,6 +129,10 @@ todo
       debug:
         msg: "The debug module will print a message: neat, eh?"
     ```
+
+### docker
+- see [docker](./14_docker.md) page, or
+- official [community.docker](https://docs.ansible.com/ansible/latest/collections/community/docker/index.html) collection docs
 
 ### fail
 [official docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/fail_module.html)

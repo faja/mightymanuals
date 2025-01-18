@@ -197,7 +197,7 @@
 - `{{ group_names }}` - list of groups current host belongs to
 - `{{ groups }}` - dict of all groups, example usage:
     ```yaml
-    {% for host in group.web %}
+    {% for host in groups.web %}
     server {{ hostvars[host].inventory_hostname }} \
       {{ hostvars[host].ansible_default_ipv4.address }}:80
     {% endfor %}

@@ -15,6 +15,16 @@ volumes:
     external:
       name: external-volume-created-outside-compose
 
+# https://docs.docker.com/reference/compose-file/networks/
+networks:
+  some_network:
+    name: this_is_going_to_be_an_actual_name
+
+# to use external network
+#networks:
+#  already_existing_external_network:
+#    external: true
+
 # https://docs.docker.com/reference/compose-file/services/
 services:
   nginx:
@@ -34,6 +44,14 @@ services:
       options:
         tag: "{{ .Name }}"
         labels: stack
+
+    # https://docs.docker.com/reference/compose-file/services/#network_mode
+    network_mode: host # to use `host` network namespace
+                       # or `none` - to disable container networking at all
+
+    # if you use non DEFAULT network
+    networks:
+      - this_is_going_to_be_an_actual_name
 
     # https://docs.docker.com/reference/compose-file/services/#ports
     ports:

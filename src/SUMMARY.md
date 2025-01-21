@@ -168,6 +168,8 @@
     - [grip](./COMMANDS/GRIP/index.md)
     - [htop](./COMMANDS/HTOP/index.md)
     - [iostat](./COMMANDS/IOSTAT/index.md)
+    - [ipcalc](./COMMANDS/IPCALC/index.md)
+    - [ipcalc](./COMMANDS/IPCALC/index.md)
     - [iptables](./COMMANDS/IPTABLES/index.md)
     - [jq](./COMMANDS/JQ/index.md)
     - [mpstat](./COMMANDS/MPSTAT/index.md)

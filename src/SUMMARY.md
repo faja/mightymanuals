@@ -159,6 +159,7 @@
     - [date](./COMMANDS/DATE/index.md)
     - [df](./COMMANDS/DF/index.md)
     - [dmesg](./COMMANDS/DMESG/index.md)
+    - [ethtool](./COMMANDS/ETHTOOL/index.md)
     - [execsnoop](./COMMANDS/EXECSNOOP/index.md)
     - [exitsnoop](./COMMANDS/EXITSNOOP/index.md)
     - [ext4slower](./COMMANDS/EXT4SLOWER/index.md)
@@ -226,6 +227,9 @@
         - [metrics](./LINUX_INTERNALS/MEMORY/METRICS_STATS_LIMITS/metrics.md)
         - [limits](./LINUX_INTERNALS/MEMORY/METRICS_STATS_LIMITS/limits.md)
     - [NETWORK](./LINUX_INTERNALS/NETWORK/index.md)
+        - [tools](./LINUX_INTERNALS/NETWORK/tools.md)
+        - [tuning](./LINUX_INTERNALS/NETWORK/tuning.md)
+        - [packet flow](./LINUX_INTERNALS/NETWORK/packet-flow.md)
 
 ---
 

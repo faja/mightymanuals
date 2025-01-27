@@ -166,6 +166,7 @@
     - [free](./COMMANDS/FREE/index.md)
     - [funccount](./COMMANDS/FUNCCOUNT/index.md)
     - [grip](./COMMANDS/GRIP/index.md)
+    - [hey](./COMMANDS/HEY/index.md)
     - [htop](./COMMANDS/HTOP/index.md)
     - [iostat](./COMMANDS/IOSTAT/index.md)
     - [ipcalc](./COMMANDS/IPCALC/index.md)
@@ -224,6 +225,7 @@
     - [MEMORY](./LINUX_INTERNALS/MEMORY/index.md)
         - [metrics](./LINUX_INTERNALS/MEMORY/METRICS_STATS_LIMITS/metrics.md)
         - [limits](./LINUX_INTERNALS/MEMORY/METRICS_STATS_LIMITS/limits.md)
+    - [NETWORK](./LINUX_INTERNALS/NETWORK/index.md)
 
 ---
 

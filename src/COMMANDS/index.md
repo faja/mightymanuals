@@ -20,6 +20,7 @@
 - [free](./FREE/index.md) `(tags=performance)`
 - [funccount](./FUNCCOUNT/index.md) `(tags=bpf,performance)`
 - [grip](./GRIP/index.md) `(tags=markdown,preview,pip)`
+- [hey](./HEY/index.md) `(tags=loadtest)`
 - [htop](./HTOP/index.md) `(tags=performance)`
 - [iostat](./IOSTAT/index.md) `(tags=performance)`
 - [iptables](./IPTABLES/index.md) `(tags=networking,security)`

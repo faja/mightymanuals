@@ -32,8 +32,10 @@ in purpouse. See some links for more detailed explanation:
   it allocates SKB data structures (SKB == socket kernel buffer, `struct sk_buff`)
   via `alloc_skb()`
 - hence, if traffic is busy, you can see `ksoftirq` thread consuming a lot of
-  CPU by `net_rx_action`, there are 3 cases, when that fuction stops:
+  CPU by `net_rx_action`, but of course it has a limited budget to run.
+  There are 3 cases, when that fuction stops:
     - there is no more data to read from
-    - it consumed too much CPU, exceeding its limit/`budget`
-    - it took too long to finish
+    - it exceeded `budget` defined by `net.core.netdev_budget` – amount of packets
+      that can be handled at most in a single run
+    - it took too long to finish (`net.core.netdev_budget_usecs`)
     - (you can find the details on the above here `/proc/net/softnet_stat`)

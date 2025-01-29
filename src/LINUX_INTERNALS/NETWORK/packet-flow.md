@@ -23,8 +23,17 @@ in purpouse. See some links for more detailed explanation:
 #### RECEIVE path
 - nic receives a packet
 - it is being put in a "ring buffer", aka "driver queue"
-- ring buffer does not contain actual data, but POINTERS to SKB data structures
-  (SKB == socket kernel buffer, `struct sk_buff`)
-- the process of receive, starts with HARD IRQ - handled by NIC, which in turn
-  triggers SOFT IRQ, handled by kernel threads: `ksoftirqd` (one per CPU thread)
-
+- ring buffer does not contain actual data, but POINTERS to memory area where
+  packet are being copied by nic via DMA (direct memory access)
+- when data is saved in memory, nic sends **hardware interrupt** (HARD IRQ)
+  which in turn triggers **softwarde interrupt** (SOFT IRQ), `NET_RX_SOFTIRQ` signal
+  sent to kernel thread `ksoftirqd` (one per CPU thread)
+- main function that pulls data from ring buffer is called `net_rx_action`,
+  it allocates SKB data structures (SKB == socket kernel buffer, `struct sk_buff`)
+  via `alloc_skb()`
+- hence, if traffic is busy, you can see `ksoftirq` thread consuming a lot of
+  CPU by `net_rx_action`, there are 3 cases, when that fuction stops:
+    - there is no more data to read from
+    - it consumed too much CPU, exceeding its limit/`budget`
+    - it took too long to finish
+    - (you can find the details on the above here `/proc/net/softnet_stat`)

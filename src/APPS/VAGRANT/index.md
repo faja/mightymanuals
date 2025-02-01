@@ -112,36 +112,10 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-- quick multi node
-```ruby
-Vagrant.configure("2") do |config|
-  config.vm.box = "debian/bookworm64"
+### single node example
 
-  nodes = [
-    "master",
-    "slave",
-    "client",
-  ]
+- [mightyplay/debian_12_ansible/Vagrantfile](https://github.com/faja/mightyplay/blob/master/_vagrant_templates/debian_12_ansible/Vagrantfile)
 
-  $script = <<-SCRIPT
-    apt-get -y update && apt-get -y install redis
-    echo 192.168.59.100 master.local master >> /etc/hosts
-    echo 192.168.59.101 slave.local  slave  >> /etc/hosts
-    echo 192.168.59.102 client.local client >> /etc/hosts
-  SCRIPT
-  config.vm.provision "shell", inline: $script
+### 3nodes cluster example
 
-  nodes.each_with_index do |n,i|
-    config.vm.define n do |server|
-      server.vm.hostname = "#{n}.local"
-      server.vm.network "private_network", ip: "192.168.59.#{100+i}"
-      server.vm.provider "virtualbox" do |vb|
-        vb.name = "#{n}.local"
-        vb.memory = 1024
-        vb.cpus = 1
-      end
-    end
-  end
-
-end
-```
+- [mightyplay/debian_12_ansible_3nodes/Vagrantfile](https://github.com/faja/mightyplay/blob/master/_vagrant_templates/debian_12_ansible_3nodes/Vagrantfile)

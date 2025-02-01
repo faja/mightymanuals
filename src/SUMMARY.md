@@ -181,6 +181,7 @@
     - [pidstat](./COMMANDS/PIDSTAT/index.md)
     - [printf](./COMMANDS/PRINTF/index.md)
     - [profile](./COMMANDS/PROFILE/index.md)
+    - [ps](./COMMANDS/PS/index.md)
     - [reflex](./COMMANDS/REFLEX/index.md)
     - [rsync](./COMMANDS/RSYNC/index.md)
     - [runqlat](./COMMANDS/RUNQLAT/index.md)

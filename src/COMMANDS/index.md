@@ -23,8 +23,8 @@
 - [hey](./HEY/index.md) `(tags=loadtest)`
 - [htop](./HTOP/index.md) `(tags=performance)`
 - [iostat](./IOSTAT/index.md) `(tags=performance)`
-- [iptables](./IPTABLES/index.md) `(tags=networking,security)`
-- [ipcalc](./IPCALC/index.md) `(tags=networking)`
+- [iptables](./IPTABLES/index.md) `(tags=network,security)`
+- [ipcalc](./IPCALC/index.md) `(tags=network)`
 - [jq](./JQ/index.md) `(tags=jq,json,yaml)`
 - [mpstat](./MPSTAT/index.md) `(tags=performance)`
 - [opensnoop](./OPENSNOOP/index.md) `(tags=bpf,performance)`
@@ -40,11 +40,12 @@
 - [runqslower](./RUNQSLOWER/index.md) `(tags=bpf,performance)`
 - [sar](./SAR/index.md) `(tags=performance)`
 - [sops](./SOPS/index.md) `(tags=encryption,secrets,security)`
+- [ss](./SS/index.md) `(tags=network)`
 - [ssh](./SSH/index.md) `(tags=ssh,security)`
 - [stackcount](./STACKCOUNT/index.md) `(tags=bpf,performance)`
 - [tcpaccept](./TCPACCEPT/index.md) `(tags=bpf,performance)`
 - [tcpconnect](./TCPCONNECT/index.md) `(tags=bpf,performance)`
-- [tcpdump](./TCPDUMP/index.md) `(tags=networking,performance)`
+- [tcpdump](./TCPDUMP/index.md) `(tags=network,performance)`
 - [tcpretrans](./TCPRETRANS/index.md) `(tags=bpf,performance)`
 - [trace](./TRACE/index.md) `(tags=bpf,performance)`
 - [uptime](./UPTIME/index.md) `(tags=performance)`

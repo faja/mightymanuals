@@ -188,6 +188,7 @@
     - [runqslower](./COMMANDS/RUNQSLOWER/index.md)
     - [sar](./COMMANDS/SAR/index.md)
     - [sops](./COMMANDS/SOPS/index.md)
+    - [ss](./COMMANDS/SS/index.md)
     - [ssh](./COMMANDS/SSH/index.md)
     - [stackcount](./COMMANDS/STACKCOUNT/index.md)
     - [tcpaccept](./COMMANDS/TCPACCEPT/index.md)

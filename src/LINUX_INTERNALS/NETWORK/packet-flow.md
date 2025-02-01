@@ -39,3 +39,12 @@ in purpouse. See some links for more detailed explanation:
       that can be handled at most in a single run
     - it took too long to finish (`net.core.netdev_budget_usecs`)
     - (you can find the details on the above here `/proc/net/softnet_stat`)
+
+#### linux network stack
+
+![](./images/linux_network_stack.jpg)
+
+#### linux tcp backlogs
+
+![](./images/linux_network_backlogs.jpg)
+

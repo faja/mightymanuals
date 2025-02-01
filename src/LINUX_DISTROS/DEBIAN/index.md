@@ -2,7 +2,6 @@
 
 # package management
 
-
 ## apt-get
 ```sh
 apt-get -y update       # refresh packages db
@@ -31,12 +30,18 @@ apt-cache search -n ${regex} # search for packages, package name only
 apt-cache showpkg ${package_name} # show package information
 ```
 
-please TODO this
+## dpkg
+```sh
+dpkg -l              # list installed packages
+dpkg -l iproute2     # show version of a installed package
+dpkg -L iproute2     # list files installed by a package
+```
 
-# packages
+# list of packages worth to install
 ```sh
 apt-get -y update           #
-apt-get -y install procps   # adds `ps` command, useful in docker
+apt-get -y install iproute2 # programs: `ss`, `ip`, `nstat`
+apt-get -y install procps   # programs: `ps`, useful in docker
 ```
 
 

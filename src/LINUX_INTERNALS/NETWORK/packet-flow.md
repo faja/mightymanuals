@@ -45,6 +45,17 @@ in purpouse. See some links for more detailed explanation:
 ![](./images/linux_network_stack.jpg)
 
 #### linux tcp backlogs
+- `SYN backlog` - single backlog (shared across all processes) for TCP connections
+  that received only SYN, and are waiting to be fully ESTABLISHED, once that
+  happen, TCP session is moved to LISTEN backlog
+- `LISTEN backlog` - per process queue of ESTABLISHED sessions waiting to be
+  accepted by the application
 
 ![](./images/linux_network_backlogs.jpg)
 
+#### Quick Short Notes
+- <span style="color:#ff4d94">**CPU Scaling**</span> - by default NIC may interrupt
+  only one CPU, which can reach 100% utilization and become a bottleneck.
+  To avoid this linux supports multi-CPU packet processing, but it must be
+  configured! see official linux
+  [documentation](https://www.kernel.org/doc/Documentation/networking/scaling.text)

@@ -11,6 +11,6 @@ ethtool -g eth0         # -g == --show-ring
 ethtool -G eth0 rx N    # -G == --set-ring
 ethtool -G eth0 tx N    # -G == --set-ring
 
-# check offload settings
+# check offload settings (TFO, UFO, GSO)
 ethtool -k eth0
 ```

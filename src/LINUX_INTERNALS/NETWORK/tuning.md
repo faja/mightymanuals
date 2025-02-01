@@ -20,6 +20,7 @@ ethtool -g eth0         # -g == --show-ring
 ethtool -G eth0 rx N    # -G == --set-ring
 ethtool -G eth0 tx N    # -G == --set-ring
 ```
+also see [commands/ethtool](../../COMMANDS/ETHTOOL/index.md) for more details
 
 ### net_rx_action
 

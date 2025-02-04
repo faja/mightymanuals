@@ -170,7 +170,7 @@
     - [hey](./COMMANDS/HEY/index.md)
     - [htop](./COMMANDS/HTOP/index.md)
     - [iostat](./COMMANDS/IOSTAT/index.md)
-    - [ipcalc](./COMMANDS/IPCALC/index.md)
+    - [ip](./COMMANDS/IP/index.md)
     - [ipcalc](./COMMANDS/IPCALC/index.md)
     - [iptables](./COMMANDS/IPTABLES/index.md)
     - [jq](./COMMANDS/JQ/index.md)

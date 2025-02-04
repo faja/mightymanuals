@@ -23,8 +23,9 @@
 - [hey](./HEY/index.md) `(tags=loadtest)`
 - [htop](./HTOP/index.md) `(tags=performance)`
 - [iostat](./IOSTAT/index.md) `(tags=performance)`
-- [iptables](./IPTABLES/index.md) `(tags=network,security)`
+- [ip](./IP/index.md) `(tags=network)`
 - [ipcalc](./IPCALC/index.md) `(tags=network)`
+- [iptables](./IPTABLES/index.md) `(tags=network,security)`
 - [jq](./JQ/index.md) `(tags=jq,json,yaml)`
 - [mpstat](./MPSTAT/index.md) `(tags=performance)`
 - [opensnoop](./OPENSNOOP/index.md) `(tags=bpf,performance)`

@@ -54,8 +54,22 @@ in purpouse. See some links for more detailed explanation:
 ![](./images/linux_network_backlogs.jpg)
 
 #### Quick Short Notes
+- <span style="color:#ffff66">**NOTE:**</span> there is a lot of "advanced"
+  algorithms and magic that work to imporve permormance of receiving or sending packets,
+  especially for TCP. Eg: GSO/GRO/TSO, congestion controls, queueuing siciplines,
+  TSQ (TCP small queues), BQL (byte queue limits), etc...
+
+  all of that can affect how the packets are going through and being processed,
+  it's not that easy and simple
 - <span style="color:#ff4d94">**CPU Scaling**</span> - by default NIC may interrupt
   only one CPU, which can reach 100% utilization and become a bottleneck.
   To avoid this linux supports multi-CPU packet processing, but it must be
   configured! see official linux
-  [documentation](https://www.kernel.org/doc/Documentation/networking/scaling.text)
+  [documentation](https://docs.kernel.org/networking/scaling.html)
+- <span style="color:#ff4d94">**segmentation offloading**</span> - GSO (generic
+  segmentation offload), GRO (generic receive offload) - implemented in kernel,
+  TSO (TCP segmentation offload) - implemented by NIC - tldr; allowes to create
+  big packets by network stack, that are split into small as 1500bytes just before
+  they are sent by NIC
+- <span style="color:#ff4d94">**BQL Byte Queue Limits**</span> - limits how many
+  bytes can be put into driver queues

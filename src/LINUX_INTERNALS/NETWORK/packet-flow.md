@@ -12,6 +12,8 @@ in purpouse. See some links for more detailed explanation:
 - [https://blog.packagecloud.io/monitoring-tuning-linux-networking-stack-receiving-data/](https://blog.packagecloud.io/monitoring-tuning-linux-networking-stack-receiving-data/)
 - [https://blog.packagecloud.io/illustrated-guide-monitoring-tuning-linux-networking-stack-receiving-data/](https://blog.packagecloud.io/illustrated-guide-monitoring-tuning-linux-networking-stack-receiving-data/)
 
+todo: https://blog.packagecloud.io/the-definitive-guide-to-linux-system-calls/
+
 ### ok, lesssgo
 
 - First of: **SEND** and **RECEIVE** paths are different.
@@ -39,6 +41,9 @@ in purpouse. See some links for more detailed explanation:
       that can be handled at most in a single run
     - it took too long to finish (`net.core.netdev_budget_usecs`)
     - (you can find the details on the above here `/proc/net/softnet_stat`)
+- network data frames are handed to the protocol layers from the queues
+- protocol layers process data
+- data is added to receive buffers attached to sockets by protocol layers
 
 #### linux network stack
 

@@ -7,12 +7,30 @@
 
 ---
 
+<span style="color:#ff4d94">
+The networking stack is complex and there is no one size fits all solution.
+</span>
+
+---
+
 ### ring buffers
 
 ```sh
+### NOTE! changing any setting most likely brings interface down and up!
+###       causing interruption of all the connections!!!
+
 # show statistics, check rx,tx ring buffer drops
 ethtool -S eth0 | grep drop
 
+## NUMBER OF QUEUES
+# check current setting
+ethtool -l eth0        # note, not all drivers support -l
+                       # if it doesn't, it's a single queue
+# set new number of queues
+ethtool -L eth0 rx 8
+ethtool -L eth0 tx 8
+
+## QUEUE LENGHT
 # check current setting
 ethtool -g eth0         # -g == --show-ring
 

@@ -175,6 +175,8 @@
     - [iptables](./COMMANDS/IPTABLES/index.md)
     - [jq](./COMMANDS/JQ/index.md)
     - [mpstat](./COMMANDS/MPSTAT/index.md)
+    - [netstat](./COMMANDS/NETSTAT/index.md)
+    - [nstat](./COMMANDS/NSTAT/index.md)
     - [opensnoop](./COMMANDS/OPENSNOOP/index.md)
     - [openssl](./COMMANDS/OPENSSL/index.md)
     - [perf](./COMMANDS/PERF/index.md)

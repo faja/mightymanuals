@@ -28,6 +28,8 @@
 - [iptables](./IPTABLES/index.md) `(tags=network,security)`
 - [jq](./JQ/index.md) `(tags=jq,json,yaml)`
 - [mpstat](./MPSTAT/index.md) `(tags=performance)`
+- [netstat](./NETSTAT/index.md) `(tags=network)`
+- [nstat](./NSTAT/index.md) `(tags=network)`
 - [opensnoop](./OPENSNOOP/index.md) `(tags=bpf,performance)`
 - [openssl](./OPENSSL/index.md)
 - [perf](./PERF/index.md)

@@ -176,6 +176,7 @@
     - [jq](./COMMANDS/JQ/index.md)
     - [mpstat](./COMMANDS/MPSTAT/index.md)
     - [netstat](./COMMANDS/NETSTAT/index.md)
+    - [nicstat](./COMMANDS/NICSTAT/index.md)
     - [nstat](./COMMANDS/NSTAT/index.md)
     - [opensnoop](./COMMANDS/OPENSNOOP/index.md)
     - [openssl](./COMMANDS/OPENSSL/index.md)

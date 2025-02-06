@@ -9,7 +9,8 @@ title = "Manuals"
 create-missing = false
 
 [output.html]
-default-theme = "navy"
+default-theme = "ayu"
+additional-css = ["custom.css"]
 
 [output.html.fold]
 enable = true

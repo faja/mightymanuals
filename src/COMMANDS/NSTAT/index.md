@@ -1,6 +1,6 @@
 ---
 
-shows various network stats, I don't find thid tool useful at all
+shows various network stats, I don't find thid tool useful tbh
 
 ```sh
 nstat     # show stats since last stat reset, and RESET the stats

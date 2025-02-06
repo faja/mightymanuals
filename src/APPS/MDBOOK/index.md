@@ -2,6 +2,7 @@
 - [include](#include)
 - [folding](#folding)
 - [colours](#colours)
+- [custom width](#custom-width)
 
 ```md
 - [include](#include)
@@ -46,3 +47,17 @@ normal stuff goess here
 - <span style="color:#ffff66">**SUPER/CMD**</span>
 - <span style="color:#99ff66">**ALT/OPTION**</span>
 - <span style="color:#33ccff">**SHIFT**</span>
+
+
+# custom width
+- book.toml
+    ```toml
+    [output.html]
+    additional-css = ["custom.css"]
+    ```
+- custom.css
+    ```css
+    :root {
+      --content-max-width: 80%;
+    }
+    ```

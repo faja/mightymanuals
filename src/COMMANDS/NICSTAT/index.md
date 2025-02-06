@@ -12,12 +12,12 @@ nicstat -i eth1 1 # limit to a single interface
   # -x  - show extended stats
 
 # TCP
-nicstat -t 1  # show
+nicstat -t 1  # show tcp stats per second
 
 # UDP
 nicstat -u 1  # show udp stats per second
 
 # see
 man nicstat
-# for a nice filed description
+# for a nice fileds description
 ```

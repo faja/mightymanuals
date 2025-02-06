@@ -89,7 +89,7 @@ $ cat /proc/net/softnet_stat
 - ...
 
 
-## network related softirqs
+## network related IRQs
 ```sh
 # soft
 grep -e CPU -e NET_ /proc/softirqs
@@ -104,11 +104,26 @@ note, that softirqs are triggered by hardirq, which in turn can be monitored
 via `/proc/interrupts` - however, when it comes to network, some
 drivers disable hardware interrupts if the packets are actively flowing
 
+see also: `mpstat -I ALL` - print interrupt statistics
+
 # /proc and /sys
+- `/proc/net/dev` - quick and nice overview, `tx/rx`: `packets`, `errors`, `drops`,
+    per interface
 - `/proc/net/snmp` - awesome stuff, `Ip`, `Icmp`, `Tcp`, `Udp` detailed metrics,
     prett much the same stuff you get from `netstat -s`
 - `/proc/net/netstat` - a lot of `Ip` and `Tcp` extended stats, (eg for TCP,
     there is more than 100 metrics)
+
+- `/proc/net/tcp` - TCP sockets details, 1 line per socket: address, buffers, state, etc...
+- `/proc/net/udd` - UDP sockets details, 1 line per socket: address, buffers, etc...
+
+- `/proc/interrupts` and `/proc/softirqs` - network related HARD an SOFT IRQs
+
+- `/sys/class/net/<INTERFACE_NAME>/statistics/<STAT_NAME>` - device stats, eg:
+    ```sh
+    cat /sys/class/net/eth0/statistics/{r,t}x_packets
+    cat /sys/class/net/eth0/statistics/{r,t}x_dropped
+    ```
 
 - use awk to get something quickly with per second interval etc...
     ```sh

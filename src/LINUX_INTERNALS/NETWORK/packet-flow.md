@@ -32,7 +32,9 @@ todo: https://blog.packagecloud.io/the-definitive-guide-to-linux-system-calls/
   sent to kernel thread `ksoftirqd` (one per CPU thread)
 - main function that pulls data from ring buffer is called `net_rx_action`,
   it allocates SKB data structures (SKB == socket kernel buffer, `struct sk_buff`)
-  via `alloc_skb()`
+  via `alloc_skb()`, it copies the data from DMA sections to the new structs,
+  and copute and populate all the fields of sk_buff struct,
+  once this is done, packet is ready to be passed to the network stack
 - hence, if traffic is busy, you can see `ksoftirq` thread consuming a lot of
   CPU by `net_rx_action`, but of course it has a limited budget to run.
   There are 3 cases, when that fuction stops:
@@ -41,9 +43,16 @@ todo: https://blog.packagecloud.io/the-definitive-guide-to-linux-system-calls/
       that can be handled at most in a single run
     - it took too long to finish (`net.core.netdev_budget_usecs`)
     - (you can find the details on the above here `/proc/net/softnet_stat`)
-- network data frames are handed to the protocol layers from the queues
+- network data frames are handed to the protocol layers via `netif_receive_skb()`
 - protocol layers process data
 - data is added to receive buffers attached to sockets by protocol layers
+- data is read fron a socket by an application
+- quick note on: iptables vs tcpdump - what's first:
+    - iptables are first - to be more specific - netfilter processing - which
+      kicks in just after packet is passed to protocol layers
+    - tcpdump - aka berkeley packet filters - kicks in just before sending
+      data to a socket - so almost at the very end, just before it is read
+      by an application
 
 #### linux network stack
 

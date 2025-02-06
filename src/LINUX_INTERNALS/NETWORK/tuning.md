@@ -37,8 +37,33 @@ ethtool -g eth0         # -g == --show-ring
 # set new queue length for rx,tx
 ethtool -G eth0 rx N    # -G == --set-ring
 ethtool -G eth0 tx N    # -G == --set-ring
+
+### also worth checking the offload settings, GRO, etc..
+ethtool -k eth0 | grep offload
 ```
 also see [commands/ethtool](../../COMMANDS/ETHTOOL/index.md) for more details
+
+
+### Enable RSS/multiqueue
+If NIC supports RSS / multiqueue. It's worth to enable processing IRQs by multiple
+CPUs. NOTE: it is usually enabled by default if nic support multiqueue:)
+
+[official documentation](https://docs.kernel.org/networking/scaling.html)
+
+TLDR;
+- install and start `irqbalance` daemon
+- enable RSS (Receive Side Scaling) to distrubute packet across different CPUs
+
+NOTEs:
+- RSS is usually enabled by default if NIC supports multiquueue
+- limit number of queues to one per physical CPU core (not hyper threades!)
+
+How to check if RSS is enabled:
+```sh
+ethtool -l ${interface_name}
+grep -e CPU -e ${interface_name} /proc/interrupts
+grep -e CPU -e NET_ /proc/softirqs
+```
 
 ### net_rx_action
 
@@ -48,7 +73,7 @@ cat /proc/net/softnet_stat
 awk '{print $3}' /proc/net/softnet_stat
 # The third value, sd->time_squeeze, is (as we saw) the number of times the
 # net_rx_action loop terminated because the budget was consumed or the
-# time limit was reached, but more work could have been.
+# time limit was reached, but more work could have been done
 
 cat /proc/sys/net/core/netdev_budget
 # how many packets can be handled at most in a single run of `net_rx_action`

@@ -40,8 +40,9 @@ dpkg -L iproute2     # list files installed by a package
 # list of packages worth to install
 ```sh
 apt-get -y update           #
-apt-get -y install iproute2 # programs: `ss`, `ip`, `nstat`
-apt-get -y install procps   # programs: `ps`, useful in docker
+apt-get -y install procps    # programs: `ps`, useful in docker
+apt-get -y install iproute2  # programs: `ss`, `ip`, `nstat`
+apt-get -y install net-tools # programs: `netstat`
 ```
 
 

@@ -53,10 +53,15 @@ awk '{for(i=3;i<=NF;++i)printf $i""FS;printf ORS}' test.txt
 awk -vFS=: -vORS=, '{print $1}' test.txt | sed 's/.$//'
 
 # use awk to print per second rate
-awk '{val=$1-val_p;val_p=$1;print "packets total:",val_p,", p/s:",val}' <(while true; do cat /sys/class/net/eth0/statistics/rx_bytes ; sleep 1;done)
+# -W interactive, bc awk sometimes doesn't flush every second;/
+awk -W interactive '{val=$1-val_p;val_p=$1;print "packets total:",val_p,", p/s:",val}' \
+  <(while true; do cat /sys/class/net/eth0/statistics/rx_bytes ; sleep 1;done)
 
 # print processes spawned by sshd
 ps -eF --forest | awk '$11 ~ /\/usr\/sbin\/sshd/{p=1} $11 ~ /^\// && $11 !~ /\/usr\/sbin\/sshd/{p=0} p'
+
+# split line into multiple lines, aka `tr " " "\n"`, and print filed number
+awk '/^TcpExt/ && NR==1 {gsub(" ","\n");print}' /proc/net/netstat | awk '{print NR, " : ", $0}'
 ```
 
 # some advanced trix

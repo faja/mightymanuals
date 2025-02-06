@@ -103,3 +103,17 @@ this is basicaly how often and on which CPU SOFT IRQs are being handled
 note, that softirqs are triggered by hardirq, which in turn can be monitored
 via `/proc/interrupts` - however, when it comes to network, some
 drivers disable hardware interrupts if the packets are actively flowing
+
+# /proc and /sys
+- `/proc/net/snmp` - awesome stuff, `Ip`, `Icmp`, `Tcp`, `Udp` detailed metrics,
+    prett much the same stuff you get from `netstat -s`
+- `/proc/net/netstat` - a lot of `Ip` and `Tcp` extended stats, (eg for TCP,
+    there is more than 100 metrics)
+
+- use awk to get something quickly with per second interval etc...
+    ```sh
+    awk -W interactive '{val=$1-val_p;val_p=$1;print "packets total:",val_p,", p/s:",val}' \
+      <(while true; do cat /sys/class/net/eth0/statistics/rx_bytes ; sleep 1;done)
+    #
+    awk '/^TcpExt/ && NR==1 {gsub(" ","\n");print}' /proc/net/netstat | awk '{print NR, " : ", $0}'
+    ```

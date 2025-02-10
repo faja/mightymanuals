@@ -7,3 +7,8 @@
     ```sh
     redis-server --protected-mode no
     ```
+- test/debug crash
+  ```sh
+  # note, `enable-debug-command local` (or yes) must be in the config
+  redis-cli DEBUG SEGFAULT
+  ```

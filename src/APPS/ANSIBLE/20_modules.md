@@ -6,6 +6,7 @@ MODULES:
 - [assert](#assert)
 - [authorized_key](#authorized_key)
 - [command](#command)
+- [copy](#copy)
 - [debug](#debug)
 - [docker](#docker)
 - [fail](#fail)
@@ -114,6 +115,38 @@ todo
           - positional
         creates: /path/to/database
     ```
+
+### copy
+
+[official docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/copy_module.html)
+
+- just create a small file with contenct specified directly in the task
+    ```yaml
+    - name: Create redis.conf config file
+      ansible.builtin.copy:
+        content: |
+          protected-mode no
+          cluster-enabled yes
+          cluster-config-file /var/lib/redis/nodes.conf
+          cluster-node-timeout 3000
+        dest: /var/lib/redis/redis.conf
+        owner: root
+        group: root
+        mode: '0644'
+    ```
+
+- copy a file from files directory (play or role)
+    ```yaml
+    - name: Install docker official GPG key
+      become: true
+      ansible.builtin.copy:
+        src: files/docker.asc
+        dest: /etc/apt/keyrings/docker.asc
+        owner: root
+        group: root
+        mode: '0644'
+    ```
+
 
 ### debug
 [official docs](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/debug_module.html)

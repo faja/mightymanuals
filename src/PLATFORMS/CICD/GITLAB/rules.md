@@ -17,3 +17,10 @@ workflow:
       when: never                                      # do NOT run on commits if there is an MR opened
     - when: always                                     # run in any other case
 ```
+
+- similar rules can be applied at the **JOB** level
+
+- <span style="color:#ff4d94">**note:**</span>
+    - workflow rules - specify when **PIPELINE** is created,
+    - **JOB** rules specify when job is created/executed,
+      there is NO interaction between these two

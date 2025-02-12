@@ -110,7 +110,7 @@
     - [promtail](./APPS/PROMTAIL/index.md)
     - [redis](./APPS/REDIS/index.md)
         - [general](./APPS/REDIS/general.md)
-        - [persistance](./APPS/REDIS/persistance.md)
+        - [persistence](./APPS/REDIS/persistence.md)
         - [replication](./APPS/REDIS/replication.md)
         - [cluster](./APPS/REDIS/cluster.md)
         - [types/sets](./APPS/REDIS/types/sets.md)

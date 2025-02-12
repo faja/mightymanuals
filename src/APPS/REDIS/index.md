@@ -1,6 +1,6 @@
 ### concepts
 - [general](./general.md)
-- [persistance](./persistance.md)
+- [persistence](./persistence.md)
 - [replication](./replication.md)
 - [cluster](./cluster.md)
 

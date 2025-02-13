@@ -35,15 +35,20 @@ apt-cache showpkg ${package_name} # show package information
 dpkg -l              # list installed packages
 dpkg -l iproute2     # show version of a installed package
 dpkg -L iproute2     # list files installed by a package
+
+dpkg -S /usr/bin/lsns  # show which package provides a file
 ```
 
 # list of packages worth to install
 ```sh
 apt-get -y update            #
 apt-get -y install procps    # programs: `ps`, useful in docker
+
 apt-get -y install iproute2  # programs: `ss`, `ip`, `nstat`
 apt-get -y install net-tools # programs: `netstat`
 apt-get -y install nicstat   # programs: `nicstat`
+
+apt-get -y util-linux        # programs: lsns, nsenter - (most likely installed by default)
 ```
 
 

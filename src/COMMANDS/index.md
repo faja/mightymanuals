@@ -27,9 +27,11 @@
 - [ipcalc](./IPCALC/index.md) `(tags=network)`
 - [iptables](./IPTABLES/index.md) `(tags=network,security)`
 - [jq](./JQ/index.md) `(tags=jq,json,yaml)`
+- [lsns](./LSNS/index.md) `(tags=namespace)`
 - [mpstat](./MPSTAT/index.md) `(tags=performance)`
 - [netstat](./NETSTAT/index.md) `(tags=network)`
 - [nicstat](./NICSTAT/index.md) `(tags=network)`
+- [nsenter](./NSENTER/index.md) `(tags=namespace)`
 - [nstat](./NSTAT/index.md) `(tags=network)`
 - [opensnoop](./OPENSNOOP/index.md) `(tags=bpf,performance)`
 - [openssl](./OPENSSL/index.md)

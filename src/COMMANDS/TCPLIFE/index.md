@@ -6,6 +6,7 @@
 
 - only after a connection changes it's state to `TCP_CLOSE`
 - for "show me all the connection that being made" please see [tcpconnect](../TCPCONNECT/index.md)
+  or [tcptracer](../TCPTRACER/index.md)
 - also please note, `tcplife` command must be started before a connection is established
   to print it after it finishes
 - useful if we have a lot of short lived connection and we just wanna see which

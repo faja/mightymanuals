@@ -50,11 +50,13 @@
 - [ss](./SS/index.md) `(tags=network)`
 - [ssh](./SSH/index.md) `(tags=ssh,security)`
 - [stackcount](./STACKCOUNT/index.md) `(tags=bpf,performance)`
-- [tcpaccept](./TCPACCEPT/index.md) `(tags=bpf,performance)`
-- [tcpconnect](./TCPCONNECT/index.md) `(tags=bpf,performance)`
+- [tcpaccept](./TCPACCEPT/index.md) `(tags=bpf,network,performance)`
+- [tcpconnect](./TCPCONNECT/index.md) `(tags=bpf,network,performance)`
 - [tcpdump](./TCPDUMP/index.md) `(tags=network,performance)`
-- [tcplife](./TCPLIFE/index.md) `(tags=bpf,performance)`
-- [tcpretrans](./TCPRETRANS/index.md) `(tags=bpf,performance)`
+- [tcplife](./TCPLIFE/index.md) `(tags=bpf,network,performance)`
+- [tcpretrans](./TCPRETRANS/index.md) `(tags=bpf,network,performance)`
+- [tcptop](./TCPTOP/index.md) `(tags=bpf,network,performance)`
+- [tcptracer](./TCPTRACER/index.md) `(tags=bpf,network,performance)`
 - [trace](./TRACE/index.md) `(tags=bpf,performance)`
 - [uptime](./UPTIME/index.md) `(tags=performance)`
 - [vmstat](./VMSTAT/index.md) `(tags=performance)`

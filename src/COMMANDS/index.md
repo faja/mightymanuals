@@ -53,6 +53,7 @@
 - [tcpaccept](./TCPACCEPT/index.md) `(tags=bpf,performance)`
 - [tcpconnect](./TCPCONNECT/index.md) `(tags=bpf,performance)`
 - [tcpdump](./TCPDUMP/index.md) `(tags=network,performance)`
+- [tcplife](./TCPLIFE/index.md) `(tags=bpf,performance)`
 - [tcpretrans](./TCPRETRANS/index.md) `(tags=bpf,performance)`
 - [trace](./TRACE/index.md) `(tags=bpf,performance)`
 - [uptime](./UPTIME/index.md) `(tags=performance)`

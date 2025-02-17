@@ -201,6 +201,7 @@
     - [tcpaccept](./COMMANDS/TCPACCEPT/index.md)
     - [tcpconnect](./COMMANDS/TCPCONNECT/index.md)
     - [tcpdump](./COMMANDS/TCPDUMP/index.md)
+    - [tcplife](./COMMANDS/TCPLIFE/index.md)
     - [tcpretrans](./COMMANDS/TCPRETRANS/index.md)
     - [trace](./COMMANDS/TRACE/index.md)
     - [uptime](./COMMANDS/UPTIME/index.md)

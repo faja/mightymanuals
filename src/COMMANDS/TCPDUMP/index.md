@@ -12,6 +12,8 @@
 -ttttt          # show time since FIRST captured packet
 
 -w filename     # save to a file
+-r filename     # read from a file, previously saved, common usaage on that:
+                # tcpdump -nr /tmp/out.tcpdump
 
 -s number       # limit how many first bytes are captured
                 # default: 96, 0 means no limit

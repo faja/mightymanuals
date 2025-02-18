@@ -8,5 +8,5 @@
 - [dns stuff](./dns.md)
 
 ---
-- [haproxy as an ingress full example](./haproxy_as_an_ingress/index.md)
-- [haproxy config play](./haproxy_config_play/index.md)
+
+for some play dirs/configs see **mightyplay/haproxy**

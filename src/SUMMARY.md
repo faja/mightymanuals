@@ -89,8 +89,6 @@
         - [stick-table and rate limiting](./APPS/HAPROXY/stick-table.md)
         - [ssl certificate live reload](./APPS/HAPROXY/ssl_live_reload.md)
         - [dns](./APPS/HAPROXY/dns.md)
-        - [haproxy as an ingress full example](./APPS/HAPROXY/haproxy_as_an_ingress/index.md)
-        - [haproxy config play](./APPS/HAPROXY/haproxy_config_play/index.md)
     - [helm](./APPS/HELM/index.md)
     - [libvirt](./APPS/LIBVIRT/index.md)
     - [loki](./APPS/LOKI/index.md)

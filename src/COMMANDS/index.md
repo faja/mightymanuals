@@ -25,6 +25,7 @@
 - [iostat](./IOSTAT/index.md) `(tags=performance)`
 - [ip](./IP/index.md) `(tags=network)`
 - [ipcalc](./IPCALC/index.md) `(tags=network)`
+- [iperf](./IPERF/index.md) `(tags=network)`
 - [iptables](./IPTABLES/index.md) `(tags=network,security)`
 - [jq](./JQ/index.md) `(tags=jq,json,yaml)`
 - [lsns](./LSNS/index.md) `(tags=namespace)`

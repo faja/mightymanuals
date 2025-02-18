@@ -48,6 +48,8 @@ apt-get -y install iproute2  # programs: `ss`, `ip`, `nstat`
 apt-get -y install net-tools # programs: `netstat`
 apt-get -y install nicstat   # programs: `nicstat`
 
+apt-get -y install iperf3    # programs: `iperf3`
+
 apt-get -y util-linux        # programs: lsns, nsenter - (most likely installed by default)
 ```
 

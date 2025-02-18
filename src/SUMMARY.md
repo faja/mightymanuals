@@ -173,6 +173,7 @@
     - [iostat](./COMMANDS/IOSTAT/index.md)
     - [ip](./COMMANDS/IP/index.md)
     - [ipcalc](./COMMANDS/IPCALC/index.md)
+    - [iperf](./COMMANDS/IPERF/index.md)
     - [iptables](./COMMANDS/IPTABLES/index.md)
     - [jq](./COMMANDS/JQ/index.md)
     - [lsns](./COMMANDS/LSNS/index.md)

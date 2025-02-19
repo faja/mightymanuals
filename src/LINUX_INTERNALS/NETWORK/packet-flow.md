@@ -21,6 +21,7 @@ todo: https://blog.packagecloud.io/the-definitive-guide-to-linux-system-calls/
   please open links above
 
 #### SEND path
+<span style="color:#ff4d94">**TODO**</span>
 
 #### RECEIVE path
 - nic receives a packet

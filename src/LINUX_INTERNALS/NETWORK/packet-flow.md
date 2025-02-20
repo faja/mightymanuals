@@ -67,6 +67,7 @@ todo: https://blog.packagecloud.io/the-definitive-guide-to-linux-system-calls/
   accepted by the application
 
 ![](./images/linux_network_backlogs.jpg)
+![](./images/linux_network_3.png)
 
 #### Quick Short Notes
 - <span style="color:#ffff66">**NOTE:**</span> there is a lot of "advanced"

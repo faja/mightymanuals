@@ -12,7 +12,9 @@ in purpouse. See some links for more detailed explanation:
 - [https://blog.packagecloud.io/monitoring-tuning-linux-networking-stack-receiving-data/](https://blog.packagecloud.io/monitoring-tuning-linux-networking-stack-receiving-data/)
 - [https://blog.packagecloud.io/illustrated-guide-monitoring-tuning-linux-networking-stack-receiving-data/](https://blog.packagecloud.io/illustrated-guide-monitoring-tuning-linux-networking-stack-receiving-data/)
 
-todo: https://blog.packagecloud.io/the-definitive-guide-to-linux-system-calls/
+- new! [https://www.kungfudev.com/blog/2024/06/14/network-sockets-syn-and-accept-queue](https://www.kungfudev.com/blog/2024/06/14/network-sockets-syn-and-accept-queue)
+
+- to read! [https://www.kungfudev.com/blog/2024/06/14/network-sockets-syn-and-accept-queue](https://blog.packagecloud.io/the-definitive-guide-to-linux-system-calls/)
 
 ### ok, lesssgo
 
@@ -60,11 +62,14 @@ todo: https://blog.packagecloud.io/the-definitive-guide-to-linux-system-calls/
 ![](./images/linux_network_stack.jpg)
 
 #### linux tcp backlogs
-- `SYN backlog` - single backlog (shared across all processes) for TCP connections
+- `SYN backlog`/`SYN queue` - a queue for TCP connections
   that received only SYN, and are waiting to be fully ESTABLISHED, once that
   happen, TCP session is moved to LISTEN backlog
-- `LISTEN backlog` - per process queue of ESTABLISHED sessions waiting to be
+- `LISTEN backlog` - queue of ESTABLISHED sessions waiting to be
   accepted by the application
+
+IMPORTANT: both of the above are PER socket in LISTEN state!
+(99% sure about that, I previously thought that the first one is global)
 
 ![](./images/linux_network_backlogs.jpg)
 ![](./images/linux_network_3.png)

@@ -60,11 +60,45 @@
 
 - tcp memory usage (system)
 
+
 - socket memory usage per socket
 
-- SYN backlog lenght
+# SYN and LISTEN queues
 
-- LISTEN backlog lenght
+- check the overflow
+```sh
+nstat -az TcpExtListenOverflows TcpExtListenDrop
+# these both refers to LISTEN queue being full,
+# however the Drops is a bit more comples, as not always SYN is dropped
+# when the LISTEN queue is full
+
+# also check
+netstat -s |  grep -i -e "listen" -e "pruned"
+# these should give similar metrics
+
+# NOTE! this is LISTEN queue related
+# NOTE! there is no easy way of checking SYN queue overflows as far as I know :sadpanda:
+```
+NOTE! these are global counters, to actually see which app is dropping due to
+full queue, you might need `bpf` as `ss` with 1 sec interval might be
+hiding stuff
+
+- get current SYN and ACCPET queues usage:
+```sh
+# get SYN queue lenght for port 80
+ss -n state syn-recv sport :80 | wc -l
+# get ACCEPT/LISTEN queue lenght for port 80
+ss -nl sport :80 # look at Recv-Q
+```
+
+- syn cookies
+```sh
+# check the syn cookies - both sent with (SYN+ACK) and received with (ACK)
+nstat -az TcpExtTCPReqQFullDoCookies TcpExtSyncookiesSent TcpExtSyncookiesRecv TcpExtSyncookiesFailed
+# these might indicate SYN FLOODs or SYN queue getting full
+```
+
+# other stuff
 
 - syn received during a tcp time_wait
 

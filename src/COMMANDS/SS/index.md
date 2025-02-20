@@ -83,3 +83,15 @@ and exec: `stat /proc/${}/fd/${}` and look at `Change` time
 ss -s
 # equivalent of cat /proc/net/sockstat
 ```
+
+### listen queue size and current lenght
+```sh
+ss -ntlp
+# for sockets in LISTEN state:
+#   - Recv-Q - means how many connections are waiting to be accpte()
+#   - Send-Q - actual size of the listen queue
+
+# note for sockets in ESTABLISHED state the meaning is different:
+#  - Recv-Q - number of bytes received but not read by the application
+#  - Send-Q - number of bytes sent but not acknowledged
+```

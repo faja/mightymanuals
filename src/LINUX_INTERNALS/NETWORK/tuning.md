@@ -157,6 +157,10 @@ net.ipv4.ip_forward = 1
 #
 # tcp_max_syn_backlog, default: 1024
 # "syn backlog" - backlog queue for half-open connections
+# note: this is not the actual lenght, the value is the max what we can get
+# the actual value is calculated in some magic way
+# tldr; set these two to the same value
+# please also note that application calling listen() can specify the backlog lenght
 net.ipv4.tcp_max_syn_backlog = 8192
 # somaxconn, default: 4096
 # "listen backlog" - per process backlog for passing connections to accept()

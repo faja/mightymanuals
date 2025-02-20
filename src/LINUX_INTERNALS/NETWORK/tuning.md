@@ -124,6 +124,20 @@ cat /proc/sys/net/ipv4/tcp_mem
 # https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/networking/ip-sysctl.rst
 ```
 
+```
+###############################################################################
+## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ##
+net.core.rmem_max = 16777216                        # TODO read and understand
+net.core.rmem_default = ...                        # TODO read and understand
+net.core.wmem_max = 16777216                        # TODO read and understand
+net.core.wmem_default = ...                        # TODO read and understand
+net.ipv4.tcp_mem = ... ... ...             # TODO read and understand
+net.ipv4.udp_mem = ... ... ...             # TODO read and understand
+net.ipv4.tcp_rmem = 4096 12582912 16777216 # TODO read and understand
+net.ipv4.tcp_wmem = 4096 12582912 16777216 # TODO read and understand
+net.ipv4.tcp_rmem = 4096 12582912 16777216 # TODO read and understand
+```
+
 # other sysctl tunnable
 
 <span style="color:#ff4d94">**NOTE:**</span> always check the defaults first
@@ -177,6 +191,33 @@ net.core.netdev_max_backlog = 3000
 # (not recommended to touch tho)
 net.ipv4.tcp_tw_reuse = 1
 
+# tcp_slow_start_after_idle, default: 1
+# if enabled, there is a slow start after TCP idle period
+# disabling that is generally recommended for latency performance
+net.ipv4.tcp_slow_start_after_idle = 0
+
+# tcp_syn_retries, default: 6
+# number of initial SYN packet retransmits during the ACTIVE connection attempt
+# don't know why default is 6, but netflix got it lowered to 2
+net.ipv4.tcp_syn_retries = 2
+# tcp_synack_retries, default: 5
+# same but for PASSIVE connections
+net.ipv4.tcp_synack_retries = 2
+
+# ip_local_port_range, default: 32768    60999
+# local port range for outgoing connections, can/should be bumped,
+# but please remember this only affects OUTGOING (active) connections
+# not incomming
+net.ipv4.ip_local_port_range = 10240 65535
+
+# tcp_abort_on_overflow, default: 0
+# it configures behaviour if listen queue is full
+# 0 - means DROP
+# 1 - means send RST packet to the client
+# i think I prefer 0, it is safer, and also client can retransmit SYN, and recover
+# BUT! if your application is too slow to accept connections, you should REALLY
+# do something about it, rather than playing with that tcp option
+net.ipv4.tcp_abort_on_overflow = 0
 
 ###############################################################################
 # conntrack
@@ -187,6 +228,7 @@ net.ipv4.tcp_tw_reuse = 1
 # there is 1 conntrack hashtable -> with N keys (aka buckets)
 # each bucket is actually a linked list, witn N nodes in it
 # each node is a single conntrack entry
+# (google for `conntrack hassh table` and see images)
 net.netfilter.nf_conntrack_buckets = 655360
 # nf_conntrack_max, default: 131072 # 2*buckets
 # the maximum number of total conntrack entries
@@ -218,25 +260,4 @@ net.core.default_qdisc = fq_codel
 #   sysctl -a net.ipv4.tcp_available_congestion_control
 # `BBR` is just example, but apparently is a good one, from GOOGLE
 net.ipv4.tcp_congestion_control = bbr
-
-
-
-###############################################################################
-## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ##
-net.core.rmem_max = 16777216                        # TODO read and understand
-net.core.rmem_default = ...                        # TODO read and understand
-net.core.wmem_max = 16777216                        # TODO read and understand
-net.core.wmem_default = ...                        # TODO read and understand
-net.ipv4.tcp_mem = ... ... ...             # TODO read and understand
-net.ipv4.udp_mem = ... ... ...             # TODO read and understand
-net.ipv4.tcp_rmem = 4096 12582912 16777216 # TODO read and understand
-net.ipv4.tcp_wmem = 4096 12582912 16777216 # TODO read and understand
-net.ipv4.tcp_rmem = 4096 12582912 16777216 # TODO read and understand
-
-net.ipv4.ip_local_port_range = 10240 65535 # TODO read and understand
-net.ipv4.tcp_abort_on_overflow = 1         # TODO read and understand , I think I prefer 0
-
-net.ipv4.tcp_slow_start_after_idle = 0 # TODO read and understand
-net.ipv4.tcp_syn_retries = 2           # TODO read and understand
-net.ipv4.tcp_synack_retries = 2        # TODO read and understand
 ```

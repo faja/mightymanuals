@@ -44,6 +44,9 @@ dpkg -S /usr/bin/lsns  # show which package provides a file
 apt-get -y update            #
 apt-get -y install procps    # programs: `ps`, useful in docker
 
+apt-get -y install netcat    # programs: `nc`
+apt-get -y install dnsutils  # programs: `dig`
+
 apt-get -y install iproute2  # programs: `ss`, `ip`, `nstat`
 apt-get -y install net-tools # programs: `netstat`
 apt-get -y install nicstat   # programs: `nicstat`

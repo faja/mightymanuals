@@ -44,3 +44,11 @@ ssh -L 5901:127.0.0.1:5901 ${HOST_NAME}
 
 # open vnciewer and connect to 127.0.0.1:5901
 ```
+
+#### how to increase memory
+```sh
+# first stop the VM
+virsh setmaxmem ${DOMAIN_NAME} 16G --config
+virsh setmem    ${DOMAIN_NAME} 16G --config
+virsh start     ${DOMAIN_NAME}
+```

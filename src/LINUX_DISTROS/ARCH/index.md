@@ -2,6 +2,7 @@
 ---
 
 - [pacman](./pacman.md)
+- [custom keyboard](./custom_keyboard.md)
 
 ---
 

@@ -247,6 +247,7 @@
 - [LINUX DISTROS](./LINUX_DISTROS/index.md)
     - [i use ARCH btw](./LINUX_DISTROS/ARCH/index.md)
         - [pacman](./LINUX_DISTROS/ARCH/pacman.md)
+        - [custom keyboard](./LINUX_DISTROS/ARCH/custom_keyboard.md)
     - [ALPINE](./LINUX_DISTROS/ALPINE/index.md)
     - [DEBIAN](./LINUX_DISTROS/DEBIAN/index.md)
 

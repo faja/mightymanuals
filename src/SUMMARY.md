@@ -140,6 +140,7 @@
         - [cheatsheet](./APPS/VAULT/cheatsheet.md)
         - [terraform](./APPS/VAULT/TERRAFORM/index.md)
     - [vim](./APPS/VIM/index.md)
+    - [vim](./APPS/versions.md)
 
 ---
 

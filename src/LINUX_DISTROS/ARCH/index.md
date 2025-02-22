@@ -1,3 +1,8 @@
+
+---
+
+- [pacman](./pacman.md)
+
 ---
 
 TODO

@@ -24,14 +24,18 @@ http {
   access_log /var/log/nginx/access.log main;
     # note on docker this is symlinked to /dev/stdout
 
-  # include /etc/nginx/mime.types
+  # include /etc/nginx/mime.types;
   default_type text/plain;
 
   server_tokens off;
 
   server {
-    listen       8081 default_server;
+    listen       8081 ssl default_server;
+    http2        on;
     server_name  _;
+
+    ssl_certificate     /etc/nginx/ssl.pem;
+    ssl_certificate_key /etc/nginx/ssl.pem;
 
     location / {
       return 200 "ok";

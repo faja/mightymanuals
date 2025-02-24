@@ -89,6 +89,7 @@
         - [stick-table and rate limiting](./APPS/HAPROXY/stick-table.md)
         - [ssl certificate live reload](./APPS/HAPROXY/ssl_live_reload.md)
         - [dns](./APPS/HAPROXY/dns.md)
+        - [play](./APPS/HAPROXY/play.md)
     - [helm](./APPS/HELM/index.md)
     - [libvirt](./APPS/LIBVIRT/index.md)
     - [loki](./APPS/LOKI/index.md)

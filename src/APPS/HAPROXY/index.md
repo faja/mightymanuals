@@ -10,4 +10,6 @@
 
 ---
 
-for some play dirs/configs see **mightyplay/haproxy**
+for some play dirs/configs see **mightyplay/haproxy**,
+
+for super quick paly config ~> [play](./play.md)

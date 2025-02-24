@@ -1,4 +1,10 @@
 
+# nvim startuptime
+
+```sh
+nvim --startuptime startuptime.log
+```
+
 # tips & trix
 
 - reverse order of lines

@@ -29,6 +29,7 @@
 - [iptables](./IPTABLES/index.md) `(tags=network,security)`
 - [jq](./JQ/index.md) `(tags=jq,json,yaml)`
 - [lsns](./LSNS/index.md) `(tags=namespace)`
+- [mkcert](./MKCERT/index.md) `(tags=ssl,security)`
 - [mpstat](./MPSTAT/index.md) `(tags=performance)`
 - [netstat](./NETSTAT/index.md) `(tags=network)`
 - [nicstat](./NICSTAT/index.md) `(tags=network)`

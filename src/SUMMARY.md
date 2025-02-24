@@ -176,6 +176,7 @@
     - [iptables](./COMMANDS/IPTABLES/index.md)
     - [jq](./COMMANDS/JQ/index.md)
     - [lsns](./COMMANDS/LSNS/index.md)
+    - [mkcert](./COMMANDS/MKCERT/index.md)
     - [mpstat](./COMMANDS/MPSTAT/index.md)
     - [netstat](./COMMANDS/NETSTAT/index.md)
     - [nicstat](./COMMANDS/NICSTAT/index.md)

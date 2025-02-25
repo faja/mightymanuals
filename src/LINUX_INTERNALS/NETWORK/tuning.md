@@ -102,12 +102,33 @@ cat /proc/sys/net/core/netdev_budget_usecs
 ```
 
 # tcp memory settings and socket buffers
-<span style="color:#ff4d94">**interesting note:**</span>
-if packet is dropped due to socket buffer is full (bc app can not handle
-the traffic/load), it doesn't appear as `dropped` in metrics (eg: netstat -s)
-it's `packets pruned from receive queue because of socket buffer overrun`
+
+<span style="color:#ff4d94">**important NOTES:**</span>
+- please keep in mind, TCP/SOCKETS memory is BARELY an issue, usually, limits
+  are good, without even tuning that
+- default limits are set dynamically based on available memory on the machine
+  and as an example, on 16G ec2, 'MIN TCP LIMIT', below which
+  kernel even doesn't bother is **~700MiB**, which is **crazy high!**
+- you probably won't see any issues on the memory graphs for TCP,
+  bc, memory issues are super short, due to quick connection/data burts
+  because of that, you probably need to notice something is wrong, based on
+  other counters (eg overflows) then use 1s (or even shorter) interval tools
+  to meassure memory issues
+- if packet is dropped due to socket buffer is full (bc app can not handle
+  the traffic/load), it doesn't appear as `dropped` in metrics (eg: netstat -s)
+  it's `packets pruned from receive queue because of socket buffer overrun`
+- SOCKET buffer size is automatically adjusted based on usage, kernel does the
+  job pretty well, however if you call `setsockopt()` with `SO_RCVBUF` or `SO_SNDBUF`
+  autoadjustment is disabled
+
+with that being said, lets first have a look on memory usage and tcp/udp limits
 
 ```sh
+# TLDR;
+#   TCP memory pressure: compare these two:
+#     - `grep TCP /proc/net/sockstat`     # current usaage
+#     - `cat /proc/sys/net/ipv4/tcp_mem`  # pressure limit
+
 # get number of sockets in use, allocated sk_buff struct, and all the memory
 cat /proc/net/sockstat
 # eg output (cuttet):
@@ -122,20 +143,66 @@ cat /proc/sys/net/ipv4/tcp_mem
 # and represent min, pressure, max
 # for more details on that file see
 # https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/networking/ip-sysctl.rst
+#
+# handy dandy awk to print 'min' in MiB:
+#   awk -v PAGESIZE=$(getconf PAGESIZE) '{print ($1*PAGESIZE)/(1024*1024) " MiB"}' /proc/sys/net/ipv4/tcp_mem
+
+# get udp memory "limits"
+cat /proc/sys/net/ipv4/udp_mem
+# similar to `tcp` one
 ```
 
-```
-###############################################################################
-## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ## TODO ##
-net.core.rmem_max = 16777216                        # TODO read and understand
-net.core.rmem_default = ...                        # TODO read and understand
-net.core.wmem_max = 16777216                        # TODO read and understand
-net.core.wmem_default = ...                        # TODO read and understand
-net.ipv4.tcp_mem = ... ... ...             # TODO read and understand
-net.ipv4.udp_mem = ... ... ...             # TODO read and understand
-net.ipv4.tcp_rmem = 4096 12582912 16777216 # TODO read and understand
-net.ipv4.tcp_wmem = 4096 12582912 16777216 # TODO read and understand
-net.ipv4.tcp_rmem = 4096 12582912 16777216 # TODO read and understand
+can you spot anything even close the the limits? probably not, but anyway:
+
+TUNING:
+
+
+```sh
+# NOTE: defaults here are from aws linux 2 - eks edition 2025 - 16G memory
+
+# tcp and udp system limits
+net.ipv4.tcp_mem = ... ... ...
+net.ipv4.udp_mem = ... ... ...
+# defaults:
+#   net.ipv4.tcp_mem = 186900       249202  373800  # min ~ 700MiB
+#   net.ipv4.udp_mem = 373803       498405  747606  # min ~ 1.4GiB
+# please REMEMBER these are in PAGES!
+# see above for explanation, if really needed, just double the defaults
+#  min: below this number of pages TCP is not bothered about its memory appetite.
+#  pressure: when amount of memory allocated by TCP exceeds this number
+#            of pages, TCP moderates its memory consumption and enters memory
+#	         pressure mode, which is exited when memory consumption falls
+#            under "min".
+#  max: number of pages allowed for queueing by all TCP sockets.
+
+
+# SOCKET BUFFER size (IN BYTES) - default and max
+# (note, default for TCP is overwriten by `tcp_Xmem` seetings)
+# these are per single SOCKET
+net.core.rmem_default = ...
+net.core.rmem_max = 16777216
+net.core.wmem_default = ...
+net.core.wmem_max = 16777216
+# defaults:
+#  net.core.rmem_default = 212992  # 208KiB
+#  net.core.rmem_max     = 212992
+#  net.core.wmem_default = 212992
+#  net.core.wmem_max     = 212992
+
+
+# TCP specific socket buffers sizes (for receive and send) - IN BYTES
+net.ipv4.tcp_rmem = 4096 12582912 16777216
+net.ipv4.tcp_wmem = 4096 12582912 16777216
+# defaults:
+#  net.ipv4.tcp_rmem = 4096        131072  6291456  # 4KiB 128KiB 6MiB
+#  net.ipv4.tcp_wmem = 4096        20480   4194304  # 4KiB 20KiB  4MiB
+# three values represent:
+#  - min - minimum socket buffer size GUARANTEED
+#  - default - default socket buffer size (this overrides `Xmem_default` setting)
+#  - max - max buffer size (this overrides `Xmem_max` setting - but only if
+#          `SO_RCVBUF` or `SO_SNDBUF` is NOT used!, usage of `SO_RCVBUF` or `SO_SNDBUF`
+#          via `setsockopt()` is still limited by `Xmem_max`)
+#          - this is confusing hence, it's good to set these two (max) the same
 ```
 
 # other sysctl tunnable

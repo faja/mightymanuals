@@ -179,9 +179,9 @@ net.ipv4.udp_mem = ... ... ...
 # SOCKET BUFFER size (IN BYTES) - default and max
 # (note, default for TCP is overwriten by `tcp_Xmem` seetings)
 # these are per single SOCKET
-net.core.rmem_default = ...
+net.core.rmem_default = 12582912
 net.core.rmem_max = 16777216
-net.core.wmem_default = ...
+net.core.wmem_default = 12582912
 net.core.wmem_max = 16777216
 # defaults:
 #  net.core.rmem_default = 212992  # 208KiB

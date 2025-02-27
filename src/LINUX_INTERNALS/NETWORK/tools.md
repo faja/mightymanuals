@@ -14,8 +14,13 @@
 - [tcpconnect](../../COMMANDS/TCPCONNECT/index.md)
 - [tcplife](../../COMMANDS/TCPLIFE/index.md)
 - [tcpretrans](../../COMMANDS/TCPRETRANS/index.md)
+- [tcpsynbl](../../COMMANDS/TCPSYNBL/index.md) - tracing SYN backlog size (and DROPs)
 - [tcptop](../../COMMANDS/TCPTOP/index.md)
 - [tcptracer](../../COMMANDS/TCPTRACER/index.md)  <-- that's the one you most likely are looking for
 
 ### bpftrace
-TODO
+
+note: most bpftrace tools got ported to bcc, so not really point of executing
+bpftrace scripts,
+
+for one liners see [bpftrace/network](../../PROGRAMMING/BPFTRACE/network.md)

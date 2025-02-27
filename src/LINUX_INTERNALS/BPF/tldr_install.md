@@ -105,4 +105,10 @@ Ok, packages are distro specific, so:
 
 ## alpine
 ## debian
+
+```sh
+bpftrace
+libbpf-tools
+```
+
 ## aws linux 2

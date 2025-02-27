@@ -57,6 +57,7 @@
 - [tcpdump](./TCPDUMP/index.md) `(tags=network,performance)`
 - [tcplife](./TCPLIFE/index.md) `(tags=bpf,network,performance)`
 - [tcpretrans](./TCPRETRANS/index.md) `(tags=bpf,network,performance)`
+- [tcpsynbl](./TCPSYNBL/index.md) `(tags=bpf,network,performance)`
 - [tcptop](./TCPTOP/index.md) `(tags=bpf,network,performance)`
 - [tcptracer](./TCPTRACER/index.md) `(tags=bpf,network,performance)`
 - [trace](./TRACE/index.md) `(tags=bpf,performance)`

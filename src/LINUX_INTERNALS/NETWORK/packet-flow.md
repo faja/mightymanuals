@@ -14,8 +14,6 @@ in purpouse. See some links for more detailed explanation:
 
 - new! [https://www.kungfudev.com/blog/2024/06/14/network-sockets-syn-and-accept-queue](https://www.kungfudev.com/blog/2024/06/14/network-sockets-syn-and-accept-queue)
 
-- to read! [https://www.kungfudev.com/blog/2024/06/14/network-sockets-syn-and-accept-queue](https://blog.packagecloud.io/the-definitive-guide-to-linux-system-calls/)
-
 ### ok, lesssgo
 
 - First of: **SEND** and **RECEIVE** paths are different.

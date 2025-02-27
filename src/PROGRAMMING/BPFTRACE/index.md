@@ -10,6 +10,10 @@ quick links
 
 ---
 
+- [network](./network.md)
+
+---
+
 # tldr; examples; one-liners
 - list probes
     ```sh

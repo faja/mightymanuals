@@ -31,6 +31,7 @@
 - [lsns](./LSNS/index.md) `(tags=namespace)`
 - [mkcert](./MKCERT/index.md) `(tags=ssl,security)`
 - [mpstat](./MPSTAT/index.md) `(tags=performance)`
+- [ncdu](./NCDU/index.md) `(tags=disk)`
 - [netstat](./NETSTAT/index.md) `(tags=network)`
 - [nicstat](./NICSTAT/index.md) `(tags=network)`
 - [nsenter](./NSENTER/index.md) `(tags=namespace)`

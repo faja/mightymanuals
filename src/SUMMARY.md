@@ -180,6 +180,7 @@
     - [lsns](./COMMANDS/LSNS/index.md)
     - [mkcert](./COMMANDS/MKCERT/index.md)
     - [mpstat](./COMMANDS/MPSTAT/index.md)
+    - [ncdu](./COMMANDS/NCDU/index.md)
     - [netstat](./COMMANDS/NETSTAT/index.md)
     - [nicstat](./COMMANDS/NICSTAT/index.md)
     - [nsenter](./COMMANDS/NSENTER/index.md)

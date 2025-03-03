@@ -77,3 +77,17 @@ interval:s:1
 
 - `sockstat.bt` - prints socket statistics, socket events count each second
 - `sofamily.bt` - summarizes accept(2) and connect(2), per process with address family
+- `soprotocol.bt` - summarizes accept(2) and connect(2), per process with protocol name
+                    pretty similar to the previous one
+- `soconnetct.bt` - prints socket connect requests, via syscall tracepoints:
+                    `sys_enter_connect` and `sys_exit_connect` - it's a bit nicer
+                    version of `tcpconnect`/`tcptracer` (but if you don't need all these details
+                    still prefered is `tcpconnect`/`tcptracer`). Fields printed:
+                    PID, PROCESS, ADDRESS, PORT, LATENCY, RESULT - the nice thing
+                    is it traces the exit syscall and we can get the RESULT
+- `soaccept.bt` - prints socket accept requests, via syscall tracepoints:
+                  `sys_enter_accept` and `sys_exit_accept` - same as above (CONNECT)
+                  but for ACCEPT
+- `socketio.bt` - prints socket I/O counts - how many which process read or writen
+                  to/from a socket
+- `socketsize.bt` - a histogram of total bytes socket IOs per process and direction

@@ -25,6 +25,11 @@ note: most bpftrace tools got ported to bcc, so it's prefferable to execute bcc 
 for one liners see [bpftrace/network](../../PROGRAMMING/BPFTRACE/network.md)
 
 for ready to use scripts also see [bpftrace/network](../../PROGRAMMING/BPFTRACE/network.md),
-but here is the list
-- `sockstat.bt` - prints socket statistics, socket events count each second
-- `sofamily.bt` - summarizes accept(2) and connect(2), per process with address family
+but here is the list:
+- `sockstat.bt`
+- `sofamily.bt`
+- `soprotocol.bt`
+- `soconnetct.bt`
+- `soaccept.bt`
+- `socketio.bt`
+- `socketsize.bt`

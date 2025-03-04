@@ -71,6 +71,28 @@ interval:s:1
 }
 ```
 
+- sordrop.bt
+```bt
+#!/usr/bin/bpftrace
+
+BEGIN
+{
+    printf("Tracing socket receive buffer full. Hit Ctrl-C to end.\n");
+}
+
+tracepoint:sock:sock_rcvqueue_full
+{
+    printf("%s rmem_alloc %d > rcvbuf %d, skb size %d\n", probe,
+        args->rmem_alloc, args->sk_rcvbuf, args->truesize);
+}
+
+tracepoint:sock:sock_exceed_buf_limit
+{
+    printf("%s rmem_alloc %d, allocated %d\n", probe,
+        args->rmem_alloc, args->allocated);
+}
+```
+
 ### ready to use scripts
 
 (see BRENDAN's books for source code)

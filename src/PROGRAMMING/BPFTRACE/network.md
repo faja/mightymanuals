@@ -43,7 +43,7 @@ bpftrace -e 'kr:udp_recvmsg /retval >=0/ { @recv_bytes = hist(retval); }'
 
 Simple scripting is relatively straight forward, nice example that is self explanatory
 
-`sockstat.bt`
+- `sockstat.bt`
 
 ```bt
 #!/usr/bin/bpftrace
@@ -71,7 +71,7 @@ interval:s:1
 }
 ```
 
-- sordrop.bt
+- `sordrop.bt`
 ```bt
 #!/usr/bin/bpftrace
 

@@ -91,3 +91,46 @@ interval:s:1
 - `socketio.bt` - prints socket I/O counts - how many which process read or writen
                   to/from a socket
 - `socketsize.bt` - a histogram of total bytes socket IOs per process and direction
+- `sormem.bt` - prints histogram of how full receive socket buffer is compared
+                to the configured limit, it prints two histograms: `@rmem_alloc`
+                (what is currently in use) and `@rmem_limit` (what limitas are configured)
+                it can be use, to determine if configured limits make sense
+
+    eg:
+    ```sh
+    # sormem.bt
+    Attaching 4 probes...
+    Tracing socket receive buffer size. Hit Ctrl-C to end.
+    ^C
+
+    @rmem_alloc:
+    [0]              72870 [ @@@@@@@@@@@@@@@@@@@@@@@                       ]
+    [1]                  0 [                                               ]
+    [2, 4)               0 [                                               ]
+    [4, 8)               0 [                                               ]
+    [8, 16)              0 [                                               ]
+    ...
+    [512, 1K)       113831 [ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ ]
+    [1K, 2K)           113 [                                               ]
+    [2K, 4K)           105 [                                               ]
+    [4K, 8K)         99221 [ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@        ]
+    [8K, 16K)        26726 [ @@@@@@@@                                      ]
+    [16K, 32K)       58028 [ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@                 ]
+    [32K, 64K)       31336 [ @@@@@@@@@@@@                                  ]
+    [64K, 128K)       6692 [ @@@                                           ]
+    [128K, 512K)         0 [                                               ]
+    ...
+    [1M, 2M)            45 [                                               ]
+    [2M, 4M)            80 [                                               ]
+
+
+    @rmem_limit:
+    [64K, 128K)      14447 [ @                                             ]
+    [128K, 256K)       262 [                                               ]
+    [256K, 512K)         0 [                                               ]
+    ...
+    [4M, 8M)             0 [                                               ]
+    [8M, 16M)       410158 [ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ ]
+    [16M, 32M)           7 [                                               ]
+
+    ```

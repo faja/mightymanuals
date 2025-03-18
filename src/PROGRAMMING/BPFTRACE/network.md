@@ -97,26 +97,67 @@ tracepoint:sock:sock_exceed_buf_limit
 
 (see BRENDAN's books for source code)
 
-- `sockstat.bt` - prints socket statistics, socket events count each second
-- `sofamily.bt` - summarizes accept(2) and connect(2), per process with address family
-- `soprotocol.bt` - summarizes accept(2) and connect(2), per process with protocol name
-                    pretty similar to the previous one
-- `soconnetct.bt` - prints socket connect requests, via syscall tracepoints:
-                    `sys_enter_connect` and `sys_exit_connect` - it's a bit nicer
-                    version of `tcpconnect`/`tcptracer` (but if you don't need all these details
-                    still prefered is `tcpconnect`/`tcptracer`). Fields printed:
-                    PID, PROCESS, ADDRESS, PORT, LATENCY, RESULT - the nice thing
-                    is it traces the exit syscall and we can get the RESULT
-- `soaccept.bt` - prints socket accept requests, via syscall tracepoints:
-                  `sys_enter_accept` and `sys_exit_accept` - same as above (CONNECT)
-                  but for ACCEPT
-- `socketio.bt` - prints socket I/O counts - how many which process read or writen
-                  to/from a socket
-- `socketsize.bt` - a histogram of total bytes socket IOs per process and direction
-- `sormem.bt` - prints histogram of how full receive socket buffer is compared
-                to the configured limit, it prints two histograms: `@rmem_alloc`
-                (what is currently in use) and `@rmem_limit` (what limitas are configured)
-                it can be use, to determine if configured limits make sense
+- **`sockstat.bt`** - prints socket statistics, socket events count each second,
+
+    eg:
+    ```sh
+    # sockstat.bt
+    Attaching 10 probes...
+    Tracing sock statistics. Output every 1 second.
+    01:11:41
+    @[tracepoint:syscalls:sys_enter_bind]: 1
+    @[tracepoint:syscalls:sys_enter_socket]: 67
+    @[tracepoint:syscalls:sys_enter_connect]: 67
+    @[tracepoint:syscalls:sys_enter_accept4]: 89
+    @[kprobe:sock_sendmsg]: 5280
+    @[kprobe:sock_recvmsg]: 10547
+
+    01:11:42
+    [...]
+    ```
+
+- **`sofamily.bt`** - summarizes `accept(2)` and `connect(2),` per process with address family
+
+    eg:
+    ```sh
+    # sofamily.bt
+    Attaching 7 probes...
+    Tracing socket connect/accepts. Ctrl-C to end.
+    ^C
+
+    @accept[sshd, 2, AF_INET]: 2
+    @accept[java, 2, AF_INET]: 420
+
+    @connect[sshd, 2, AF_INET]: 2
+    @connect[sshd, 10, AF_INET6]: 2
+    @connect[(systemd), 1, AF_UNIX]: 12
+    @connect[sshd, 1, AF_UNIX]: 34
+    @connect[java, 2, AF_INET]: 215
+    ```
+
+- **`soprotocol.bt`** - summarizes accept(2) and connect(2), per process with protocol name
+    pretty similar to the previous one
+
+- **`soconnect.bt`** - prints socket connect requests, via syscall tracepoints:
+    `sys_enter_connect` and `sys_exit_connect` - it's a bit nicer
+    version of `tcpconnect`/`tcptracer` (but if you don't need all these details
+    still prefered is `tcpconnect`/`tcptracer`). Fields printed:
+    PID, PROCESS, ADDRESS, PORT, LATENCY, RESULT - the nice thing
+    is it traces the exit syscall and we can get the RESULT
+
+- **`soaccept.bt`** - prints socket accept requests, via syscall tracepoints:
+    `sys_enter_accept` and `sys_exit_accept` - same as above (CONNECT)
+    but for ACCEPT
+
+- **`socketio.bt`** - prints socket I/O counts - how many which process read or writen
+    to/from a socket
+
+- **`socketsize.bt`** - a histogram of total bytes socket IOs per process and direction
+
+- **`sormem.bt`** - prints histogram of how full receive socket buffer is compared
+    to the configured limit, it prints two histograms: `@rmem_alloc`
+    (what is currently in use) and `@rmem_limit` (what limitas are configured)
+    it can be use, to determine if configured limits make sense
 
     eg:
     ```sh
@@ -155,4 +196,54 @@ tracepoint:sock:sock_exceed_buf_limit
     [8M, 16M)       410158 [ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ ]
     [16M, 32M)           7 [                                               ]
 
+    ```
+
+- **`soconnlat.bt`** - shows socket connection latency as aa histogram (with user-level
+    stack traces). Similar to `soconnect.bt` but helps you identify
+    connections by code paths (source code that causes connections),
+    works by tracing `connect(2)`, `select(2)`, `poll(2)`(family)
+
+    eg:
+    ```sh
+    # soconnlat.bt
+    Attaching 12 probes...
+    Tracing IP connect() latency with ustacks. Ctrl-C to end.
+    ^C
+
+    @us[
+        __GI___connect+108
+        ...<cut - full stack trace>...
+        __clone+63
+    , FreeColClient:W]:
+    [32, 64)             1 [ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ ]
+
+    @us[
+        __connect+71
+    , java]:
+    [128, 256)          69 [ @@@@@@@@@@@@@@@@@@@@@@@@@@                    ]
+    [256, 512)          28 [ @@@@@@@@@                                     ]
+    [512, 1K)          121 [ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@    ]
+    [1K, 2K)            53 [ @@@@@@@@@@@@@@@@@@@                           ]
+    ```
+
+- **`so1stbyte.bt`** - traces the time from issuing an IP socket connect(2) to the
+    first read byte for that socket, works by instrumenting
+    syscall tracepoints `connect(2)`, `read(2)`, `recv(2)`
+
+    eg:
+    ```sh
+    # so1stbyte.bt
+    Attaching 21 probes...
+    Tracing IP socket first-read-byte latency. Ctrl-C to end.
+    ^C
+
+    @us[java]:
+    [256, 512)           4 [                                               ]
+    [512, 1K)            5 [ @                                             ]
+    [1K, 2K)            34 [ @@@@@@                                        ]
+    [2K, 4K)           212 [ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@      ]
+    [4K, 8K)           260 [ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ ]
+    ...
+    [256K, 512K)         3 [                                               ]
+    [512K, 1M)           1 [                                               ]
     ```

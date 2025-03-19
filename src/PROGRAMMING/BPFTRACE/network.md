@@ -248,3 +248,15 @@ tracepoint:sock:sock_exceed_buf_limit
 
 - **`tcpwin.bt`** - traces TCP send congestion window size and other kernel parameters
 - **`tcpnagle.bt`** - traces usage of TCP nagle
+- **`udpconnect.bt`** - traces new UDP connections
+
+    eg:
+    ```sh
+    # udpconnect.bt
+    Attaching 3 probes...
+    TIME      PID   COMM             IP  RADDR                 RPORT
+    20:58:38  6039  DNS Res~er #540  4   10.45.128.25          53
+    20:58:38  2621  TaskSchedulerFo  4   10.45.128.25          53
+    20:58:39  3876  Chrome_IOThread  6   2001:4860:4860::8888  53
+    [...]
+    ```

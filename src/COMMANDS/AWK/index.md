@@ -62,6 +62,10 @@ ps -eF --forest | awk '$11 ~ /\/usr\/sbin\/sshd/{p=1} $11 ~ /^\// && $11 !~ /\/u
 
 # split line into multiple lines, aka `tr " " "\n"`, and print filed number
 awk '/^TcpExt/ && NR==1 {gsub(" ","\n");print}' /proc/net/netstat | awk '{print NR, " : ", $0}'
+
+# build a handy tmp map, then use for to print all it's values,
+# use second item ($2) as a map key
+awk -F, '$1 == "rcv" { a[$2]++ } END { for (s in a) { print s, a[s] } }' out.tcpwin01.txt
 ```
 
 # some advanced trix

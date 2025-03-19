@@ -245,5 +245,6 @@ tracepoint:sock:sock_exceed_buf_limit
     [4K, 8K)           260 [ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ ]
     ...
     [256K, 512K)         3 [                                               ]
-    [512K, 1M)           1 [                                               ]
-    ```
+
+- **`tcpwin.bt`** - traces TCP send congestion window size and other kernel parameters
+- **`tcpnagle.bt`** - traces usage of TCP nagle

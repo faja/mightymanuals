@@ -19,6 +19,7 @@
 - [find](./FIND/index.md)
 - [free](./FREE/index.md) `(tags=performance)`
 - [funccount](./FUNCCOUNT/index.md) `(tags=bpf,performance)`
+- [gethostlatency](./GETHOSTLATENCY/index.md) `(tags=bpf,network,performance)`
 - [grip](./GRIP/index.md) `(tags=markdown,preview,pip)`
 - [hey](./HEY/index.md) `(tags=loadtest)`
 - [htop](./HTOP/index.md) `(tags=performance)`

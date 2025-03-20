@@ -260,3 +260,6 @@ tracepoint:sock:sock_exceed_buf_limit
     20:58:39  3876  Chrome_IOThread  6   2001:4860:4860::8888  53
     [...]
     ```
+
+- other scripts that can be found in the books: `ippecn`, `superping`,
+  `qdisc-fq`, `qdisc-*`

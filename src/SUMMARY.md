@@ -168,6 +168,7 @@
     - [find](./COMMANDS/FIND/index.md)
     - [free](./COMMANDS/FREE/index.md)
     - [funccount](./COMMANDS/FUNCCOUNT/index.md)
+    - [gethostlatency](./COMMANDS/GETHOSTLATENCY/index.md)
     - [grip](./COMMANDS/GRIP/index.md)
     - [hey](./COMMANDS/HEY/index.md)
     - [htop](./COMMANDS/HTOP/index.md)

@@ -10,6 +10,7 @@
 - [ss](../../COMMANDS/SS/index.md)
 
 ### bpf (bcc)
+- [gethostlatency](../../COMMANDS/GETHOSTLATENCY/index.md)
 - [tcpaccept](../../COMMANDS/TCPACCEPT/index.md)
 - [tcpconnect](../../COMMANDS/TCPCONNECT/index.md)
 - [tcplife](../../COMMANDS/TCPLIFE/index.md)
@@ -33,3 +34,9 @@ but here is the list:
 - `soaccept.bt`
 - `socketio.bt`
 - `socketsize.bt`
+- `sormem.bt`
+- `soconnlat.bt`
+- `so1stbyte.bt`
+- `tcpwin.bt`
+- `tcpnagle.bt`
+- `udpconnect.bt`

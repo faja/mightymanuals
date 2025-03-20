@@ -11,10 +11,12 @@
 
 ### bpf (bcc)
 - [gethostlatency](../../COMMANDS/GETHOSTLATENCY/index.md)
+- [solisten](../../COMMANDS/SOLISTEN/index.md) - pretty cool one, prints socket `listen(2)` calls with details
 - [tcpaccept](../../COMMANDS/TCPACCEPT/index.md)
 - [tcpconnect](../../COMMANDS/TCPCONNECT/index.md)
 - [tcplife](../../COMMANDS/TCPLIFE/index.md)
 - [tcpretrans](../../COMMANDS/TCPRETRANS/index.md)
+- [tcpstates](../../COMMANDS/TCPSTATES/index.md) - prints TCP session state changes
 - [tcpsynbl](../../COMMANDS/TCPSYNBL/index.md) - tracing SYN backlog size (and DROPs)
 - [tcptop](../../COMMANDS/TCPTOP/index.md)
 - [tcptracer](../../COMMANDS/TCPTRACER/index.md)  <-- that's the one you most likely are looking for
@@ -40,3 +42,5 @@ but here is the list:
 - `tcpwin.bt`
 - `tcpnagle.bt`
 - `udpconnect.bt`
+- `netsize.bt`
+- `nettxlat.bt`

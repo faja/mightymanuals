@@ -261,5 +261,25 @@ tracepoint:sock:sock_exceed_buf_limit
     [...]
     ```
 
+- **`netsize.bt`** - todo
+
+    eg:
+    ```sh
+    # netsize.bt
+    Attaching 5 probes...
+
+    TODO
+    ```
+
+- **`nettxlat.bt`** - todo
+
+    eg:
+    ```sh
+    # nettxlat.bt
+    Attaching 4 probes...
+
+    TODO
+    ```
+
 - other scripts that can be found in the books: `ippecn`, `superping`,
   `qdisc-fq`, `qdisc-*`

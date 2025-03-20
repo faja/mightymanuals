@@ -50,6 +50,7 @@
 - [runqlen](./RUNQLEN/index.md) `(tags=bpf,performance)`
 - [runqslower](./RUNQSLOWER/index.md) `(tags=bpf,performance)`
 - [sar](./SAR/index.md) `(tags=performance)`
+- [solisten](./SOLISTEN/index.md) `(tags=bpf,network,performance)`
 - [sops](./SOPS/index.md) `(tags=encryption,secrets,security)`
 - [ss](./SS/index.md) `(tags=network)`
 - [ssh](./SSH/index.md) `(tags=ssh,security)`
@@ -59,6 +60,7 @@
 - [tcpdump](./TCPDUMP/index.md) `(tags=network,performance)`
 - [tcplife](./TCPLIFE/index.md) `(tags=bpf,network,performance)`
 - [tcpretrans](./TCPRETRANS/index.md) `(tags=bpf,network,performance)`
+- [tcpstates](./TCPSTATES/index.md) `(tags=bpf,network,performance)`
 - [tcpsynbl](./TCPSYNBL/index.md) `(tags=bpf,network,performance)`
 - [tcptop](./TCPTOP/index.md) `(tags=bpf,network,performance)`
 - [tcptracer](./TCPTRACER/index.md) `(tags=bpf,network,performance)`

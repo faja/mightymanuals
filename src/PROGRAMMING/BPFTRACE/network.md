@@ -224,7 +224,7 @@ tracepoint:sock:sock_exceed_buf_limit
 
     eg:
     ```sh
-    # socketio.bt
+    # socketsize.bt
     Attaching 2 probes...
     ^C
 

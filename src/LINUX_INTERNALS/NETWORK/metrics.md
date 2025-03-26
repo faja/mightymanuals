@@ -2,10 +2,61 @@
 
 # Metrics in practice
 
-- rx,tx bytes per second
-- rx,tx packets per second
-- packet drops, errors
+## rx,tx bytes and packets per second
 
+- node exporter: `node_network_{receive,transmit}_{bytes,packets}_total` - yeah,
+  really nice stats, defo first thing to look at
+- cli:
+    ```sh
+    # my first cli tool to ues is `nicstat` (however, I'm not sure how to install
+    # that on aws linux) shows packets and bytes per second per interface
+    % nicstat 1
+    Time          Int   rKB/s   wKB/s   rPk/s   wPk/s    rAvs    wAvs %Util    Sat
+    22:36:21     eth0    4.40    0.87    9.43    6.66   477.5   133.6  0.00   0.00
+    22:36:21     eth1    0.01    0.00    0.03    0.00   172.0    0.00  0.00   0.00
+    Time          Int   rKB/s   wKB/s   rPk/s   wPk/s    rAvs    wAvs %Util    Sat
+    22:36:22     eth0    0.35    0.56    5.99    5.99   60.00   95.33  0.00   0.00
+    22:36:22     eth1    0.00    0.00    0.00    0.00    0.00    0.00  0.00   0.00
+
+    # some total stats, can be check with netstat -s, but I dont find
+    # it super useful for per second thing
+    netstat -s | grep -e InOctets -e OutOctets
+    ```
+
+- manual /proc, /sys
+    ```sh
+    # ok, from highest level to lowest
+
+    # {bytes,packets} {rx,tx} - per interface (similar stats to nicstat)
+    % cat /proc/net/dev
+
+    # packets total
+    % cat /proc/net/snmp | grep Ip | awk '{print $4, $11}'
+    InReceives OutRequests
+    14591018844 14593688103
+
+    # bytes total
+    % cat /proc/net/netstat | grep Ip | awk '{print $8, $9}'
+    InOctets OutOctets
+    111217441278663 222443045610484
+
+    # two above can be obtain with
+    % netstat -s
+
+    # finally you can read stats from interface /sys path
+    # in general
+    cat /sys/class/net/<INTERFACE_NAME>/statistics/<STAT_NAME>
+    #eg:
+    cat /sys/class/net/eth0/statistics/rx_packets
+    ```
+
+- awk magic 1 liner! LFG!
+    ```sh
+    awk -W interactive '{val=$1-val_p;val_p=$1;print "packets total:",val_p,", p/s:",val}' \
+    <(while true; do cat /sys/class/net/eth0/statistics/rx_bytes ; sleep 1;done)
+    ```
+
+## packet drops, errors
 
     ```sh
     ethtool -S <interface>
@@ -13,36 +64,13 @@
     ip -s link
     ```
 
-    or using `sysfs`
-    eg:
-    ```
-    /sys/class/net/eno1/statistics/rx_bytes
-    ```
-    in general the path is:
-    ```
-    /sys/class/net/<INTERFACE_NAME>/statistics/<STAT_NAME>
-    ```
-
-    note: sysfs are slightly higer level than direct NIC level stats
-    provided by `ethtool`
-
-    even higher level is to read `/proc/net/dev`
-    which provides 1line per interface stats
-
-- ip packets tx,rx
-
-    ```sh
-    cat /proc/net/snmp
-    cat /proc/net/netstat
-    ```
-
-- udp
+# udp
 
     ```sh
     grep Udp /proc/net/snmp
     cat /proc/net/udp
     ```
-- tcp
+# tcp
 
     ```sh
     grep Tcp /proc/net/snmp

@@ -6,7 +6,6 @@
 - network memory consumption
 - SYN and LISTEN queues
 - /proc/net/softnet_stat
-- network related IRQs
 
 # Metrics in practice
 
@@ -190,8 +189,6 @@ $ cat /proc/net/softnet_stat
 
 
 ## network related IRQs
-TODO
-
 ```sh
 # soft
 grep -e CPU -e NET_ /proc/softirqs
@@ -207,7 +204,6 @@ via `/proc/interrupts` - however, when it comes to network, some
 drivers disable hardware interrupts if the packets are actively flowing
 
 see also: `mpstat -I ALL` - print interrupt statistics
-
 
 # /proc /sys etc...
 - `/proc/net/tcp` - tcp connection per line - details

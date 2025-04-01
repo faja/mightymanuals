@@ -57,41 +57,74 @@
     ```
 
 ## packet drops, errors
+TODO
+TODO
+TODO
+TODO
 
-    ```sh
-    ethtool -S <interface>
-    # or
-    ip -s link
-    ```
+```sh
+ethtool -S <interface>
+# or
+ip -s link
+```
 
-# udp
+- `/proc/net/dev` - quick and nice overview, `tx/rx`: `packets`, `errors`, `drops`,
+    per interface
 
-    ```sh
-    grep Udp /proc/net/snmp
-    cat /proc/net/udp
-    ```
-# tcp
+```sh
+cat /sys/class/net/eth0/statistics/{r,t}x_packets
+cat /sys/class/net/eth0/statistics/{r,t}x_dropped
+```
 
-    ```sh
-    grep Tcp /proc/net/snmp
-    cat /proc/net/tcp
-    ```
+## sockets (/proc/net/sockstat)
 
+```sh
+# to get number of socket (all kinds/types/protocols)
+% grep sockets /proc/net/sockstat
+
+# to get that number per kind/type/protocol
+% cat /proc/net/protocols
+```
+
+## udp
+
+TODO TODO TODO TODO TODO
+
+```sh
+grep Udp /proc/net/snmp
+
+# UDP sockets details, 1 line per socket: address, buffers, etc...
+% cat /proc/net/udp
+```
+
+
+## tcp
+
+TODO TODO TODO TODO TODO
+
+```sh
+grep Tcp /proc/net/snmp
+
+# TCP sockets details, 1 line per socket: address, buffers, state, etc...
+% cat /proc/net/tcp
+```
 - active/passive connections/s
-
 - tcp states number of connections in particular state
-
 - tcp errors (retransmits, out of order, etc..)
+- syn received during a tcp time_wait
 
+## network memory consumption
 
-- socket stats (number of sockets)
+TODO TODO TODO TODO TODO
 
 - tcp memory usage (system)
-
-
 - socket memory usage per socket
 
-# SYN and LISTEN queues
+
+
+## SYN and LISTEN queues
+
+TODO TODO TODO TODO TODO
 
 - check the overflow
 ```sh
@@ -126,11 +159,10 @@ nstat -az TcpExtTCPReqQFullDoCookies TcpExtSyncookiesSent TcpExtSyncookiesRecv T
 # these might indicate SYN FLOODs or SYN queue getting full
 ```
 
-# other stuff
-
-- syn received during a tcp time_wait
-
 ## /proc/net/softnet_stat
+
+TODO TODO TODO TODO TODO
+
 ```sh
 $ cat /proc/net/softnet_stat
 6dcad223 00000000 00000001 00000000 00000000 00000000 00000000 00000000 00000000 00000000
@@ -152,6 +184,9 @@ $ cat /proc/net/softnet_stat
 
 
 ## network related IRQs
+
+TODO TODO TODO TODO TODO
+
 ```sh
 # soft
 grep -e CPU -e NET_ /proc/softirqs
@@ -168,29 +203,23 @@ drivers disable hardware interrupts if the packets are actively flowing
 
 see also: `mpstat -I ALL` - print interrupt statistics
 
-# /proc and /sys
-- `/proc/net/dev` - quick and nice overview, `tx/rx`: `packets`, `errors`, `drops`,
-    per interface
+# /proc /sys etc...
+- `/proc/net/tcp` - tcp connection per line - details
+- `/proc/net/udp` - udp connection per line - details
+- `/proc/net/sockstat` and `/proc/net/protocols` - socket statistics
+- `/proc/net/dev` - ip level stuff per interface, packets, bytes, drops, errors
 - `/proc/net/snmp` - awesome stuff, `Ip`, `Icmp`, `Tcp`, `Udp` detailed metrics,
-    prett much the same stuff you get from `netstat -s`
+    (prett much the same stuff you get from `netstat -s`)
 - `/proc/net/netstat` - a lot of `Ip` and `Tcp` extended stats, (eg for TCP,
     there is more than 100 metrics)
+- `/proc/net/softnet_stat` - per CPU sk_buff processing stats (very low level)
 
-- `/proc/net/tcp` - TCP sockets details, 1 line per socket: address, buffers, state, etc...
-- `/proc/net/udd` - UDP sockets details, 1 line per socket: address, buffers, etc...
+# AWK
+```sh
+# use awk to get something quickly with per second interval etc...
+awk -W interactive '{val=$1-val_p;val_p=$1;print "packets total:",val_p,", p/s:",val}' \
+  <(while true; do cat /sys/class/net/eth0/statistics/rx_bytes ; sleep 1;done)
 
-- `/proc/interrupts` and `/proc/softirqs` - network related HARD an SOFT IRQs
-
-- `/sys/class/net/<INTERFACE_NAME>/statistics/<STAT_NAME>` - device stats, eg:
-    ```sh
-    cat /sys/class/net/eth0/statistics/{r,t}x_packets
-    cat /sys/class/net/eth0/statistics/{r,t}x_dropped
-    ```
-
-- use awk to get something quickly with per second interval etc...
-    ```sh
-    awk -W interactive '{val=$1-val_p;val_p=$1;print "packets total:",val_p,", p/s:",val}' \
-      <(while true; do cat /sys/class/net/eth0/statistics/rx_bytes ; sleep 1;done)
-    #
-    awk '/^TcpExt/ && NR==1 {gsub(" ","\n");print}' /proc/net/netstat | awk '{print NR, " : ", $0}'
-    ```
+# print all column names from /proc/net/netstat
+awk '/^TcpExt/ && NR==1 {gsub(" ","\n");print}' /proc/net/netstat | awk '{print NR, " : ", $0}'
+```

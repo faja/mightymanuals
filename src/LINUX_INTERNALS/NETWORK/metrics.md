@@ -1,5 +1,13 @@
 ---
 
+# TODO
+- packet drops, errors
+- tcp
+- network memory consumption
+- SYN and LISTEN queues
+- /proc/net/softnet_stat
+- network related IRQs
+
 # Metrics in practice
 
 ## rx,tx bytes and packets per second
@@ -58,9 +66,6 @@
 
 ## packet drops, errors
 TODO
-TODO
-TODO
-TODO
 
 ```sh
 ethtool -S <interface>
@@ -87,22 +92,28 @@ cat /sys/class/net/eth0/statistics/{r,t}x_dropped
 ```
 
 ## udp
-
-TODO TODO TODO TODO TODO
-
 ```sh
+# number of UDP datagrams rx/tx, errors, etc
+# (same as netstat -s, nstat -as)
 grep Udp /proc/net/snmp
 
 # UDP sockets details, 1 line per socket: address, buffers, etc...
-% cat /proc/net/udp
+cat /proc/net/udp
+# important! please remember local and remote address is in HEX and in BIG ENDIAN
+# so you have to read it from the end (address, two bytes at a time), eg:
+# address: "0100007F" is actually 7F.00.00.01 (hex) -> 127.0.0.1 (dec)
+# port: "0044" is actually "68"
+
+# UDP sockets in use and memory allocated (memory in PAGES (getconf PAGESIZE))
+grep Udp /proc/net/sockstat
 ```
 
-
 ## tcp
-
-TODO TODO TODO TODO TODO
+TODO
 
 ```sh
+# number of TCP segments rx/tx, errors, etc
+# (same as netstat -s, nstat -as)
 grep Tcp /proc/net/snmp
 
 # TCP sockets details, 1 line per socket: address, buffers, state, etc...
@@ -114,17 +125,13 @@ grep Tcp /proc/net/snmp
 - syn received during a tcp time_wait
 
 ## network memory consumption
-
-TODO TODO TODO TODO TODO
+TODO
 
 - tcp memory usage (system)
 - socket memory usage per socket
 
-
-
 ## SYN and LISTEN queues
-
-TODO TODO TODO TODO TODO
+TODO
 
 - check the overflow
 ```sh
@@ -160,8 +167,7 @@ nstat -az TcpExtTCPReqQFullDoCookies TcpExtSyncookiesSent TcpExtSyncookiesRecv T
 ```
 
 ## /proc/net/softnet_stat
-
-TODO TODO TODO TODO TODO
+TODO
 
 ```sh
 $ cat /proc/net/softnet_stat
@@ -184,8 +190,7 @@ $ cat /proc/net/softnet_stat
 
 
 ## network related IRQs
-
-TODO TODO TODO TODO TODO
+TODO
 
 ```sh
 # soft
@@ -202,6 +207,7 @@ via `/proc/interrupts` - however, when it comes to network, some
 drivers disable hardware interrupts if the packets are actively flowing
 
 see also: `mpstat -I ALL` - print interrupt statistics
+
 
 # /proc /sys etc...
 - `/proc/net/tcp` - tcp connection per line - details

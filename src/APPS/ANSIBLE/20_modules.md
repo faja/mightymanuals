@@ -287,6 +287,8 @@ actions:
         src: ...
         dest: ...
         mode: '0640'
+        trim_blocks: true   # this is default
+        lstrip_blocks: true # by default this is false!
     ```
 
 - validate sudoers

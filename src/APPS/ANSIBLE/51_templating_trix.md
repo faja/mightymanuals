@@ -85,5 +85,32 @@
 
     In general, the way I want it is to set `true` for **both** of them.
 
-- next trix go here
+- <span style="color:#ff4d94">**YAML!**</span> pretty yaml
+
+    ```yaml
+    vars:
+      my_config:
+        key1: value1
+        key2:
+          - item1
+          - item2
+    ```
+
+    template file:
+
+    ```yaml
+    some_config: here
+    and:
+      then:
+        foo:
+          bar:
+            {{ my_config | to_nice_yaml(indent=2, sort_keys=False) | indent(8) }}
+
+     # NOTE:
+     #  indent=2 parameter (in to_nice_yaml filter) refers to how to indend the rendered yaml itself
+     #           the keys and subkeys - you can think about it as a "inside" yaml variable you are passing
+     #  indent(8) filter at the end - refers to were we wanna start with the inecting yaml
+     #            - you can think about it as a "outside" yaml variable you are passing
+
+    ```
 

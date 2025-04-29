@@ -48,6 +48,11 @@
     ---
     - name: my firsy play
       hosts: all
+
+      tasks:
+        - name: test
+          ansible.builtin.debug:
+            msg: 1 2 1 2 this is just a test
     ```
 
 - run ansible

@@ -82,7 +82,19 @@ Please note code in an assert statement is Jinja not Python.
         that: st.stat.isdir
     ```
 
-
+- or
+    ```yaml
+    - name: Check if running on supported platform
+      vars:
+        is_redhat: "{{ ansible_os_family == 'RedHat' }}"
+        is_centos: "{{ ansible_distribution == 'CentOS' and ansible_distribution_major_version == '7' }}"
+        is_amazon: "{{ ansible_distribution == 'Amazon' and ansible_distribution_major_version == '2' }}"
+      ansible.builtin.assert:
+        that:
+          # please remember, this is jinja not python
+          - is_redhat
+          - is_centos or is_amazon
+    ```
 
 ### authorized_key
 todo

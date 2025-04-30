@@ -69,3 +69,5 @@ mkdir inventory
 touch inventory/inventory.yaml
 touch ansible.cfg
 ```
+
+test

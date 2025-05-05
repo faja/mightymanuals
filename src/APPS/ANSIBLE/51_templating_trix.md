@@ -104,13 +104,12 @@
       then:
         foo:
           bar:
-            {{ my_config | to_nice_yaml(indent=2, sort_keys=False) | indent(8) }}
+            {{ my_config | to_nice_yaml(indent=2, sort_keys=False) | indent(8) | trim }}
 
      # NOTE:
      #  indent=2 parameter (in to_nice_yaml filter) refers to how to indend the rendered yaml itself
      #           the keys and subkeys - you can think about it as a "inside" yaml variable you are passing
      #  indent(8) filter at the end - refers to were we wanna start with the inecting yaml
      #            - you can think about it as a "outside" yaml variable you are passing
-
+     #  trim - to not put a new line at the end of the output
     ```
-

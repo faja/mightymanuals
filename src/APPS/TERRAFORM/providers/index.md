@@ -1,2 +1,2 @@
-- [aws](../../../PLATFORMS/AWS/TERRAFORM/index.md)
+- [aws](./aws/index.md)
 - [tls](./tls/index.md)

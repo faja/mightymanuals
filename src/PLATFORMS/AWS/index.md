@@ -1,5 +1,6 @@
 ---
-- [TERRAFORM STUFF](./TERRAFORM/index.md)
+
+- [TERRAFORM STUFF](../../APPS/TERRAFORM/providers/aws/index.md)
 
 ---
 

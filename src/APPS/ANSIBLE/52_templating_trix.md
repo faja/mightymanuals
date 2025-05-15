@@ -29,6 +29,11 @@
     result['service'][my_service_variable] # variables can be used as well, nice
     ```
 
+- bool to string, if a variable is a bool, but you wanna pritn "true/"false" instead of "True/False"
+    ```yaml
+    ... {{ variable_that_is_a_bool | string | lower }} ...
+    ```
+
 - <span style="color:#ff4d94">**HOT!**</span> whitespacing and blocks `{% %}`
 
     TLDR; use

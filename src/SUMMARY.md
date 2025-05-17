@@ -146,7 +146,8 @@
         - [cheatsheet](./APPS/VAULT/cheatsheet.md)
         - [terraform](./APPS/VAULT/TERRAFORM/index.md)
     - [vim](./APPS/VIM/index.md)
-    - [vim](./APPS/versions.md)
+    - [versions](./APPS/versions.md)
+    - [local install](./APPS/local_install.md)
 
 ---
 

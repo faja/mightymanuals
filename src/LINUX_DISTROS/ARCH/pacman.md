@@ -34,7 +34,8 @@ pacman -Rn package_name  # doesn't save config files, after removing
 ## UPGRADE
 
 ```sh
-pacman -Syu  # update everything
+pacman -Syu                # update everything
+pacman -S ${PACKAGE_NAME}  # update single package
 
 # if you got "corrupted key" error
 pacman -Sy archlinux-keyring

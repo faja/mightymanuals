@@ -31,6 +31,7 @@
 
 ---
 
-[versions](./versions.md)
+- [versions](./versions.md)
+- [local install](./local_install.md)
 
 ---

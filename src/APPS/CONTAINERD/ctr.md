@@ -22,6 +22,11 @@ ctr -n k8s.io tasks exec -t --exec-id XXX ${CONTAINER_ID} /bin/bash
 # exec-id is just a random string/id
 ```
 
+- inspect a container
+```sh
+ctr --namespace k8s.io container info ${CONTAINER_ID}
+```
+
 - logs...hmmm...not really sure, but there is no way of getting logs from a running task,
     similar to `docker logs`
     - on K8S node, the logs can be read directly from disk

@@ -11,6 +11,7 @@
 - [grafana](./GRAFANA/index.md)
 - [haproxy](./HAPROXY/index.md)
 - [helm](./HELM/index.md)
+- [kind](./KIND/index.md)
 - [libvirt](./LIBVIRT/index.md)
 - [loki](./LOKI/index.md)
 - [mdbook](./MDBOOK/index.md)

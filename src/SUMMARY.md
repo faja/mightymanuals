@@ -92,6 +92,7 @@
         - [dns](./APPS/HAPROXY/dns.md)
         - [play](./APPS/HAPROXY/play.md)
     - [helm](./APPS/HELM/index.md)
+    - [kind](./APPS/KIND/index.md)
     - [libvirt](./APPS/LIBVIRT/index.md)
     - [loki](./APPS/LOKI/index.md)
     - [mdbook](./APPS/MDBOOK/index.md)

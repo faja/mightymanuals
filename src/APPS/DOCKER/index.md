@@ -2,6 +2,22 @@
 - [compose](./COMPOSE/index.md)
 - [docker image sha madness](./SHA/index.md)
 
+# basic docker usage
+
+## listing containers
+```sh
+# custom output
+## include labels
+docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Labels}}"
+## include particular label
+docker ps --format '{{.ID}}\t{{ .Names }}\t{{ .Label "some.label.with.dots.xxx" }}'
+
+
+# filter by label
+docker ps --filter label=labelKEY        # label exists
+docker ps --filter label=labelKEY=value1 # label must be set exactly to `value1`
+```
+
 # below is all todo
 
 - deubugging "slim" containers
@@ -30,8 +46,6 @@ docker manifest inspect -v ${IMAGE} | jq .Descriptor.digest
 
 ---
 ```sh
-docker ps --filter label=labelKEY=value1 \
-  --format '{{ .Names }}\t{{ .Label "some.label.with.dots.xxx" }}'
 ```
 
 ---

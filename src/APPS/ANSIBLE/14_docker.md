@@ -29,7 +29,7 @@ docker_compose
     project_src: /var/lib/docker-compose/prometheus
 ```
 
-### send signal handler
+### handler: send signal
 ```yaml
 - name: reload prometheus config
   become: true
@@ -39,4 +39,14 @@ docker_compose
     state: stopped    # send signal but don't remove container
     force_kill: true  # use kill signal instead of stop
     kill_signal: HUP  # send HUP instead of kill
+```
+
+### handler: restart container
+```yaml
+- name: restart grafana container
+  become: true
+  listen: grafana_container_restart
+  community.docker.docker_container:
+    name: grafana
+    restart: yes
 ```

@@ -10,6 +10,9 @@ sops updatekeys some_file.yaml # add or remove keys based on `creaation_rules` c
 # but it's a good practice to rotate key if we are removing some keys
 sops rotate -i --rm-age age1...keyxxx some_file.yaml  # rotate keys, inplace
 sops rotate -i some_file.yaml  # rotate keys, inplace
+
+# extract single key
+sops -d --extract '["key_name"]["subkey"]' some_file.yaml
 ```
 
 ## sops and age

@@ -1,5 +1,7 @@
 ---
 
+- [official ConfigMap reference](https://kubernetes.io/docs/reference/kubernetes-api/config-and-storage-resources/config-map-v1/)
+
 # tldr
 ```yaml
 ---
@@ -37,4 +39,19 @@ data:
 ```yaml
 data:
   mapping-config.yaml: | {{ toYaml .Values.mappingConfig | nindent 4 }}
+```
+
+- provide a config file from outside the chart, "deployment specific",
+  NOTE: this is in general not a good practise
+```yaml
+# first in values.yaml
+configYaml: ""
+
+# configmap.yaml
+data:
+    config.yaml: | {{ tpl .Values.configYaml . | nindent 4 }}
+    # or just {{ .Values.configYaml | nindent 4 }} - if no templating is needed
+
+# then run helm with --set-file option, eg:
+helm template ... --set-file configYaml=my_custom_config_from_outside_chart.yaml
 ```

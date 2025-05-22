@@ -1,7 +1,6 @@
 ---
 
 - [official docs](https://kind.sigs.k8s.io/)
-- [local install](../local_install.md)
 
 ---
 
@@ -17,3 +16,21 @@ kind delete cluster --name ${CLUSTER_NAME}            # delete cluster
 kind load docker-image my-custom-image-0 my-custom-image-1  # load docker image into kind node
 docker exec kind-control-plane crictl images                # list images on a kind node
 ```
+
+# ingress, aka how to access
+
+## pod with port mapping
+```yaml
+kind: Pod
+...
+spec:
+  containers:
+    - name: ...
+      ports:
+        - containerPort: 5678
+          hostPort: 80
+```
+then `docker container inspect kind-control-plane | grep IPAddress` and
+`curl http://....` - should work
+
+## service with NodePort

@@ -12,7 +12,7 @@ pacman -S $(pacman -Ssq package_regexp)   # to install all packages matched to r
 ## MANUAL build and install from AUR
 # download snapshot .tar.gz file
 makepkg
-sudo pacman -U *.tar.xz
+sudo pacman -U *.pkg.tar.zst
 ```
 
 ## REMOVE

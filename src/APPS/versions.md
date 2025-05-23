@@ -2,6 +2,7 @@
 
 |app|last time I checked|
 |---|-------------------|
+|[cilium](https://github.com/cilium/cilium?tab=readme-ov-file#stable-releases)| 1.17.4 |
 |[go](https://go.dev/doc/devel/release)| 1.24.0 |
 |[grafana](https://github.com/grafana/grafana/releases)| 12.0.0 |
 |[haproxy](https://www.haproxy.org/) (LTS line)| 3.0.10 |

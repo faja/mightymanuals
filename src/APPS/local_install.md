@@ -1,10 +1,24 @@
 ---
 
+- [cilium-cli](#cilium-cli)
+- [kind](#kind)
+
+
+### cilium-cli
+- [version url](https://github.com/cilium/cilium-cli?tab=readme-ov-file#releases)
+- install commands:
+```sh
+VERSION=0.18.3
+curl -L -o /tmp/cilium.tar.gz https://github.com/cilium/cilium-cli/releases/download/v${VERSION}/cilium-linux-amd64.tar.gz
+tar -C ~/bin2 -xzvf /tmp/cilium.tar.gz
+cilium version
+
+```
 ### kind
 - [version url](https://github.com/kubernetes-sigs/kind/releases)
 - install commands:
 ```sh
-VERSION=0.28.0
+VERSION=0.29.0
 curl -L -o ~/bin2/kind https://github.com/kubernetes-sigs/kind/releases/download/v${VERSION}/kind-linux-amd64
 chmod a+x ~/bin2/kind
 kind version

@@ -1,3 +1,17 @@
+---
+
+# usage
+
+- md preview
+    ```sh
+    :Markview            # to toggle in buffer rendering
+    :LivePreview start   # to open browser based live preview
+    ```
+
+- git related
+    ```sh
+    # todo
+    ```
 
 # nvim startuptime
 

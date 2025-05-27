@@ -28,7 +28,7 @@
 - [tmux](./TMUX/index.md)
 - [vagrant](./VAGRANT/index.md)
 - [vault](./VAULT/index.md)
-- [vim](./VIM/index.md)
+- [vim/nvim](./VIM/index.md)
 
 ---
 

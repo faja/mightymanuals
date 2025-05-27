@@ -34,3 +34,18 @@ then `docker container inspect kind-control-plane | grep IPAddress` and
 `curl http://....` - should work
 
 ## service with NodePort
+
+# confgi example
+```yaml
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+- role: worker
+- role: worker
+- role: worker
+networking:
+  disableDefaultCNI: true
+  podSubnet: 10.10.0.0/16
+  serviceSubnet: 10.11.0.0/16
+```

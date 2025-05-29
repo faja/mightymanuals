@@ -2,16 +2,41 @@
 
 # usage
 
-- md preview
-    ```sh
-    :Markview            # to toggle in buffer rendering
-    :LivePreview start   # to open browser based live preview
-    ```
+## nvim tree
+```yaml
+# keybindings
+E     # expand all
+W     # collaps all
+H     # toggle .dot files
+J     # last sibling
+K     # first sibling
+P     # parent
+m     # mark
+bd    # delete marked
+```
+## md preview
+```yaml
+:Markview            # to toggle in buffer rendering
+:LivePreview start   # to open browser based live preview
+```
 
-- git related
-    ```sh
-    # todo
-    ```
+## git related
+```yaml
+# todo
+```
+
+## treesitter
+```yaml
+:InspectTree    # to inspect treesitter tree - but also quite nice to just check
+                # if treesitter is working for a current filetype
+:TSInstallInfo  # check what parsers are installed
+:TSModuleInfo   # check if highlighting is enabled
+```
+## surround
+```yaml
+ds"   # remove surrounded " ... "example to test"
+cs"'  # replace " with '    ... "example to test"
+```
 
 # nvim startuptime
 
@@ -19,9 +44,29 @@
 nvim --startuptime startuptime.log
 ```
 
+# config
+##
+
+## fresh config installation
+```sh
+# tmp new installation
+cd .config
+rm -rf ~/.config/nvim.back && mv ~/.config/nvim{,.back}
+rm -rf ~/.local/share/nvim.back && mv ~/.local/share/nvim{,.back}
+rm -rf ~/.cache/nvim.back && mv ~/.cache/nvim{,.back}
+```
+
 # tips & trix
 
-- reverse order of lines
+### OMG! re-indent magic with `=`
+- to reindend a selection, simply select few lines and press `=`
+- to magically reindend the whole file: `gg=G`
+    - `gg` - go to the top
+    - `=`  - reindent
+    - `G`  - go to the bottom
+
+
+### reverse order of lines
     - entire file
     ```
     :g/^/m0

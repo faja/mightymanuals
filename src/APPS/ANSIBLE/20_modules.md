@@ -147,6 +147,27 @@ todo
         mode: '0644'
     ```
 
+- create a secret file
+    ```yaml
+    # in the playbook prefetch webhook_token secret from somp
+    pre_tasks:
+      - name: Include variables from vars/secrets.sops.yaml
+        community.sops.load_vars:
+          file: secrets.sops.yaml
+
+    # in the role
+    - name: Create EnvironmentFile file
+      ansible.builtin.copy:
+        content: |
+          X_WEBHOOK_TOKEN={{ webhook_token }}
+        dest: /var/lib/webhook/EnvironmentFile-new
+        owner: "{{ webhook_user }}"
+        group: "{{ webhook_user }}"
+        mode: '0400'
+      # notify: TODO:
+      no_log: "{{ webhook_ansible_no_log }}"
+    ```
+
 - copy a file from files directory (play or role)
     ```yaml
     - name: Install docker official GPG key

@@ -83,3 +83,12 @@ cp /backup/backup.${VOLUME_NAME}.*.tar /  # inside docker
 tar -xvf /backup.${VOLUME_NAME}.*.tar     # inside docker
 exit
 ```
+
+### how to move docker volume to host volume (same host)
+```
+VOLUME_NAME=...
+HOST_PATH=...
+docker run --rm -it -v ${VOLUME_NAME}:/data -v ${HOST_PATH}:${HOST_PATH}:rw debian:bullseye bash
+cp -rp /data/* ${HOST_PATH}/ # inside docker
+exit
+```

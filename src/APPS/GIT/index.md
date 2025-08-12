@@ -17,3 +17,5 @@
 - [22. gpg signing](./22.gpg.md)
 - [25. .gitignore](./25.gitignore.md)
 - [26. lfs](./26.lfs.md)
+---
+- [69. misc](./69.misc.md)

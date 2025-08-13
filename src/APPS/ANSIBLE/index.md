@@ -35,3 +35,4 @@ language syntax:
 - [56. block](./56_syntax_block.md)
 - [57. handlers](./57_syntax_handlers.md)
 - [58. async](./58_syntax_async.md)
+- [69. misc trix](./69_misc_trix.md)

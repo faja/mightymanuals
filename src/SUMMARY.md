@@ -29,6 +29,7 @@
         - [syntax: block](./APPS/ANSIBLE/56_syntax_block.md)
         - [syntax: handlers](./APPS/ANSIBLE/57_syntax_handlers.md)
         - [syntax: async](./APPS/ANSIBLE/58_syntax_async.md)
+        - [syntax: misc trix](./APPS/ANSIBLE/69_misc_trix.md)
     - [atlantis](./APPS/ATLANTIS/index.md)
     - [cadvisor](./APPS/CADVISOR/index.md)
     - [consul](./APPS/CONSUL/index.md)

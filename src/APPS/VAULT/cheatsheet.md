@@ -38,6 +38,7 @@ vault operator unseal "<UNSEAL_KEY_3>"  # no vault token is needed
 # raft related #################################################################
 vault operator raft list-peers
 vault operator raft autopilot state
+vault operator raft autopilot get-config
 
 # audit logging ################################################################
 vault audit enable file file_path=stdout

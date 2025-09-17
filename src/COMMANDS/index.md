@@ -67,6 +67,7 @@
 - [trace](./TRACE/index.md) `(tags=bpf,performance)`
 - [uptime](./UPTIME/index.md) `(tags=performance)`
 - [vmstat](./VMSTAT/index.md) `(tags=performance)`
+- [wget](./WGET/index.md) `(tags=)`
 - [wscat](./WSCAT/index.md) `(tags=websocket)`
 - [yj](./YJ/index.md) `(tags=jq,hcl,json,yaml,convert)`
 - [yq](./YQ/index.md) `(tags=jq,json,yaml)`

@@ -44,6 +44,8 @@ curl -k -H "X-Vault-Token: $(cat /secrets/vault_token)" \
 vault server -config /path/to/config.hcl
 
 vault operator init
+# or to init with 1 seal key
+vault operator init -key-shares=1 -key-threshold=1
 
 vault operator unseal "<UNSEAL_KEY_1>"  # no vault token is needed
 vault operator unseal "<UNSEAL_KEY_2>"  # no vault token is needed
@@ -51,4 +53,12 @@ vault operator unseal "<UNSEAL_KEY_3>"  # no vault token is needed
 
 # raft related #################################################################
 vault operator raft list-peers
+
+# audit logging ################################################################
+vault audit enable file file_path=stdout
+```
+
+### misc
+```sh
+vault kv get -output-policy dev-secrets/creds
 ```

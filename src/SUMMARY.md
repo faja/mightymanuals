@@ -151,6 +151,7 @@
     - [vault](./APPS/VAULT/index.md)
         - [cheatsheet](./APPS/VAULT/cheatsheet.md)
         - [auth](./APPS/VAULT/auth.md)
+        - [misc](./APPS/VAULT/misc.md)
         - [terraform](./APPS/VAULT/TERRAFORM/index.md)
     - [vim/nvim](./APPS/VIM/index.md)
     - [webhook](./APPS/WEBHOOK/index.md)

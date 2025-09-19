@@ -36,6 +36,8 @@ key | action
 <span style="color:#ff4d94">**CTRL**</span>-`s` + `s` | horizontal split aka `-`
 <span style="color:#ff4d94">**CTRL**</span>-`s` + `v` | vertical split aka `|`
 <span style="color:#ff4d94">**CTRL**</span>-`s` + `,` | rename window
+tmux swap-window -s 2 -t 1 | swap window 2 and 1 in place
+tmux move-window -s 1 -t 99 | move window 1 to position 99
 ---|---
 <span style="color:#ff4d94">**CTRL**</span>-`s` + `[,<ecs>` | enter copy mode
 <span style="color:#ff4d94">**CTRL**</span>-`s` + `C-u` | copy first arg from last line

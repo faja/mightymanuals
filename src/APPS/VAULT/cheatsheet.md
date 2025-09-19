@@ -24,7 +24,7 @@ export VAULT_TOKEN="root"
 vault server -config /path/to/config.hcl
 
 export VAULT_ADDR="https://127.0.0.1"
-export VAULT_SKIP_VERIF="true"
+export VAULT_SKIP_VERIFY="true"
 export VAULT_TOKEN=""
 
 vault operator init

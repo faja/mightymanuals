@@ -153,6 +153,7 @@
         - [auth](./APPS/VAULT/auth.md)
         - [misc](./APPS/VAULT/misc.md)
         - [terraform](./APPS/VAULT/TERRAFORM/index.md)
+        - [metrics](./APPS/VAULT/metrics.md)
     - [vim/nvim](./APPS/VIM/index.md)
     - [webhook](./APPS/WEBHOOK/index.md)
     - [versions](./APPS/versions.md)

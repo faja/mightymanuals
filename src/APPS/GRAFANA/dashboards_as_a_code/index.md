@@ -1,31 +1,24 @@
 # getting started
 - install `jsonnet` and `jb`
-    ```
+    ```sh
     go install github.com/google/go-jsonnet/cmd/jsonnet@latest
     go install github.com/jsonnet-bundler/jsonnet-bundler/cmd/jb@latest
     ```
 
 - create and init project dir
-    ```
+    ```sh
     mkdir myawesomedashboards && cd myawesomedashboards
     jb init
-    jb install https://github.com/grafana/grafonnet-lib/grafonnet
+    jb install github.com/grafana/grafonnet/gen/grafonnet-latest@main
+    # or version specific
+    jb install github.com/grafana/grafonnet/gen/grafonnet-v11.4.0@main
     ```
 
 - create and compile your first dashboard
     ```
     cat > dashboard.jsonnet <<EOT
-    local grafana = import 'grafonnet/grafana.libsonnet';
-
-    local dashboard = grafana.dashboard;
-
-    dashboard.new(
-      'Emoji Popularity',
-      tags=['emojivoto'],
-      timezone='utc',
-      schemaVersion=16,
-      time_from='now-1h',
-    )
+    local grafonnet = import 'github.com/grafana/grafonnet/gen/grafonnet-latest/main.libsonnet';
+    grafonnet.dashboard.new('My Dashboard')
     EOT
 
     jsonnet -J vendor -o dashboard.json dashboard.jsonnet
@@ -34,7 +27,7 @@
 - import json dashboard to grafana, how? it's up to you, but terraform is a good choice
 
 # next steps
-- [quick start example](./quick_start/index.md)
+- for a quick start example - see [mightyplay - 00_quick_one](https://github.com/faja/mightyplay/tree/master/grafana/dashboards_as_a_code/00_quick_one)
 - [production (one of my projects)](./production/index.md)
 
 # jsonnet snippets

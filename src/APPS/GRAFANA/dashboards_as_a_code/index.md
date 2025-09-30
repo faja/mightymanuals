@@ -28,14 +28,11 @@
 
 # next steps
 - for a quick start example - see [mightyplay - 00_quick_one](https://github.com/faja/mightyplay/tree/master/grafana/dashboards_as_a_code/00_quick_one)
-- [production (one of my projects)](./production/index.md)
+- for my production setup - see [mightyplay - 01_prod_one](https://github.com/faja/mightyplay/tree/master/grafana/dashboards_as_a_code/01_prod_one)
 
 # jsonnet snippets
-- [jsonnet snippets](./jsonnet_snippets/index.md)
+- [jsonnet snippets](./jsonnet_snippets/index.md) - TODO NEXT
 
 # links
-- [https://github.com/grafana/grafonnet-lib](https://github.com/grafana/grafonnet-lib)
-- [https://grafana.github.io/grafonnet-lib/](https://grafana.github.io/grafonnet-lib/)
-- [https://github.com/google/go-jsonnet](https://github.com/google/go-jsonnet)
-- [https://github.com/jsonnet-bundler/jsonnet-bundler](https://github.com/jsonnet-bundler/jsonnet-bundler)
-- [https://github.com/adamwg/grafana-dashboards](https://github.com/adamwg/grafana-dashboards)
+- rendered api docs: [grafana.github.io/grafonnet](https://grafana.github.io/grafonnet/index.html)
+- github: [github.com/grafana/grafonnet](https://github.com/grafana/grafonnet)

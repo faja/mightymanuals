@@ -1,38 +1,18 @@
 ```
-local grafana = import 'grafonnet/grafana.libsonnet';
+local g = import 'github.com/grafana/grafonnet/gen/grafonnet-latest/main.libsonnet';
 
-local dashboard = grafana.dashboard.new(
-  'Prometheus',        // dashboard name
-  timezone='utc',
-  time_from='now-1h',
-  editable=true,
-  graphTooltip=1,
-)
+local variables = [];
+local panels = [];
 
-// ...
-
-dashboard
-.addTemplate(varPrometheusDS)
-.addTemplate(varJob)
-.addTemplate(varCluster)
-
-// top row
-.addPanels(
-  [
-    panelVersion     { gridPos: {x: 0,  y: 0, w: 3, h: 4} },
-    panelNodes       { gridPos: {x: 3,  y: 0, w: 3, h: 4} },
-  ]
-)
-
-// row ...
-.addPanel(
-  grafana.row.new(title='TSDB', collapse=true)
-  .addPanels(
-    [
-      panelTSDBStorageSize        { gridPos: {x: 0,  y: 10, w: 8, h: 8} },
-      panelTSDBSamplesAppended    { gridPos: {x: 8,  y: 10, w: 8, h: 8} },
-    ]
-  ),
-  gridPos={X: 0, y: 9, w: 24, h: 1},
-)
+// https://grafana.github.io/grafonnet/API/dashboard/index.html
+g.dashboard.new('my-awesome-dashboard')
++ g.dashboard.withEditable(true)
++ g.dashboard.withUid('my-awesome-dashboard')
++ g.dashboard.withTags(['tag1', 'tag2'])
++ g.dashboard.withTimezone('UTC')
++ g.dashboard.time.withFrom('now-1h')
++ g.dashboard.time.withTo('now')
++ g.dashboard.graphTooltip.withSharedCrosshair()
++ g.dashboard.withVariables(variables)
++ g.dashboard.withPanels(panels)
 ```

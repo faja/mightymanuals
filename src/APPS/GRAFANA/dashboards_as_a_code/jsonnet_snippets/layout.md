@@ -1,58 +1,29 @@
 
-TODO
-
-- collapsed
-```
-.addPanel(
-  grafana.row.new(title='XXX', collapse=true)
-  .addPanels(
-    [
-      panelLocalVar2 { gridPos: {x: 0,  y: 10, w: 8, h: 8} },
-    ]
-  ),
-  gridPos={x: 0, y: 9, w: 24, h: 1},
-)
-```
-- collapsed, repeatable rows
-```
-.addPanel(
-  grafana.row.new(title='More stuff', collapse=true)
-  .addPanels(
-    [
-      ...
-    ]
-  ),
-  gridPos={x: 0, y: 21, w: 24, h: 1},
-)
-```
+NOTE, the way I prefer to compose panels on a dashboard is with using utility
+function [util.grid.makeGrid](https://grafana.github.io/grafonnet/API/util.html#fn-gridmakegrid)
 
 ```
-// also for multi value variable to used for this
-local varBackend = grafana.template.custom(
-    'backend',           // name
-    'backend1,backend2', // query
-    'All',               // current
-    includeAll=true,
-    hide=true,
-);↴
+makeGrid(panels, panelWidth, panelHeight, startY)
 ```
+function wraps in a realy nice way rows and pannels
 
-- NONcollapsed
-```
-.addPanels(
-    [
-        grafana.row.new(title='Overview', collapse=false) { gridPos: {x: 0, y: 2, w: 24, h: 1} },
-        panelMemoryUsage { gridPos: {x: 0, y: 3, w: 24, h: 8} },
-    ]
-)
-```
+by setting `panelWidth` we decide how many panels we wanna have per row,
 
-- NONcollapsed, repeatable rows
+and `startY` sets the starting point of `Y`
+
+tldr; my approach:
 ```
-.addPanels(
-    [
-        grafana.row.new(title='Task: ${task}', repeat='task', collapse=false) { gridPos: {x: 0, y: 2, w: 24, h: 1} },
-        panelMemoryUsage { gridPos: {x: 0, y: 3, w: 24, h: 8} },
-    ]
-)
+local panels_row_1 = [
+// becasue panels are gonna be wrapped by makeGrid function
+// skip withGridPos here
+];
+
+local panels_row_2 = [
+];
+
+local panels = g.util.grid.makeGrid(panels_row_1, 6, 4, 2)
+             + g.util.grid.makeGrid(panels_row_2, 8, 4, 6);
+
+g.dashboard.new('my-awesome-dashboard')
++ g.dashboard.withPanels(panels)
 ```

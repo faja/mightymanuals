@@ -76,6 +76,7 @@
                 - [dashboard](./APPS/GRAFANA/dashboards_as_a_code/jsonnet_snippets/dashboard.md)
                 - [variables](./APPS/GRAFANA/dashboards_as_a_code/jsonnet_snippets/variables.md)
                 - [dashboard layout](./APPS/GRAFANA/dashboards_as_a_code/jsonnet_snippets/layout.md)
+                - [row](./APPS/GRAFANA/dashboards_as_a_code/jsonnet_snippets/row.md)
                 - [panel stat](./APPS/GRAFANA/dashboards_as_a_code/jsonnet_snippets/panel_stat.md)
                 - [panel timeseries](./APPS/GRAFANA/dashboards_as_a_code/jsonnet_snippets/panel_timeseries.md)
                 - [panel gauge](./APPS/GRAFANA/dashboards_as_a_code/jsonnet_snippets/panel_gauge.md)

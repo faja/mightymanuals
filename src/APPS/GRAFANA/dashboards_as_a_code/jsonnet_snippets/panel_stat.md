@@ -1,109 +1,87 @@
-- simplest stat ever: single valie, instant query, color value
+api docs:
+- [panel stat](https://grafana.github.io/grafonnet/API/panel/stat/index.html)
+- [prometheus query](https://grafana.github.io/grafonnet/API/query/prometheus.html)
+
+
+### simple: single valie, instant query, color value
 ```
-local panelStatefulsetsStatefulsets = {
-  // type, title and description
-  "type": "stat",
-  "title": "Statefulsets",
+g.panel.stat.new('Number of nodes')
+// if we are using util.grid.makeGrid() function withGridPos is not needed
+//+ g.panel.stat.panelOptions.withGridPos(h=4, w=8, x=8, y=2)
++ g.panel.stat.queryOptions.withTargets([
+    g.query.prometheus.new(
+      '${PROMETHEUS_DS}',
+      'count(up{infra_cluster="${infra_cluster}", namespace="${namespace}", vault_cluster="${vault_cluster}"})'
+    ) + g.query.prometheus.withInstant(true),
+  ]),
+```
 
-  // datasource
-  "datasource": {
-    "type": "prometheus",
-    "uid": "${PROMETHEUS_DS}"
-  },
-
-  // targets
-  "targets": [
+### value mapping - custom text based on query value
+```
+g.panel.stat.new('Cluster state')
+// if we are using util.grid.makeGrid() function withGridPos is not needed
+//+ g.panel.stat.panelOptions.withGridPos(h=4, w=8, x=0, y=2)
++ g.panel.stat.options.withColorMode("background")
++ g.panel.stat.standardOptions.withMappings([
     {
-      "expr": "count(kube_statefulset_created{namespace=~\"$namespace\"})",
-      "instant": true
+      type: 'value',
+      options: {
+        '0': { text: 'unhealthy', color: 'red'},
+        '1': { text: 'healthy',   color: 'green'},
+      }
     }
-  ]
-};
+  ])
++ g.panel.stat.queryOptions.withTargets([
+    g.query.prometheus.new(
+      '${PROMETHEUS_DS}',
+      'vault_autopilot_healthy{namespace="${namespace}", vault_cluster="${vault_cluster}"}'
+    ) + g.query.prometheus.withInstant(true),
+  ])
 ```
 
-- copy paste example, text from lables
+### text from label
+the trick here is to use text mode "name" and legent format {{ label }}
 ```
-local panelVersion = {
-  // type, title and description
-  "type": "stat",
-  "title": "Version",
-  "description": "blabla",
-
-  // datasource
-  "datasource": {
-    "type": "prometheus",
-    "uid": "${PROMETHEUS_DS}"
-  },
-
-  // targets
-  "targets": [
-    {
-      "expr": "prometheus_build_info{job=\"$job\"}",
-      "instant": true,
-      "legendFormat": "{{ version }}"
-    }
-  ],
-
-  // filedConfig
-  "fieldConfig": {
-  },
-
-  // options
-  "options": {
-    "textMode": "name",   // display text from label
-    "colorMode": "none",  // disable color
-    "graphMode": "none",  // disable graphing values (for instant query it does not matter)
-    "reduceOptions": {
-      "calcs": [
-        "lastNotNull"
-      ]
-    }
-  }
-};
+g.panel.stat.new('Leader')
+// if we are using util.grid.makeGrid() function withGridPos is not needed
+//+ g.panel.stat.panelOptions.withGridPos(h=4, w=8, x=16, y=2)
++ g.panel.stat.options.withColorMode("none")
++ g.panel.stat.options.withGraphMode("none")
++ g.panel.stat.options.withTextMode("name")
++ g.panel.stat.queryOptions.withTargets([
+    g.query.prometheus.new(
+      '${PROMETHEUS_DS}',
+      'vault_core_active{infra_cluster="namespace="${namespace}", vault_cluster="${vault_cluster}"} == 1'
+    ) + g.query.prometheus.withInstant(true)
+      + g.query.prometheus.withLegendFormat('{{job}}')
+  ]),
 ```
 
-- copy paste example, single value latest, no graph
+other example with transformation
 ```
-local panelRetention = {
-  // type, title and description
-  "type": "stat",
-  "title": "Retention",
-  "description": "blabla...",
-
-  // datasource
-  "datasource": {
-    "type": "prometheus",
-    "uid": "${PROMETHEUS_DS}"
-  },
-
-  // targets
-  "targets": [
-    {
-      "expr": "time() - prometheus_tsdb_lowest_timestamp_seconds{job=\"$job\"}",
-      "instant": true
-    }
-  ],
-
-  // filedConfig
-  "fieldConfig": {
-    "defaults": {
-      "unit": "s"
-    }
-  },
-
-  // options
-  "options": {
-    "colorMode": "none",  // disable color
-    "graphMode": "none",  // disable graphing
-    "reduceOptions": {
-      "calcs": [
-        "lastNotNull"
-      ]
-    }
-  }
-};
+g.panel.stat.new('Version')
++ g.panel.stat.panelOptions.withDescription("[vault releases](https://github.com/hashicorp/vault/releases)")
++ g.panel.stat.options.withColorMode("none")
++ g.panel.stat.options.withGraphMode("none")
++ g.panel.stat.options.withTextMode("name")
++ g.panel.stat.queryOptions.withTargets([
+    g.query.prometheus.new(
+      '${PROMETHEUS_DS}',
+      'container_last_seen{infra_cluster="${infra_cluster}", container_label_nomad_namespace="${namespace}", container_label_nomad_job_name="${vault_cluster}-1"}'
+    )
+    + g.query.prometheus.withInstant(true)
+    + g.query.prometheus.withLegendFormat('{{image}}'),
+  ])
+  + g.panel.stat.queryOptions.withTransformations([
+      g.panel.stat.queryOptions.transformation.withId('renameByRegex')
+      + g.panel.stat.queryOptions.transformation.withOptions({
+          regex: '.+:(.+)-.+',
+          renamePattern: '$1',
+        }),
+  ])
 ```
 
+# old
 - copy paste example, single value latest + graph
 ```
 local panelStorageSize = {

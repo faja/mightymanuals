@@ -73,6 +73,7 @@ g.panel.stat.new('Version')
     + g.query.prometheus.withLegendFormat('{{image}}'),
   ])
   + g.panel.stat.queryOptions.withTransformations([
+      g.panel.stat.queryOptions.transformation.withId('merge'),
       g.panel.stat.queryOptions.transformation.withId('renameByRegex')
       + g.panel.stat.queryOptions.transformation.withOptions({
           regex: '.+:(.+)-.+',

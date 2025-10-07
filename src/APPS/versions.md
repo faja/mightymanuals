@@ -13,6 +13,7 @@
 |[nginx](https://github.com/nginx/nginx/releases) | 1.29.1 |
 |[prometheus](https://github.com/prometheus/prometheus/releases)| 3.6.0 |
 |[terraform](https://developer.hashicorp.com/terraform/install?product_intent=terraform)| 1.13.3 |
+|[terraform: aws provider](https://registry.terraform.io/providers/hashicorp/aws/latest)| 6.15.0 |
 |[traefik](https://github.com/traefik/traefik/releases)| 3.5.3 |
 |---|---|
 |[template]()| X.X.X |

@@ -5,7 +5,7 @@
   apt:
     pkg: "{{ item }}"
     state: present
-  with_items:
+  loop: # note: `loop` is a new/modern version of `with_itmes`
     - pkg1
     - pkg2
 ```
@@ -58,17 +58,37 @@ loop_control:
 ```
 
 ## with_dict
-```yaml
-vars:
-  foo:
-    bar:
-      baz:
-        more:
-          nesting: ok
+- example 1
+    ```yaml
+    vars:
+      foo:
+        bar:
+          baz:
+            more:
+              nesting: ok
 
-tasks:
-  - debug: var=item.value.baz.more.nesting
-    with_dict: "{{ foo }}"
-  - debug: var=item.key
-    with_dict: "{{ foo }}"
-```
+    tasks:
+      - debug: var=item.value.baz.more.nesting
+        with_dict: "{{ foo }}"
+      - debug: var=item.key
+        with_dict: "{{ foo }}"
+    ```
+
+- example 2
+    ```yaml
+    vars:
+      users:
+        user1:
+          property1: abc
+          property2: abc
+        user2:
+          property1: xyz
+          property2: xyz
+
+    tasks:
+      - debug:
+          msg: "user: {{ item.key }}, prop1: {{ item.value.property1 }}"
+        loop: "{{ users | dict2items }}"
+    # -> user: user1, prop1: abc
+    # -> user: user2, prop1: abc
+    ```

@@ -5,6 +5,7 @@
 - [built-in variables](#built-in-variables)
 - [facts](#facts)
 - [include_vars module](#include_vars-module)
+- [tips](#tips)
 
 ---
 
@@ -308,3 +309,32 @@ Custom facts are read from `/etc/ansible/facts.d/*.fact` and exposed with
       paths:
         - ../vars
 ```
+
+# tips
+- howto reference a variable based on other variable name, eg:
+    ```yaml
+    "{{ vars['some_string' + other_variable_name] }}"
+    ```
+    full example
+    ```yaml
+    - name: Create .docker/config.json
+      become: true
+      ansible.builtin.copy:
+        content: |
+          {
+            "auths": {
+              "amsdard.io": {
+                "auth": "{{ vars['users_bots_' + item.key + '_docker_auth'] }}"
+              }
+            }
+          }
+        dest: /home/{{ item.key }}/.docker/config.json
+        owner: "{{ item.key }}"
+        group: "{{ item.key }}"
+        mode: "0600"
+      loop: "{{ users_bots | dict2items }}"
+      loop_control:
+        label: "{{ item.key }}"
+      when: item.value.docker | default(false)
+      no_log: true
+    ```

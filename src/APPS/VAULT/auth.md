@@ -30,3 +30,27 @@ vault policy write my-policy ./policy.hcl -output-curl-string
 ```sh
 vault path-help sys/policy
 ```
+
+### cert based dynamic tokens
+
+```sh
+# create some policy first (see above), which is gonna be attached to requested token
+
+# enable cert auth
+vault auth enable cert
+
+# create cert roles
+CERT_DNS_SAN="your-service-*.client.consul"
+vault write auth/cert/certs/your_service_role \
+  certificate="@/secrets/ca_mtls.crt" \
+  allowed_dns_sans="${CERT_DNS_SAN}" \
+  token_policies="your_service_policy" \
+  token_ttl=1h token_max_ttl=4h
+
+# login
+vault login -method=cert name=your_service_role
+
+# list roles, and get details about one of them
+vault list auth/cert/certs
+vault read auth/cert/certs/your_service_role
+```

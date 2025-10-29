@@ -3,7 +3,7 @@ api docs:
 - [prometheus query](https://grafana.github.io/grafonnet/API/query/prometheus.html)
 
 
-### simple: single valie, instant query, color value
+## simple: single valie, instant query, color value
 ```
 g.panel.stat.new('Number of nodes')
 // if we are using util.grid.makeGrid() function withGridPos is not needed
@@ -16,7 +16,7 @@ g.panel.stat.new('Number of nodes')
   ]),
 ```
 
-### value mapping - custom text based on query value
+## value mapping - custom text based on query value
 ```
 g.panel.stat.new('Cluster state')
 // if we are using util.grid.makeGrid() function withGridPos is not needed
@@ -39,7 +39,7 @@ g.panel.stat.new('Cluster state')
   ])
 ```
 
-### text from label
+## text from label
 the trick here is to use text mode "name" and legent format {{ label }}
 ```
 g.panel.stat.new('Leader')
@@ -59,6 +59,9 @@ g.panel.stat.new('Leader')
 
 other example with transformation
 ```
+// INFO
+// `merge` transformation used to combine few series into one
+
 g.panel.stat.new('Version')
 + g.panel.stat.panelOptions.withDescription("[vault releases](https://github.com/hashicorp/vault/releases)")
 + g.panel.stat.options.withColorMode("none")
@@ -82,151 +85,39 @@ g.panel.stat.new('Version')
   ])
 ```
 
-# old
-- copy paste example, single value latest + graph
+## simple: single latest value + graph
 ```
-local panelStorageSize = {
-  // type, title and description
-  "type": "stat",
-  "title": "Storage size",
-
-  // datasource
-  "datasource": {
-    "type": "prometheus",
-    "uid": "${PROMETHEUS_DS}"
-  },
-
-  // targets
-  "targets": [
-    {
-      "expr": "prometheus_tsdb_storage_blocks_bytes{job=\"$job\"}"
-    }
-  ],
-
-  // filedConfig
-  "fieldConfig": {
-    "defaults": {
-      "color": {
-        "fixedColor": "light-red",
-        "mode": "fixed"
-      },
-      "unit": "bytes"
-    }
-  },
-
-  // options
-  "options": {
-    "colorMode": "none",  // disable color
-    "reduceOptions": {
-      "calcs": [
-        "lastNotNull"
-      ]
-    }
-  }
-};
+g.panel.stat.new('Number of nodes')
+// if we are using util.grid.makeGrid() function withGridPos is not needed
+//+ g.panel.stat.panelOptions.withGridPos(h=4, w=8, x=8, y=2)
++ g.panel.stat.standardOptions.withUnit('bytes')
++ g.panel.stat.options.withColorMode("none")
++ g.panel.stat.standardOptions.color.withMode('fixed')
++ g.panel.stat.standardOptions.color.withFixedColor('light-red')
++ g.panel.stat.options.reduceOptions.withCalcs(['lastNotNull'])
++ g.panel.stat.queryOptions.withTargets([
+    g.query.prometheus.new(
+      '${PROMETHEUS_DS}',
+      'prometheus_tsdb_storage_blocks_bytes{job="$job"}'
+    ),
+  ]),
 ```
 
-- single stat, avare value across all metrics
+## single stat, AVG value across all metrics
 ```
 // INFO
 // the way to do it is:
 //   - use transformation reduce (calculation does not matter)
 //   - use options.reduceOptions.calcs: mean (this calculates avarerage)
 
-local panelJobsAvgDuration = {
-  // type, title and description
-  "type": "stat",
-  "title": "Avg duration",
-
-  // datasource
-  "datasource": {
-    "type": "prometheus",
-    "uid": "${PROMETHEUS_DS}"
-  },
-
-  // targets
-  "targets": [
-    {
-      "expr": "kube_job_status_completion_time{namespace=~\"$namespace\"} - kube_job_status_start_time{namespace=~\"$namespace\"}"
-    }
-  ],
-
-  // filedConfig
-  "fieldConfig": {
-    "defaults": {
-      "unit": "s"
-    }
-  },
-
-  // options
-  "options": {
-    "reduceOptions": {
-      "calcs": [
-        "mean"
-      ]
-    }
-  },
-
-  // transformations
-  "transformations": [
-    {
-      "id": "reduce"
-    }
-  ]
-};
-```
-
-- single stat, merge multiple values into one single stat, for instance for displaying a version
-```
-    local panelClusterVersion = {
-  // type, title and description
-  "type": "stat",
-  "title": "Cluster version",
-  "description": "Actually a `kubelet` version running on a node, selected by `Last*`.",
-
-  // datasource
-  "datasource": {
-    "type": "prometheus",
-    "uid": "${PROMETHEUS_DS}"
-  },
-
-  // targets
-  "targets": [
-    {
-      "expr": "kube_node_info",
-      "instant": true,
-      "legendFormat": "{{ kubelet_version }}"
-    }
-  ],
-
-  // filedConfig
-  "fieldConfig": {
-  },
-
-  // options
-  "options": {
-    "textMode": "name",   // display text from label
-    "colorMode": "none",  // disable color
-    "reduceOptions": {
-      "calcs": [
-        "lastNotNull"
-      ]
-    }
-  },
-
-  // transformations
-  "transformations": [
-    {
-      "id": "merge",
-      "options": {}
-    },
-    {
-      "id": "renameByRegex",
-      "options": {
-        "regex": "v([^-]+)-.+",
-        "renamePattern": "$1"
-      }
-    }
-  ]
-};
++ g.panel.stat.options.reduceOptions.withCalcs(['mean'])
++ g.panel.stat.queryOptions.withTargets([
+    g.query.prometheus.new(
+      '${PROMETHEUS_DS}',
+      'kube_job_status_completion_time{namespace="$namespace"} - kube_job_status_start_time{namespace="$namespace"}',
+    ),
+  ]),
++ g.panel.stat.queryOptions.withTransformations([
+    g.panel.stat.queryOptions.transformation.withId('reduce'),
+  ])
 ```

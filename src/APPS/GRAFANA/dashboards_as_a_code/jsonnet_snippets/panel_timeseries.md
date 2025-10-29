@@ -1,3 +1,35 @@
+api docs:
+- [panel timeseries](https://grafana.github.io/grafonnet/API/panel/timeSeries/index.html)
+- [prometheus query](https://grafana.github.io/grafonnet/API/query/prometheus.html)
+
+###  simple
+
+```
+g.panel.timeSeries.new('Memory (reported by Nomad)')
++ g.panel.timeSeries.standardOptions.withUnit('bytes')
++ g.panel.timeSeries.standardOptions.withMin(0)
++ g.panel.timeSeries.queryOptions.withTargets([
+    g.query.prometheus.new(
+      '${PROMETHEUS_DS}',
+      'nomad_client_allocs_memory_allocated{infra_cluster="${infra_cluster}", namespace="${namespace}", exported_job="${job}", task="${task}"}')
+      + g.query.prometheus.withLegendFormat('requested - {{alloc_id}}'),
+    g.query.prometheus.new(
+      '${PROMETHEUS_DS}',
+      'nomad_client_allocs_memory_max_allocated{infra_cluster="${infra_cluster}", namespace="${namespace}", exported_job="${job}", task="${task}"}')
+      + g.query.prometheus.withLegendFormat('max - {{alloc_id}}'),
+    g.query.prometheus.new(
+      '${PROMETHEUS_DS}',
+      'nomad_client_allocs_memory_usage{infra_cluster="${infra_cluster}", namespace="${namespace}", exported_job="${job}", task="${task}"}')
+      + g.query.prometheus.withLegendFormat('used - {{alloc_id}}'),
+  ])
++ g.panel.timeSeries.standardOptions.withOverrides([
+    g.panel.timeSeries.standardOptions.override.byRegexp.new('/requested|max/')
+    + g.panel.timeSeries.standardOptions.override.byRegexp.withProperty('custom.lineStyle', {fill: 'dash'})
+])
+```
+
+
+# OLD
 - copy paste example
 ```
 local panelCPUUsage = {

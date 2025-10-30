@@ -308,7 +308,8 @@
     - [RUST](./PROGRAMMING/RUST/index.md)
         - [start here](./PROGRAMMING/RUST/START_HERE/index.md)
         - [syntax](./PROGRAMMING/RUST/SYNTAX/index.md)
-        - [advanced topics](./PROGRAMMING/RUST/ADVANCED/index.md)
+        - [topics](./PROGRAMMING/RUST/TOPICS/index.md)
+            - [cargo](./PROGRAMMING/RUST/TOPICS/cargo.md)
     - [YAML](./PROGRAMMING/YAML/index.md)
     - [ZSH](./PROGRAMMING/ZSH/index.md)
 

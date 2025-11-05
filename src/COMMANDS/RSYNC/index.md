@@ -27,7 +27,7 @@
 ## examples
 - simple one liners
 ```sh
-rsync -avzH -e ssh --stats --progress /var/lib/prometheus root@172.30.91.136:/var/lib/prometheus
+rsync -avzH -e ssh --stats --progress /var/lib/prometheus/ root@172.30.91.136:/var/lib/prometheus/
 
 rsync -a --progress --stats --delete /airflow/ /opt/airflow/dags/
 

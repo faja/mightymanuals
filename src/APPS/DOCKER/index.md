@@ -102,6 +102,10 @@ docker manifest inspect -v ${IMAGE} | jq .Descriptor.digest
 
     # node01
     rsync -avzH -e ssh --stats --progress /var/lib/docker-compose/registry root@172.30.91.136:/var/lib/docker-compose
+    # edit volumes:
+    #   - add "prefix" to the name in `volumes` section: registry_dbdata
+    #   - add "external: true"
+    #   - rename it's usage in `services` section - if needed
 
     # terraform alb point to node02
 

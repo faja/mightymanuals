@@ -135,7 +135,7 @@ docker manifest inspect -v ${IMAGE} | jq .Descriptor.digest
     VOLUME_MOUNT_PATH=/var/lib/postgresql/data
     cd /tmp/registry
     docker run --rm \
-      -e VOLUME_NAME=${VOLUME_NAME} \
+      -e VOLUME_NAME=${VOLUME_NAME} -e VOLUME_MOUNT_PATH=${VOLUME_MOUNT_PATH} \
       -v $(pwd):/backup -v ${VOLUME_NAME}:${VOLUME_MOUNT_PATH} \
       -it debian:bullseye bash
     cp /backup/backup.${VOLUME_NAME}.*.tar /  # inside docker

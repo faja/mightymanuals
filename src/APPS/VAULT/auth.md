@@ -1,5 +1,11 @@
 ---
 
+### list tokens
+```sh
+vault list auth/token/accessors                               # list accessors
+vault write auth/token/lookup-accessor accessor="${ACCESSOR}" # get metadata of a token
+```
+
 ### working with policies, tokens, roles, etc...
 
 - create admin policy and token
@@ -53,4 +59,23 @@ vault login -method=cert name=your_service_role
 # list roles, and get details about one of them
 vault list auth/cert/certs
 vault read auth/cert/certs/your_service_role
+```
+
+### generate/revoke root token
+```sh
+# revoke a root token
+export VAULT_TOKEN="${ROOT_TOKEN}"
+vault token revoke -self
+
+# generate a root token
+vault operator generate-root -init  # write down OTP, will be needed later
+
+vault operator generate-root  # provide recovery key
+vault operator generate-root  # provide recovery key
+vault operator generate-root  # provide recovery key, last one should print out
+                              # encoded token, write it down, will be needed later
+
+OPT="..."
+ENCODED_TOKEN="..."
+vault operaotr generate-root -decode="${ENCODED_TOKEN}" -otp="${OTP}"
 ```

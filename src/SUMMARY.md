@@ -149,6 +149,7 @@
     - [vault](./APPS/VAULT/index.md)
         - [cheatsheet](./APPS/VAULT/cheatsheet.md)
         - [auth](./APPS/VAULT/auth.md)
+        - [config](./APPS/VAULT/config.md)
         - [misc](./APPS/VAULT/misc.md)
         - [terraform](./APPS/VAULT/TERRAFORM/index.md)
         - [metrics](./APPS/VAULT/metrics.md)

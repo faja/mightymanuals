@@ -67,7 +67,10 @@ vault read auth/cert/certs/your_service_role
 export VAULT_TOKEN="${ROOT_TOKEN}"
 vault token revoke -self
 
-# generate a root token
+# generate a root token if we DO have one
+vault token create -policy=root
+
+# generate a root token if we do NOT have one
 vault operator generate-root -init  # write down OTP, will be needed later
 
 vault operator generate-root  # provide recovery key
@@ -77,5 +80,14 @@ vault operator generate-root  # provide recovery key, last one should print out
 
 OPT="..."
 ENCODED_TOKEN="..."
-vault operaotr generate-root -decode="${ENCODED_TOKEN}" -otp="${OTP}"
+vault operator generate-root -decode="${ENCODED_TOKEN}" -otp="${OTP}"
+```
+
+### rekey (unseal/recovery)
+```sh
+# NOTE! for recovery keys (if you have autounsealing) you have to  pass -target=recovery flag
+vault operator rekey -init -key-shares=3 -key-threshold=2 [-target=recovery]
+vault operator rekey [-target=recovery]
+vault operator rekey [-target=recovery]
+vault operator rekey [-target=recovery]
 ```

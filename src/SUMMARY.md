@@ -2,6 +2,9 @@
 
 
 - [APPS](./APPS/index.md)
+    - [alloy](./APPS/ALLOY/index.md)
+        - [k8s](./APPS/ALLOY/k8s.md)
+        - [host with containers](./APPS/ALLOY/host.md)
     - [ansible](./APPS/ANSIBLE/index.md)
         - [quick start](./APPS/ANSIBLE/00_quick_start.md)
         - [inventory](./APPS/ANSIBLE/01_inventory.md)

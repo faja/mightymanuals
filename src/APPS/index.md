@@ -1,5 +1,6 @@
 # APPS
 
+- [alloy](./ALLOY/index.md)
 - [ansible](./ANSIBLE/index.md)
 - [atlantis](./ATLANTIS/index.md)
 - [cadvisor](./CADVISOR/index.md)

@@ -99,6 +99,8 @@
     - [k8s](./APPS/K8S/index.md)
         - [yamls](./APPS/K8S/yamls/index.md)
             - [ConfigMap](./APPS/K8S/yamls/configmap.md)
+            - [Pod](./APPS/K8S/yamls/pod.md)
+            - [Daemonset](./APPS/K8S/yamls/daemonset.md)
     - [kind](./APPS/KIND/index.md)
     - [libvirt](./APPS/LIBVIRT/index.md)
     - [loki](./APPS/LOKI/index.md)

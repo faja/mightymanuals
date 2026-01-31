@@ -1,5 +1,7 @@
 ---
 
+- [install](./install.md)
+
 # package management
 
 ## apt-get

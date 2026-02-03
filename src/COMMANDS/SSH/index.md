@@ -12,6 +12,11 @@
     ssh-keygen -y -f ~/.ssh/id_myawesomenewkey_2024
     ```
 
+- other
+    ```sh
+    ssh-keygen -p -f ~/.ssh/id_ed25519 # add/update passphrase of an existing key
+    ```
+
 # ssh-keyscan
 ```
 ssh-keygen -R ${SOME_HOSTNAME_FROM_KNOWN_HOSTS}

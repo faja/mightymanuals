@@ -18,6 +18,18 @@ docker ps --filter label=labelKEY        # label exists
 docker ps --filter label=labelKEY=value1 # label must be set exactly to `value1`
 ```
 
+## cleaning up unused stuff
+```sh
+docker image prune     # remove dangling images only
+docker image prune -a  # remove all unused images (dangling, and tagged but not used)
+
+docker system prune               # full cleanup: images, containers, networks, cache
+docker system prune -a            # same as above +unused images
+docker system prune -a --volumes  # same as above +unused volumes
+
+docker system df                  #  nice command to see disk usage
+```
+
 # below is all todo
 
 - deubugging "slim" containers

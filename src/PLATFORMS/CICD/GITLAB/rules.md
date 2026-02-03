@@ -83,7 +83,7 @@ rules:
     changes:            # this rule gonna trigger a job, on MR and default branch
       paths:            # but only if code has been changed
         - deploy/**/*
-  - if: $CI_COMMIT_REF_NAME == "CI_DEFAULT_BRANCH"   # but run on default branch, no matter if changed
+  - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH # but run on default branch, no matter if changed
   - when: never
 
 # case 3: branch pipelines, both default and non default if changed
@@ -92,12 +92,12 @@ rules:
 rules:
   - if: $CI_PIPELINE_SOURCE == "web" # run a job, if pipeline is triggered manually via UI, no matter if
                                      # this is nice, if we wanna use `changes` on default branch
-  - if: $CI_COMMIT_REF_NAME != "CI_DEFAULT_BRANCH" # run on a branch but only if changed
+  - if: $CI_COMMIT_REF_NAME != $CI_DEFAULT_BRANCH # run on a branch but only if changed
     changes:
       compare_to: refs/heads/$CI_DEFAULT_BRANCH
       paths:
         - deploy/**/*
-  - if: $CI_COMMIT_REF_NAME == "CI_DEFAULT_BRANCH" # run on default branch if changed
+  - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH # run on default branch if changed
     changes:
       paths:
         - deploy/**/*
@@ -107,12 +107,12 @@ rules:
 #         on branch pipelines we need to use compare_to
 
 rules:
-  - if: $CI_COMMIT_REF_NAME != "CI_DEFAULT_BRANCH" # run on a branch but only if changed
+  - if: $CI_COMMIT_REF_NAME != $CI_DEFAULT_BRANCH # run on a branch but only if changed
     changes:
       compare_to: refs/heads/$CI_DEFAULT_BRANCH
       paths:
         - deploy/**/*
-  - if: $CI_COMMIT_REF_NAME == "CI_DEFAULT_BRANCH" # run on default branch always
+  - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH # run on default branch always
   - when: never
 
 ```

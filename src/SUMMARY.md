@@ -198,6 +198,7 @@
     - [iperf](./COMMANDS/IPERF/index.md)
     - [iptables](./COMMANDS/IPTABLES/index.md)
     - [jq](./COMMANDS/JQ/index.md)
+    - [less](./COMMANDS/LESS/index.md)
     - [lsns](./COMMANDS/LSNS/index.md)
     - [mkcert](./COMMANDS/MKCERT/index.md)
     - [mpstat](./COMMANDS/MPSTAT/index.md)

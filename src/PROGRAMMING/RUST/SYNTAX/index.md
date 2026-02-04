@@ -86,7 +86,7 @@ t1.0
 // note! there is no `for elem in tup` iterations
 ```
 
-## vectors Vec<T>
+## vectors `Vec<T>`
 ```rust
 
 let mut v1: Vec<i32> = Vec::new();

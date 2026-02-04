@@ -24,11 +24,11 @@ stick-table type <type> size <size> expire <duration> store <data_type>
     - `type ip`
     - `type ipv6`
 
-- size <size> - number of entries in a table, supports suffixes "k", "m", "g", approx size per entry is 50 bytes + size of a string if any
+- `size <size>` - number of entries in a table, supports suffixes "k", "m", "g", approx size per entry is 50 bytes + size of a string if any
 
-- expire <duration> - expire old entries if not touched for <duration>
+- `expire <duration>` - expire old entries if not touched for duration
 
-- store <data_type> - defines what actualy we want to store as a "value" (key is the thing defined by `type` keyword)
+- `store <data_type>` - defines what actualy we want to store as a "value" (key is the thing defined by `type` keyword)
     - `store http_req_rate(60s)` - store the rate of requests in a floating window of 60s
     - `store conn_rate(60s)` - store tcp connection rate in a floating window of 60s
     - `store conn_cur` - store number of current connections

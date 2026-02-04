@@ -10,9 +10,13 @@ TODO
 
 post install
 
-vagrant
-virtualbox
-virtualbox-host-modules-arch
+- vagrant
+- virtualbox
+- virtualbox-host-modules-arch
+
+packages installed manually via AUR:
+- vagrant - needed latest version - https://aur.archlinux.org/packages/vagrant
+- dropbox - only via AUR - https://aur.archlinux.org/packages/dropbox
 
 ---
 

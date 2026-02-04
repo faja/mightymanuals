@@ -107,6 +107,7 @@
     - [mdbook](./APPS/MDBOOK/index.md)
     - [nginx](./APPS/NGINX/index.md)
         - [play](./APPS/NGINX/play.md)
+        - [ssl, certs, etc...](./APPS/NGINX/ssl.md)
     - [nomad](./APPS/NOMAD/index.md)
         - [cheatsheet](./APPS/NOMAD/cheatsheet.md)
         - [main docs](./APPS/NOMAD/MAIN_DOCS/index.md)

@@ -11,6 +11,11 @@ openssl s_client -connect ${HOST}:${PORT} -servername ${SNI} -showcerts  # to se
 
 openssl dhparam -dsaparam -out dhparams.pem 4098  # generate dhparams
 
+# ---------------------------------------------------------------------------- #
+# verify server/client certificate
+openssl verify -CAfile ca.crt client.crt
+openssl verify -CAfile ca_root_only.crt -untrusted ca_intermediate.crt client.crt
+
 
 # ---------------------------------------------------------------------------- #
 # date related
@@ -29,5 +34,4 @@ openssl ec -in client.key -noout -text  # get info about `EC PRIVATE KEY` key ty
 # check if cert matches private key
 openssl x509 -noout -modulus -in cert.pem | openssl md5
 openssl rsa  -noout -modulus -in key.pem  | openssl md5
-
 ```

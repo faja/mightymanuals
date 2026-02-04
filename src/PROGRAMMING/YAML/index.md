@@ -3,7 +3,7 @@
 ```yaml
 #------------------------------------------------------------------------------#
 # how to test?
-cat a.yaml | yq -yy
+cat a.yaml | yq
 
 #------------------------------------------------------------------------------#
 # string to string
@@ -19,6 +19,22 @@ array_key1: &array_key1
     DIGEST: sha256:b330aa1cd9a0dd5b6f68aad00cb67e8e03f02e6c16eabf9f065a03bb4b2301cd
 
 array_key2: *array_key1
+
+#------------------------------------------------------------------------------#
+# object to object
+volumes:
+  ebs:
+    redis: &standard_2a
+      type: gp3
+      size: 20
+      availability_zone: eu-west-2a
+
+    vault: *standard_2a
+
+    # reuse but OVERRIDE a property
+    vault_but_smaller_disk:
+      <<: *standard_2a
+      size: 10
 ```
 
 # multiline string

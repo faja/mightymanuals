@@ -42,6 +42,12 @@ pacman -Sy archlinux-keyring
 pacman -Syu
 ```
 
+## DOWNGRADE
+```sh
+ls -la /var/cache/pacman/pkg/                         # search for previously installed packages in cache
+pacman -U file:///var/cache/pacman/pkg/...pkg.tar.zst # install/downgrade a package
+```
+
 ## QUERY
 
 ```sh

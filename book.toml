@@ -1,7 +1,6 @@
 [book]
 authors = ["faja"]
 language = "en"
-src = "src"
 title = "Manuals"
 
 [build]

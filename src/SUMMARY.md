@@ -281,6 +281,7 @@
     - [DEBIAN](./LINUX_DISTROS/DEBIAN/index.md)
         - [install](./LINUX_DISTROS/DEBIAN/install.md)
         - [package management](./LINUX_DISTROS/DEBIAN/package_management.md)
+        - [networking](./LINUX_DISTROS/DEBIAN/networking.md)
     - [RHEL, CENTOS, FEDORA, AWS LINUX](./LINUX_DISTROS/RHEL/index.md)
         - [selinux](./LINUX_DISTROS/RHEL/topics/selinux.md)
 

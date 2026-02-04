@@ -10,7 +10,7 @@
 - [cachestat](./CACHESTAT/index.md) `(tags=bpf,performance)`
 - [cat](./CAT/index.md)
 - [curl](./CURL/index.md)
-- [date](./DATE/index.md)
+- [date](./DATE/index.md) `(tags=time,date)`
 - [df](./DF/index.md)
 - [dmesg](./DMESG/index.md) `(tags=performance)`
 - [execsnoop](./EXECSNOOP/index.md) `(tags=bpf,performance)`
@@ -65,6 +65,7 @@
 - [tcpsynbl](./TCPSYNBL/index.md) `(tags=bpf,network,performance)`
 - [tcptop](./TCPTOP/index.md) `(tags=bpf,network,performance)`
 - [tcptracer](./TCPTRACER/index.md) `(tags=bpf,network,performance)`
+- [timedatectl](./TIMEDATECTL/index.md) `(tags=time,date)`
 - [trace](./TRACE/index.md) `(tags=bpf,performance)`
 - [uptime](./UPTIME/index.md) `(tags=performance)`
 - [vmstat](./VMSTAT/index.md) `(tags=performance)`

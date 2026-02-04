@@ -2,7 +2,7 @@
 
 # install on a bare metal
 
-# PRE install steps
+## PRE install steps
 - downlad netinstall ios, simply google for `debian __LATEST_CODENAME__ netinstall iso`
   go to the first link and download it
 - `dd` iso into usb pendrive
@@ -12,7 +12,7 @@
     ```
 - boot a server from the usb pendrive
 
-# INSTALLATION
+## INSTALLATION
 
 durgin the installation
 - create user `tmp` - for initial setup - gonna be deleted later
@@ -22,9 +22,9 @@ durgin the installation
   /var - rest
   ```
 
-# POST install steps
+## POST install steps
 
-## if RAID
+### if software RAID
 ```sh
 # NOTE: if there is RAID1, install grub on the other hard drive
 sudo grub-install /dev/sda
@@ -32,7 +32,7 @@ sudo grub-install /dev/sdb
 sudo update-grub
 ```
 
-## apt config
+### apt config
 ```sh
 cat <<EOT > /etc/apt/apt.conf.d/99norecommends
 APT::Install-Recommends "0";
@@ -40,8 +40,7 @@ APT::Install-Suggests "0";
 EOT
 ```
 
-## packages
-
+### packages
 ```sh
 mkdir /etc/installed_packages
 apt list --installed > /etc/installed_packages/20260131_00
@@ -55,7 +54,9 @@ tmp ALL=(ALL:ALL) NOPASSWD:ALL
 EOT
 ```
 
-# POST install via SSH
+## POST install via SSH
+> [!NOTE]
+> use `tmp` user with `sudo`, by default root login is disabled
 
 - ssh key
 ```sh
@@ -66,8 +67,17 @@ EOT
 chmod 600 .ssh/authorized_keys
 ```
 
-NOTE: use `tmp` user with `sudo` - by default root login is disabled
+- date and time (note, this is gonna be adjusted further later via config management tool)
+```
+timedatectl
+timedatectl set-ntp false
+timedatectl set-timezone UTC
+timedatectl set-time "YYYY-MM-DD HH:MM:SS"
+hwclock --systohc
+timedatectl
+```
 
+TODO/NEXT:
 ```sh
 sudo apt install --no-install-recommends \
   ca-certificates \

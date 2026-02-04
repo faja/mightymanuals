@@ -234,6 +234,7 @@
     - [tcpsynbl](./COMMANDS/TCPSYNBL/index.md)
     - [tcptop](./COMMANDS/TCPTOP/index.md)
     - [tcptracer](./COMMANDS/TCPTRACER/index.md)
+    - [timedatectl](./COMMANDS/TIMEDATECTL/index.md)
     - [trace](./COMMANDS/TRACE/index.md)
     - [uptime](./COMMANDS/UPTIME/index.md)
     - [vmstat](./COMMANDS/VMSTAT/index.md)

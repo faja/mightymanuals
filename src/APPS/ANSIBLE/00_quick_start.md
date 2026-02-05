@@ -4,8 +4,8 @@
 - `Vagrantfile`
     ```ruby
     Vagrant.configure("2") do |config|
-      config.vm.box = "debian/bookworm64"
-      NodeCount = 3
+      config.vm.box = "bento/debian-13"
+      NodeCount = 3 # or change this to 1
       (1..NodeCount).each do |i|
         config.vm.define "node#{i}" do |node|
           node.vm.hostname = "node#{i}.local"
@@ -26,6 +26,9 @@
     nocows = true
     inventory=./inventory.yaml
     stdout_callback = yaml
+    roles_path = ../../roles
+    # gathering = explicit # it depends
+    hash_behaviour = merge
     ```
 
 - `inventory.yaml`

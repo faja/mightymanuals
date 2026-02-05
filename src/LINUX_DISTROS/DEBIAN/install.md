@@ -40,7 +40,7 @@ APT::Install-Suggests "0";
 EOT
 ```
 
-### packages
+### packages and ssh server
 ```sh
 mkdir /etc/installed_packages
 apt list --installed > /etc/installed_packages/20260131_00
@@ -67,8 +67,15 @@ EOT
 chmod 600 .ssh/authorized_keys
 ```
 
+- install and start dbus
+```sh
+apt install --no-install-recommends dbus
+systemctl enable --now dbus
+```
+
 - date and time (note, this is gonna be adjusted further later via config management tool)
 ```
+apt install --no-install-recommends util-linux-extra # porvides `hwclock` binary
 timedatectl
 timedatectl set-ntp false
 timedatectl set-timezone UTC
@@ -77,10 +84,29 @@ hwclock --systohc
 timedatectl
 ```
 
-TODO/NEXT:
+- basic packages:
 ```sh
-sudo apt install --no-install-recommends \
+apt install --no-install-recommends \
   ca-certificates \
-  curl \
-  vim
+  man \
+  resolvconf \
+  vim \
+  && true
+```
+
+- configure networking, most likely static, `/etc/network/interfaces`
+```ini
+auto lo
+iface lo inet loopback
+
+auto enp3s0
+iface enp3s0 inet static
+  address 192.168.1.50/24
+  gateway 192.168.1.1
+  dns-nameservers 1.1.1.1 8.8.8.8
+```
+
+## FINAL REBOOT
+```sh
+reboot
 ```

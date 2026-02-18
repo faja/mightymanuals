@@ -160,6 +160,8 @@
         - [terraform](./APPS/VAULT/TERRAFORM/index.md)
         - [metrics](./APPS/VAULT/metrics.md)
     - [vim/nvim](./APPS/VIM/index.md)
+        - [usage](./APPS/VIM/usage.md)
+        - [config](./APPS/VIM/config.md)
     - [webhook](./APPS/WEBHOOK/index.md)
     - [versions](./APPS/versions.md)
     - [local install](./APPS/local_install.md)

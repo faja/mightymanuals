@@ -1,6 +1,13 @@
 ---
 
 # base usage
+```yaml
+################################################################################
+# diff mode
+]c - jump to next change
+[c - jump to prev change
+```
+
 # plugin related usage
 
 ## git related
@@ -162,10 +169,6 @@ rm -rf ~/.cache/nvim.back && mv ~/.cache/nvim{,.back}
 - `:Gedit HASH:%` - opens current file ata specific commit
 }}}
 
-{{{ vim diff (normal diff)
-            ]c - jump to next change
-            [c - jump to prev change
-}}}
 
 {{{ telescope
 

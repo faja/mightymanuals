@@ -14,6 +14,20 @@
 :DiffviewFileHistory %
 # find the commit you wanna open the file on
 # it opens in a diff mode, simply quit the side you don't want and keep the one you want
+
+################################################################################
+# see diff of a specifc file between two commits
+# this is equivalent of:
+#  git diff 5618c3e5bf62847c1b9f7420783ec27dd438244e..b386ffca433ed6a49b76147758857d1a4f84caba vpc/outputs.tf
+
+# first, if you know the commits and path, simply go for:
+:DiffviewOpen 5618c3e5bf62847c1b9f7420783ec27dd438244e..b386ffca433ed6a49b76147758857d1a4f84caba -- vpc/outputs.tf
+# or use the following flow, to discover commits you wanna compare
+# open a file first, then open it's change history
+:DiffviewFileHistory %
+# look for commits you wanna compare
+`gf` # this is gonna open the file in a new tab (at HEAD)
+:DiffviewOpen ${SHA1}..${SHA_2} -- %
 ```
 
 # TODO
@@ -151,22 +165,6 @@ rm -rf ~/.cache/nvim.back && mv ~/.cache/nvim{,.back}
 {{{ vim diff (normal diff)
             ]c - jump to next change
             [c - jump to prev change
-}}}
-
-{{{ diffview
-# see changes for a single path or file
-  :DiffviewOpen 5618c3e5bf62847c1b9f7420783ec27dd438244e..b386ffca433ed6a49b76147758857d1a4f84caba -- vpc/outputs.tf
-this is equivalent of
-  git diff 5618c3e5bf62847c1b9f7420783ec27dd438244e..b386ffca433ed6a49b76147758857d1a4f84caba vpc/outputs.tf
-
-# see history for current file
-  :DiffviewFileHistory %
-
-# nice flow
-  1. open diffview
-  2. select a file then "gf" to open it in previous tab
-  3. :DiffviewFileHistory %
-
 }}}
 
 {{{ telescope

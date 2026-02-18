@@ -6,13 +6,14 @@
 ## git related
 ```yaml
 ################################################################################
-# open a file in on a specific commit
+# open a file on a specific commit
 # using fugitive
 :Gedit ${commit_sha}:path/to/a/file.txt
 # using diffview
+# open a file first
 :DiffviewFileHistory %
-# find the commit you wanna open the file in
-# it opens in a diff mode, simply quit the side you don't want
+# find the commit you wanna open the file on
+# it opens in a diff mode, simply quit the side you don't want and keep the one you want
 ```
 
 # TODO

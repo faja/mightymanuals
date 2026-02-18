@@ -305,6 +305,7 @@
 
 - [PROGRAMMING](./PROGRAMMING/index.md)
     - [BASH (shell scripting)](./PROGRAMMING/BASH/index.md)
+        - [shell trix](./PROGRAMMING/BASH/shell_trix.md)
         - [variables ${}](./PROGRAMMING/BASH/variables.md)
         - [snippets](./PROGRAMMING/BASH/snippets.md)
         - [my awesome sh script template](./PROGRAMMING/BASH/template.md)

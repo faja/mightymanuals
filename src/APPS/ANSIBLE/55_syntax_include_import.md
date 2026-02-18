@@ -31,4 +31,6 @@ example of dynamic includ
 
 # go for
 - include_tasks: "{{ ansible_os_family}}.yaml"
+# or
+- include_tasks: "{{ (ansible_distribution ~ '_' ~ ansible_distribution_major_version) | lower }}.yaml"
 ```

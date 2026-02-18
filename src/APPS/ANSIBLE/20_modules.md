@@ -186,13 +186,15 @@ todo
 
 - short version - for quick debug purposes
     ```yaml
-    - debug: var=myvarname_i_wanna_debug
+    - ansible.builtin.debug:
+        msg: "TODO"
+    - ansible.builtin.debug: var=myvarname_i_wanna_debug
     ```
 
 - long
     ```yaml
     - name: Show a debug message
-      debug:
+      ansible.builtin.debug:
         msg: "The debug module will print a message: neat, eh?"
     ```
 

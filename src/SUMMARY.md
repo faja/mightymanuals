@@ -151,6 +151,7 @@
         - [terragrunt](./APPS/TERRAFORM/terragrunt/index.md)
         - [tflint](./APPS/TERRAFORM/tflint/index.md)
     - [tmux](./APPS/TMUX/index.md)
+    - [typesense](./APPS/TYPESENSE/index.md)
     - [vagrant](./APPS/VAGRANT/index.md)
     - [vault](./APPS/VAULT/index.md)
         - [cheatsheet](./APPS/VAULT/cheatsheet.md)

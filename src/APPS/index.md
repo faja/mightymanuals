@@ -26,6 +26,7 @@
 - [skopeo](./SKOPEO/index.md)
 - [task](./TASK/index.md)
 - [terraform](./TERRAFORM/index.md)
+- [typesense](./TYPESENSE/index.md)
 - [tmux](./TMUX/index.md)
 - [vagrant](./VAGRANT/index.md)
 - [vault](./VAULT/index.md)

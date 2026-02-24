@@ -17,6 +17,11 @@ Watch a directory and rerun a command when certain files change
 
 - quick usage
 ```sh
+# any file recursively
+reflex -r '.' -- sh -c \
+  'echo {} && echo && cd ../../deployments/typesense && \
+  helm template typesense typesense --values values.yaml > manifest.yaml'
+
 reflex -r "\.txt$" echo {}
 reflex -r "\.jsonnet$" -- bash -c "render {} && tf-init && tf-apply"
 reflex -r "\.yaml$" helm tempalte xxx .

@@ -38,3 +38,14 @@ spec:
   replicas: 3
   revisionHistoryLimit: 3
 ```
+
+- `persistentVolumeClaimRetentionPolicy`
+```yaml
+# what to do with pvc and pv when statefulset is deleted or scaled down
+# NOTE: the behaviour also depends on storageClass ReclaimPolicy
+#       kubectl describe storageClass ${NAME}
+spec:
+  persistentVolumeClaimRetentionPolicy:
+    whenDeleted: Retain # Retain(default), Delete
+    whenScaled: Retain  # Retain(default), Delete
+```

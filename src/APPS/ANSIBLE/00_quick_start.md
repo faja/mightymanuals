@@ -64,11 +64,3 @@
     ansible all -m ping             # to test connectivity
     ansible-playbook playbook.yaml  # to run the very first playbook
     ```
-
-# my prod setup
-```
-mkdir ${ANSIBLE_PROJECT} && cd ${ANSIBLE_PROJECT}
-mkdir inventory
-touch inventory/inventory.yaml
-touch ansible.cfg
-```

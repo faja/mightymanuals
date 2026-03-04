@@ -17,6 +17,7 @@
 - [libvirt](./LIBVIRT/index.md)
 - [loki](./LOKI/index.md)
 - [mdbook](./MDBOOK/index.md)
+- [nftables](./NFTABLES/index.md)
 - [nginx](./NGINX/index.md)
 - [nomad](./NOMAD/index.md)
 - [podman](./PODMAN/index.md)

@@ -337,6 +337,9 @@
 ---
 
 - [MISC](./MISC/index.md)
+    - [PACKAGES_DESKTOP_SETUP](./MISC/PACKAGES_DESKTOP_SETUP/index.md)
+        - [linux - I use ARCH btw](./MISC/PACKAGES_DESKTOP_SETUP/linux.md)
+        - [macos](./MISC/PACKAGES_DESKTOP_SETUP/macos.md)
     - [REGEX](./MISC/REGEX/index.md)
     - [KEYBOARD SHORTCUTS](./MISC/KEYBOARD_SHORTCUTS/index.md)
         - [browser](./MISC/KEYBOARD_SHORTCUTS/browser.md)

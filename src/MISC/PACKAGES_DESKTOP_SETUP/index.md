@@ -1,0 +1,2 @@
+- [linux - I use ARCH btw](./linux.md)
+- [macos](./macos.md)

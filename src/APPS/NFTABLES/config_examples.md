@@ -24,7 +24,21 @@ table inet filter {
 
 # my prod bare metal server
 ```yaml
-TODO
+table inet filter {
+    chain input {
+        type filter hook input priority 0; policy drop;
+
+        iif lo accept                          # loopback
+        ct state invalid drop                  # drop bad state
+        ct state established,related accept    # allow return traffic
+
+        ip saddr 192.168.20.0/24 icmp type echo-request accept # allow ping (IPv4) from LAN
+        ip saddr 192.168.20.0/24 tcp dport 22 accept           # allow ssh from LAN
+    }
+
+    chain forward { type filter hook forward priority 0; policy drop; }
+    chain output  { type filter hook output  priority 0; policy accept; }
+}
 ```
 
 # include

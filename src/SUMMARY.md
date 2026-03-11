@@ -271,6 +271,7 @@
         - [bpftrace](./LINUX_INTERNALS/BPF/bpftrace.md)
         - [programming python](./LINUX_INTERNALS/BPF/python/index.md)
         - [programming go](./LINUX_INTERNALS/BPF/go/index.md)
+    - [CGROUPS](./LINUX_INTERNALS/CGROUPS/index.md)
     - [CPU](./LINUX_INTERNALS/CPU/index.md)
         - [limits and throttling](./LINUX_INTERNALS/CPU/METRICS_STATS_LIMITS/limits_and_throttling.md)
     - [MEMORY](./LINUX_INTERNALS/MEMORY/index.md)

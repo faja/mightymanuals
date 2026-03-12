@@ -23,5 +23,6 @@ systemd-cgls   # runtime.slice/containerd.service
 # containerd command
 ```
 containerd --version     # print version
-containerd config dump   # current runtime config
+containerd config default # dump default configuration
+containerd config dump    # dump current runtime configuration
 ```

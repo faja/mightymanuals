@@ -14,6 +14,9 @@ apt install ${package_name}=${package_version}  # install specify version
 
 apt list --installed                            # list all installed packages
 apt list --installed ${package_name}            # show specific package
+
+apt show ${package_name} | grep Source  # show where(what repo) package coming from
+                                        # works for both installed and not installed
 ```
 
 ## dpkg

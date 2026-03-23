@@ -18,3 +18,9 @@
 |---|---|
 |[template]()| X.X.X |
 
+
+
+- 1liner to check version
+```sh
+curl -s https://endoflife.date/api/redis.json | jq -r '.[0]' | g latest
+```

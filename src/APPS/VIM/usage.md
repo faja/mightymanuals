@@ -50,6 +50,7 @@ K     # first sibling
 P     # parent
 m     # mark
 bd    # delete marked
+C-]   # `cd` aka change directory
 ```
 ## markdown preview
 ```yaml

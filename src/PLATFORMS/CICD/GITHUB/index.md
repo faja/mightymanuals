@@ -1,6 +1,8 @@
 
 ---
 
+- [aws integration](./aws.md)
+
 For now just a buch of quick copy paste snippets
 
 ## docker build and push

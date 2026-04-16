@@ -307,6 +307,7 @@
         - [firewall rules](./PLATFORMS/CLOUDFLARE/firewall_rules.md)
     - [CICD tools](./PLATFORMS/CICD/index.md)
         - [GitHub Actions](./PLATFORMS/CICD/GITHUB/index.md)
+            - [aws](./PLATFORMS/CICD/GITHUB/aws.md)
         - [GitLab](./PLATFORMS/CICD/GITLAB/index.md)
             - [rules](./PLATFORMS/CICD/GITLAB/rules.md)
 

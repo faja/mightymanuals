@@ -248,6 +248,7 @@
     - [vmstat](./COMMANDS/VMSTAT/index.md)
     - [wget](./COMMANDS/WGET/index.md)
     - [wscat](./COMMANDS/WSCAT/index.md)
+    - [xfs_*](./COMMANDS/XFS/index.md)
     - [yj](./COMMANDS/YJ/index.md)
     - [yq](./COMMANDS/YQ/index.md)
 

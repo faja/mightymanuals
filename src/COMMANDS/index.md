@@ -71,6 +71,7 @@
 - [vmstat](./VMSTAT/index.md) `(tags=performance)`
 - [wget](./WGET/index.md) `(tags=)`
 - [wscat](./WSCAT/index.md) `(tags=websocket)`
+- [xfs_*](./XFS/index.md) `(tags=xfs,disk,partition)`
 - [yj](./YJ/index.md) `(tags=jq,hcl,json,yaml,convert)`
 - [yq](./YQ/index.md) `(tags=jq,json,yaml)`
 

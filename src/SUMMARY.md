@@ -49,6 +49,7 @@
             - [python](./APPS/DOCKER/DOCKERFILE/PYTHON/index.md)
             - [wolfi](./APPS/DOCKER/DOCKERFILE/WOLFI/index.md)
         - [compose](./APPS/DOCKER/COMPOSE/index.md)
+            - [simples, nginx, compose](./APPS/DOCKER/COMPOSE/00.simplest.nginx.md)
             - [basic file, all elements](./APPS/DOCKER/COMPOSE/01.basic.all.md)
             - [networks](./APPS/DOCKER/COMPOSE/02.networks.md)
         - [sha](./APPS/DOCKER/SHA/index.md)

@@ -131,6 +131,7 @@
         - [persistence](./APPS/REDIS/persistence.md)
         - [replication](./APPS/REDIS/replication.md)
         - [cluster](./APPS/REDIS/cluster.md)
+        - [auth](./APPS/REDIS/auth.md)
         - [types/sets](./APPS/REDIS/types/sets.md)
     - [skopeo](./APPS/SKOPEO/index.md)
     - [task](./APPS/TASK/index.md)

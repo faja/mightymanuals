@@ -4,6 +4,7 @@
 - [redis-cli](#redis-cli)
 
 ---
+# redis-server
 
 - start server and listen on specific interface/port
     ```sh
@@ -24,7 +25,7 @@
 
 ```sh
 # authentication
-redis-cli -a ${PASSWORD} --no-auth-warning
+redis-cli -h ${HOSTNAME} -p ${PORT} -a ${PASSWORD} --no-auth-warning
 # or
 redis-cli
   > AUTH ${PASSWORD}

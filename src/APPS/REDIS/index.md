@@ -3,6 +3,7 @@
 - [persistence](./persistence.md)
 - [replication](./replication.md)
 - [cluster](./cluster.md)
+- [auth/users/ACLs](./auth.md)
 
 ### types
 - [sets](./types/sets.md)

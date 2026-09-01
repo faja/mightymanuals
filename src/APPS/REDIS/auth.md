@@ -23,8 +23,14 @@ couple of notes: `redis` has a concept of users and passwords:
 
 ## IMPORTANT
 
-ACL commands are not propagated via replication neither cluster.
+- ACL commands are not propagated via replication neither cluster.
 They are NODE-local configuration.
+- use `aclfile /path/to/users.acl` - to fully manage all users in users.acl file, or a combination of
+  ```sh
+  requirepass ...
+  user ....
+  ```
+  in redis.config file
 
 ## `ACL SETUSER`
 
@@ -67,4 +73,56 @@ categories are sets of commands, that we use with `@`, with `ACL SETUSER ...`, e
 ```sh
 > ACL CAT               # list all command categories
 > ACL CAT ${category}   # get details about a command
+```
+
+## ACLFILE
+
+- important, when using aclfile, you must include `default` user in it, can't use `requirepass`
+  and use `aclfile` at the same time, you also should create dedicated replication-user
+  ```
+  requirepass ... == `default` user
+  masterauth  ... == `replica-user` user
+
+  # note, please do not get confused,
+  # `requirepass` is replaced by entry in aclfile
+  # `masterauth` is client site config, together with `masteruser` - is a user/pass pair
+  # slave is using to auth against master,
+
+  ```
+
+- it's also possbile to include `requirepass`, `masteruser` and `user ...` in a "default"
+  redis config, and it's ok if we wanna create just one extra user, something like readonly or similar,
+  but if we are going to go for multiple different users, dedicated per app, I'd say lets just go for
+  users.acl
+
+- redis config points where users are configured
+
+```sh
+aclfile /path/to/users.acl
+```
+
+- `users.acl`
+```sh
+# comment lines require redis 8.8+
+
+# general syntax
+# user <username> on #<sha256_hex> <rules...>
+
+# default user
+user default on #... ~* &* +@all
+
+# replication user referenced by masteruser on every node
+user replica-user on #... -@all +psync +replconf +ping
+
+# app user (cluster aware)
+user app on #... ~* resetchannels +@read +@write -@dangerous +cluster|slots +cluster|shards +cluster|nodes +asking +readonly +readwrite
+```
+- how to generate sha from a password
+```sh
+printf '%s' "abc" | sha256sum | cut -d" " -f1
+```
+
+- after updateing a file, load new creds
+```
+> ACL LOAD
 ```

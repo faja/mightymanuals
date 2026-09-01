@@ -64,6 +64,7 @@ ACL SETUSER ${username} >${password} ~* resetchannels +@read +@write -@dangerous
 ```sh
 > ACL LIST
 > ACL GETUSER ${username}
+> ACL LOAD                # to load updated aclfile.acl into memory
 ```
 
 ## categories

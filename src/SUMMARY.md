@@ -124,6 +124,8 @@
             - [very first example job](./APPS/NOMAD/TERRAFORM/00_JOB/index.md)
     - [podman](./APPS/PODMAN/index.md)
     - [postgres](./APPS/POSTGRES/index.md)
+        - [basic usage](./APPS/POSTGRES/basic_usage.md)
+        - [users and roles](./APPS/POSTGRES/users_and_roles.md)
         - [dump && restore](./APPS/POSTGRES/dump_restore.md)
     - [promtail](./APPS/PROMTAIL/index.md)
     - [redis](./APPS/REDIS/index.md)

@@ -90,6 +90,26 @@ vault token create -orphan -policy=app-rw
 
 ### transit
 ```sh
+# enable transit engine
+vault secrets enable transit
+vault secrets enable -path=transit-prod transit
+
+# create a key
+# example key for JWT signing
+vault write -f transit/keys/alpaca \
+  type=ecdsa-p256 \
+  exportable=false \
+  allow_plaintext_backup=false
+
+# other example
+vault write -f transit/key/orders-encryption \
+  type=aes256-gcm96 \
+  auto_rotate_period=720h \
+  deletion_allowed=false \
+  exportable=false \
+  allow_plaintext_backup=false
+
+# NOTE auto_rotate_period is by default 0 - DISABLED
 ```
 
 

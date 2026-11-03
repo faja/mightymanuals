@@ -1,0 +1,3 @@
+- [BASICS](./BASICS/index.md)
+    - [INSTALL](./BASICS/install.md)
+    - [AUTH](./BASICS/auth.md)

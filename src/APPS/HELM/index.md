@@ -1,5 +1,7 @@
 ---
 
+- [local chart mirror](./local-chart-mirror.md)
+
 - template comments
 ```
 {{/*   *}}    # without whitespace removal
@@ -28,3 +30,4 @@ helm-docs
 {{ template "chart.valuesSection" . }}
 ```
 see all available templates in the [official docs](https://github.com/norwoodj/helm-docs)
+

@@ -97,6 +97,7 @@
         - [dns](./APPS/HAPROXY/dns.md)
         - [play](./APPS/HAPROXY/play.md)
     - [helm](./APPS/HELM/index.md)
+        - [local chart mirror](./APPS/HELM/local-chart-mirror.md)
     - [k8s](./APPS/K8S/index.md)
         - [yamls](./APPS/K8S/yamls/index.md)
             - [ConfigMap](./APPS/K8S/yamls/configmap.md)

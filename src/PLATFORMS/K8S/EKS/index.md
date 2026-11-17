@@ -1,3 +1,4 @@
-- [BASICS](./BASICS/index.md)
-    - [INSTALL](./BASICS/install.md)
-    - [AUTH](./BASICS/auth.md)
+- [INSTALL](./install.md)
+- [AUTH](./auth.md)
+- [ADDONS](./addons.md)
+- [LOAD BALANCER CONTROLLER](./lbc.md)

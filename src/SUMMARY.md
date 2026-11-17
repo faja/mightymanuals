@@ -320,9 +320,10 @@
     - [K8S](./PLATFORMS/K8S/index.md)
         - [GENERAL](./PLATFORMS/K8S/GENERAL/index.md)
         - [EKS(AWS)](./PLATFORMS/K8S/EKS/index.md)
-            - [BASICS](./PLATFORMS/K8S/EKS/BASICS/index.md)
-                - [INSTALL](./PLATFORMS/K8S/EKS/BASICS/install.md)
-                - [AUTH](./PLATFORMS/K8S/EKS/BASICS/auth.md)
+            - [INSTALL](./PLATFORMS/K8S/EKS/install.md)
+            - [AUTH](./PLATFORMS/K8S/EKS/auth.md)
+            - [ADDONS](./PLATFORMS/K8S/EKS/addons.md)
+            - [LOAD BALANCER CONTROLLER](./PLATFORMS/K8S/EKS/lbc.md)
         - [BARE METAL](./PLATFORMS/K8S/BARE_METAL/index.md)
 
 ---
